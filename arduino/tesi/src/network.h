@@ -8,5 +8,6 @@
 // -------------------------------------------------------------------------
 void setupWiFi();
 void setupOOCSI();
+void loopOOCSI();
 
 #endif // NETWORK_H

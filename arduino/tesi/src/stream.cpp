@@ -6,7 +6,7 @@
 // Loops through an array of sensor configuration pointers and an array
 // of corresponding send functions. If a sensor is enabled and its update
 // interval has passed, the sensor’s lastUpdate is refreshed and its
-// send function is called.
+// send function is called. Afterwards, if Wi-Fi is up, it pings OOCSI.
 void streamSensors(unsigned long now) {
     // Array of pointers to SensorConfig structures
     struct SensorConfig* sensors[] = { 
@@ -14,12 +14,11 @@ void streamSensors(unsigned long now) {
     };
 
     // Array of pointers to corresponding send functions.
-    // For CAP (MPR121), sendButtons() sends individual messages.
     void (*sendFunctions[])() = { 
         sendBattery, sendLDR, sendMIC, sendPOT, sendDistance, sendQUAT, sendPUSH, sendButtons 
     };
 
-    int sensorCount = sizeof(sensors) / sizeof(sensors[0]);
+    const int sensorCount = sizeof(sensors) / sizeof(sensors[0]);
 
     for (int i = 0; i < sensorCount; i++) {
         if (sensors[i]->enabled && (now - sensors[i]->lastUpdate >= sensors[i]->interval)) {
@@ -27,4 +26,5 @@ void streamSensors(unsigned long now) {
             sendFunctions[i](); // Call corresponding function
         }
     }
+    loopOOCSI(); // Call OOCSI loop function
 }

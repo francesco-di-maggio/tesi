@@ -11,10 +11,10 @@ void initBNO055() {
         Serial.println(F("No BNO055 detected. Check wiring or I2C ADDR!"));
         return; // Do not halt execution, just report an error
     }
-    Serial.println(F("BNO055 initialized!"));
-
-    // Use external crystal for better accuracy
+    // Use external 32.768 kHz crystal for better accuracy
     BNO_SENSOR.setExtCrystalUse(true);
+
+    Serial.println(F("BNO055 initialized!"));
 }
 
 // -------------------------------------------------------------------------

@@ -41,21 +41,18 @@ void sendOSC(const char* address, const T& value, int length = 1) {
 // -------------------------------------------------------------------------
 template <typename T>
 void sendSerial(const char* label, const T& value, int length = 1) {
-    // Print device index first, then label, then value.
-    Serial.print(DEVICE_INDEX);
-    Serial.print(" ");
-    Serial.print(label);
-    Serial.print(" ");
+    // Print: "CHANNEL /<DEVICE_INDEX> /<BASE_ADDRESS> /<label> "
+    Serial.printf("%s %d %s %s ", CHANNEL, DEVICE_INDEX, BASE_ADDRESS, label);
+    
     if constexpr (std::is_array_v<T> || std::is_pointer_v<T>) {
         for (int i = 0; i < length; i++) {
             Serial.print(value[i]);
-            Serial.print(" ");
+            if (i + 1 < length) Serial.print(" "); // Print space between values
         }
         Serial.println();
     } else {
-        Serial.println(value);
+        Serial.println(value); 
     }
-    // Serial.println();
 }
 
 // -------------------------------------------------------------------------

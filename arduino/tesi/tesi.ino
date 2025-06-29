@@ -2,7 +2,7 @@
     TESI (Tangible and Embodied Interaction)
      
     ©2025 Francesco Di Maggio
-    Modified: 22-02-2025
+    Modified: 05-05-2025
    
     - Designed for Adafruit HUZZAH32 Feather / ESP32 Feather V2
     - Using WiFi (ADC#2 won't work!)
@@ -42,8 +42,7 @@ void setup() {
 
   // printMacAddress();
 
-  setupWiFi();
-  setupOOCSI();
+  // setupWiFi(); setupOOCSI();
   initSensors();
 
   Serial.println(F("READY TO GO!"));
@@ -57,9 +56,4 @@ void setup() {
 void loop() {
   unsigned long now = millis();
   streamSensors(now);
-
-  // Use this keepAlive() function if you do NOT need to receive data from OOCSI
-  // Use the check() function if you also need to process incoming messages
-  // oocsi.check();
-  oocsi.keepAlive(); 
 }

@@ -7,14 +7,14 @@ const char* BASE_ADDRESS = "/tesi";     // Base address used for OSC and OOCSI m
 // -------------------------------------------------------------------------
 // Define each sensor with its ON/OFF, OSC, Serial, OOCSI and Sample Rate settings
 // -------------------------------------------------------------------------
-SensorConfig BATTERY  = {1, 1, 0, 0, 4000}; // Batter ON/OFF, OSC, Serial, OOCSI, Refresh Rate (ms)
-SensorConfig LDR      = {1, 1, 0, 0, 20};
-SensorConfig MIC      = {1, 1, 0, 0, 40};
-SensorConfig POT      = {1, 1, 0, 0, 10};
-SensorConfig DISTANCE = {1, 1, 0, 0, 20};
-SensorConfig QUAT     = {1, 1, 0, 0, 40};
-SensorConfig PUSH     = {1, 1, 0, 0, 5};
-SensorConfig CAP      = {1, 1, 0, 0, 5};
+SensorConfig BATTERY  = {1, 0, 1, 0, 4000}; // Batter ON/OFF, OSC, Serial, OOCSI, Refresh Rate (ms)
+SensorConfig LDR      = {1, 0, 1, 0, 20};
+SensorConfig MIC      = {1, 0, 0, 0, 40};
+SensorConfig POT      = {1, 0, 1, 0, 10};
+SensorConfig DISTANCE = {1, 0, 1, 0, 20};
+SensorConfig QUAT     = {1, 0, 1, 0, 40};
+SensorConfig PUSH     = {1, 0, 1, 0, 5};
+SensorConfig CAP      = {1, 0, 1, 0, 5};
 
 // -------------------------------------------------------------------------
 // WiFi & OSC Configuration
@@ -35,7 +35,7 @@ const IPAddress OUT_IP(145, 116, 46, 72); // Change this to your local IP addres
 const char* SSID = "OOCSI";
 const char* PASS = "OutOfControl2025!";
 const char* HOSTSERVER = "oocsi.id.tue.nl";
-const IPAddress OUT_IP(192, 168, 2, 100); // Static IP
+const IPAddress OUT_IP(192, 168, 60, 108); // Static IP
 
 #else
 #error "No network defined! Please define LOCAL_NETWORK, WORK_NETWORK, or HOME_NETWORK."

@@ -31,7 +31,7 @@ fp-info-cache
 *.csv
 
 # Desktop Services Store
-*.DS_Store
+.DS_Store
 
 # Backups
 *backups/

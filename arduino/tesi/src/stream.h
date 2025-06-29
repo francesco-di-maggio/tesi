@@ -4,11 +4,16 @@
 #include "config.h"
 #include "sensors.h"
 #include "utilities.h"
+#include "network.h"
 
 // --------------------------------------
 // Function Prototype
 // --------------------------------------
+// Main streaming function called from loop()
 void streamSensors(unsigned long now);
+
+// OOCSI callback function called from loop()
+void loopOOCSI();
 
 // Sensor Data Transmission Functions
 void sendBattery();
