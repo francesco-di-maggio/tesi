@@ -1,12 +1,13 @@
 #ifndef PUSH_H
 #define PUSH_H
 
-#include "config.h"      // Provides PUSH_PIN1, PUSH_PIN2, CHANNEL, and PUSH config
-#include "utilities.h"   // For setColor(), sendSerial(), sendOSC(), sendOOCSI()
+#include "config.h"
+#include "utilities.h"
 
 // -------------------------------------------------------------------------
-// Function Prototypes for Two Push Buttons
+// Function Prototypes for Push Button Operations
 // -------------------------------------------------------------------------
+
 // Reads the states of two push buttons into the provided array (buttons[0] and buttons[1])
 void readPushButtons(int (&buttons)[2]);
 

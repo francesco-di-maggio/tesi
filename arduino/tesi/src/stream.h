@@ -6,16 +6,20 @@
 #include "utilities.h"
 #include "network.h"
 
-// --------------------------------------
-// Function Prototype
-// --------------------------------------
+// -------------------------------------------------------------------------
+// Function Prototypes
+// -------------------------------------------------------------------------
+
 // Main streaming function called from loop()
+// Loops through enabled sensors and sends data if the update interval has passed.
 void streamSensors(unsigned long now);
 
 // OOCSI callback function called from loop()
+// Handles OOCSI message processing and keep-alive pings.
 void loopOOCSI();
 
 // Sensor Data Transmission Functions
+// Each function sends data for a specific sensor.
 void sendBattery();
 void sendLDR();
 void sendMIC();

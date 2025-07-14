@@ -20,13 +20,13 @@ void readPushButtons(int (&buttons)[2]) {
 
     unsigned long now = millis();
 
-    // Process push button 1 with debounce
+    // Debounce logic for button 1
     if (currentPush1 != lastPushState[0] && (now - lastDebounceTime[0] > debounceDelay)) {
         lastDebounceTime[0] = now;
         lastPushState[0] = currentPush1;
     }
 
-    // Process push button 2 with debounce
+    // Debounce logic for button 2
     if (currentPush2 != lastPushState[1] && (now - lastDebounceTime[1] > debounceDelay)) {
         lastDebounceTime[1] = now;
         lastPushState[1] = currentPush2;
@@ -54,15 +54,9 @@ void sendPUSH() {
             char address[20];
             snprintf(address, sizeof(address), "/push/%d", i + 1);
 
-            if (PUSH.serial) {
-                sendSerial(address, buttons[i]);
-            }
-            if (PUSH.osc) {
-                sendOSC(address, buttons[i]);
-            }
-            if (PUSH.oocsi) {
-                sendOOCSI(CHANNEL, address, buttons[i]);
-            }
+            if (PUSH.serial)  sendSerial(address, buttons[i]);
+            if (PUSH.osc)     sendOSC(address, buttons[i]);
+            if (PUSH.oocsi)   sendOOCSI(CHANNEL, address, buttons[i]);
         }
     }
 }

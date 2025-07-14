@@ -4,66 +4,68 @@
 // -------------------------------------------------------------------------
 // Battery Voltage Reading Constants
 // -------------------------------------------------------------------------
-const float ADC_MIN = 0.0f;               // Minimum ADC reading for ESP32 (12-bit = 0)
-const float ADC_MAX = 4095.0f;            // Maximum ADC reading for ESP32 (12-bit = 4095)
-const float REF_VOLTAGE = 3.3f;           // ESP32 ADC reference voltage (regulated 3.3V)
-const float VOLTAGE_DIVIDER_RATIO = 2.0f; // Voltage divider ratio (e.g., halves the battery voltage)
-const float BATTERY_FULL = 3.7f;          // Voltage when battery is fully charged (100%)
-const float BATTERY_EMPTY = 3.2f;         // Voltage when battery is empty (0%)
+constexpr float ADC_MAX = 4095.0f;            // ESP32 ADC is 12-bit (0-4095)
+constexpr float REF_VOLTAGE = 3.3f;           // ESP32 ADC reference voltage
+constexpr float VOLTAGE_DIVIDER_RATIO = 2.0f; // Adjust if your divider is different
+constexpr float BATTERY_FULL = 3.7f;          // Voltage at 100%
+constexpr float BATTERY_EMPTY = 3.2f;         // Voltage at 0%
 
 // -------------------------------------------------------------------------
 // EMA Smoothing Parameter
 // -------------------------------------------------------------------------
-// Lower ALPHA_BATTERY means more smoothing (and slower response)
-const float ALPHA_BATTERY = 0.4f;
+constexpr float ALPHA_BATTERY = 0.4f;
 
 // -------------------------------------------------------------------------
-// readBattery()
+// Initializes battery monitoring (placeholder for future use)
 // -------------------------------------------------------------------------
-// Reads the raw ADC value from BATTERY_PIN, converts it to a battery voltage,
-// maps that voltage to a percentage (0 to 100), and applies an EMA filter for smoothing.
-int readBattery() {
-    int batteryRaw = analogRead(BATTERY_PIN);
-    float batteryVoltage = ((float)batteryRaw / ADC_MAX) * REF_VOLTAGE * VOLTAGE_DIVIDER_RATIO;
-    
-    // Map the voltage (scaled by 100) into a percentage
-    int batteryPercent = constrain(
-        map((int)(batteryVoltage * 100), (int)(BATTERY_EMPTY * 100), (int)(BATTERY_FULL * 100), 0, 100),
-        0, 100
-    );
-    
-    // Apply EMA filter to smooth the value
-    static float batteryEstimate = batteryPercent; // Initialize with first reading
-    batteryEstimate = ALPHA_BATTERY * batteryPercent + (1.0f - ALPHA_BATTERY) * batteryEstimate;
-    
-    return (int)(batteryEstimate + 0.5f); // Round to nearest int
+void initBattery() {
+    // No initialization needed for analogRead on ESP32
 }
 
 // -------------------------------------------------------------------------
-// sendBattery()
+// Reads the battery voltage (in Volts)
 // -------------------------------------------------------------------------
-// Sends the battery percentage via Serial, OSC, and OOCSI only if the new
-// filtered value differs from the last sent value.
-void sendBattery() {
-    static int lastSentValue = -1;  // Tracks the last sent battery percentage
-    int value = readBattery();
-    
-    if (value == lastSentValue) {
-        return; // No change detected; do not send
-    }
-    lastSentValue = value;
-    
-    // Build the address string
-    char address[20];
-    snprintf(address, sizeof(address), "/battery");
+float readBatteryVoltage() {
+    int rawValue = analogRead(BATTERY_PIN);
+    float voltage = (static_cast<float>(rawValue) / ADC_MAX) * REF_VOLTAGE * VOLTAGE_DIVIDER_RATIO;
+    return voltage;
+}
 
-    if (BATTERY.serial) {
-        sendSerial(address, value);
-    }
-    if (BATTERY.osc) {
-        sendOSC(address, value);
-    }
-    if (BATTERY.oocsi) {
-        sendOOCSI(CHANNEL, address, value);
-    }
+// -------------------------------------------------------------------------
+// Reads the battery percentage (0-100, smoothed)
+// -------------------------------------------------------------------------
+int readBatteryPercent() {
+    float voltage = readBatteryVoltage();
+    int percent = constrain(
+        map(static_cast<int>(voltage * 100), static_cast<int>(BATTERY_EMPTY * 100), static_cast<int>(BATTERY_FULL * 100), 0, 100),
+        0, 100
+    );
+    static float batteryEstimate = percent; // Initialize with first reading
+    batteryEstimate = ALPHA_BATTERY * percent + (1.0f - ALPHA_BATTERY) * batteryEstimate;
+    return static_cast<int>(batteryEstimate + 0.5f); // Rounded
+}
+
+// -------------------------------------------------------------------------
+// Checks if the battery voltage is below a low threshold
+// -------------------------------------------------------------------------
+bool isBatteryLow() {
+    constexpr float LOW_VOLTAGE_THRESHOLD = 3.2f; // Adjust as needed
+    float voltage = readBatteryVoltage();
+    return voltage < LOW_VOLTAGE_THRESHOLD;
+}
+
+// -------------------------------------------------------------------------
+// Sends the battery percentage via configured protocols (only if changed)
+// -------------------------------------------------------------------------
+void sendBattery() {
+    static int lastSentValue = -1;
+    int percent = readBatteryPercent();
+
+    if (percent == lastSentValue) return;
+    lastSentValue = percent;
+
+    const char* address = "/battery";
+    if (BATTERY.serial) sendSerial(address, percent);
+    if (BATTERY.osc)    sendOSC(address, percent);
+    if (BATTERY.oocsi)  sendOOCSI(CHANNEL, address, percent);
 }

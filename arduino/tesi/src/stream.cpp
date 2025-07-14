@@ -1,30 +1,40 @@
 #include "stream.h"
+#include "config.h"
+#include "ping.h"
 
 // -------------------------------------------------------------------------
-// General Streaming Function (Uses now (currentMillis) from loop)
+// Main Streaming Function
 // -------------------------------------------------------------------------
-// Loops through an array of sensor configuration pointers and an array
-// of corresponding send functions. If a sensor is enabled and its update
-// interval has passed, the sensor’s lastUpdate is refreshed and its
-// send function is called. Afterwards, if Wi-Fi is up, it pings OOCSI.
+// Loops through an array of sensor configuration pointers and their corresponding
+// send functions. If a sensor is enabled and its update interval has passed,
+// the sensor’s lastUpdate is refreshed and its send function is called.
+// Afterwards, if OOCSI is enabled, it pings OOCSI.
 void streamSensors(unsigned long now) {
     // Array of pointers to SensorConfig structures
-    struct SensorConfig* sensors[] = { 
+    SensorConfig* const sensors[] = { 
         &BATTERY, &LDR, &MIC, &POT, &DISTANCE, &QUAT, &PUSH, &CAP 
     };
 
     // Array of pointers to corresponding send functions.
-    void (*sendFunctions[])() = { 
+    void (*const sendFunctions[])() = { 
         sendBattery, sendLDR, sendMIC, sendPOT, sendDistance, sendQUAT, sendPUSH, sendButtons 
     };
 
-    const int sensorCount = sizeof(sensors) / sizeof(sensors[0]);
+    constexpr size_t sensorCount = sizeof(sensors) / sizeof(sensors[0]);
 
-    for (int i = 0; i < sensorCount; i++) {
+    // Iterate through each sensor to check if it needs to be updated
+    for (size_t i = 0; i < sensorCount; i++) {
         if (sensors[i]->enabled && (now - sensors[i]->lastUpdate >= sensors[i]->interval)) {
-            sensors[i]->lastUpdate = now;
-            sendFunctions[i](); // Call corresponding function
+            sensors[i]->lastUpdate = now; // Update the last update time
+            sendFunctions[i]();           // Call the corresponding send function
         }
     }
-    loopOOCSI(); // Call OOCSI loop function
+
+    // Send heartbeat ping
+    sendPing();
+
+    // Maintain OOCSI connection and process messages
+    #if defined(USE_OOCSI)
+    loopOOCSI();
+    #endif
 }

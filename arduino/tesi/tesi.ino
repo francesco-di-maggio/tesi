@@ -27,7 +27,6 @@
 // -------------------------------------------------------------------------
 // SETUP 
 // -------------------------------------------------------------------------
-
 void setup() {
   Serial.begin(115200);
   Serial.println(F("Starting Serial Communication"));
@@ -38,16 +37,23 @@ void setup() {
   pinMode(GREEN_PIN, OUTPUT);
   pinMode(BLUE_PIN, OUTPUT); 
 
-  setColor(255, 0, 0); // RED LIGHT!
+  setColor(255, 0, 0); // RED LIGHT: Booting
 
-  // printMacAddress();
+  // printMacAddress(); // Uncomment if you want to print MAC address
 
-  // setupWiFi(); setupOOCSI();
-  initSensors();
+  setupWiFi();
+
+  #if defined(USE_OOCSI) // Chnage this in config.h
+  setupOOCSI();
+  #endif
+
+  setupSensors();
 
   Serial.println(F("READY TO GO!"));
 
-  setColor(0, 255, 0); delay(500); setColor(0, 0, 0); // GREEN LIGHT!
+  setColor(0, 255, 0); 
+  delay(500); 
+  setColor(0, 0, 0); // GREEN LIGHT: Ready, then off
 }
 
 // -------------------------------------------------------------------------

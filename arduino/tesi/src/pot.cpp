@@ -1,99 +1,80 @@
 #include "pot.h"
-#include "utilities.h"
+#include <Arduino.h>
+#include <stdio.h> // For snprintf if needed
 
 // -------------------------------------------------------------------------
-// Kalman Filter Variables
+// Smoothing and Deadzone Parameters
 // -------------------------------------------------------------------------
-// kalmanEstimate: the current estimated (filtered) value
-// kalmanError: the error covariance (uncertainty in the estimate)
-// kalmanProcessNoise: controls how quickly the filter adapts (lower = smoother)
-// kalmanMeasurementNoise: represents sensor noise (lower = less jitter)
-static float kalmanEstimate = 0.0f; // Estimated value
-static float kalmanError = 1.0f;    // Error covariance
-const float kalmanProcessNoise = 0.005f;    // Lower = smoother, Higher = more reactive
-const float kalmanMeasurementNoise = 1.5f; // Lower = less jitter, Higher = more flexible
+constexpr int DEADZONE_THRESHOLD = 15;     // Ignore small changes (higher = more stable)
+constexpr float MOVING_BLEND = 0.8f;       // Fast update on big change
+constexpr float IDLE_BLEND = 0.2f;         // Slow update when idle
+
+// Uncomment below for Kalman filter support (advanced users)
+// static float kalmanEstimate = 0.0f;
+// static float kalmanError = 1.0f;
+// constexpr float kalmanProcessNoise = 0.005f;
+// constexpr float kalmanMeasurementNoise = 1.5f;
+
+static float potEstimate = 0.0f;
+static int lastStableValue = 0;
 
 // -------------------------------------------------------------------------
-// Adaptive Responsiveness Parameters
+// Initializes the potentiometer filter with the current value
 // -------------------------------------------------------------------------
-// DEADZONE_THRESHOLD: minimum difference to register a change (higher = more stable)
-// MOVING_BLEND: blending factor used when a significant change is detected (faster response)
-// IDLE_BLEND: blending factor used when only small changes occur (more stability when idle)
-const int DEADZONE_THRESHOLD = 15;     // Higher = more stability, Lower = detects tiny changes
-const float MOVING_BLEND = 0.8f;       // Higher = reacts faster to movement
-const float IDLE_BLEND = 0.2f;         // Higher = steadier when idle
-
-static int lastStableValue = 0; // Stores the last valid (stable) value
-
-// -------------------------------------------------------------------------
-// Initial POT Value Setup (To Prevent Startup Drift)
-// -------------------------------------------------------------------------
-// Reads the initial analog value and sets the Kalman filter's starting point.
 void initPOT() {
-    int initialPotValue = analogRead(POT_PIN);
-    kalmanEstimate = initialPotValue;
-    lastStableValue = initialPotValue;
+    int initial = analogRead(POT_PIN);
+    potEstimate = initial;
+    lastStableValue = initial;
+
+    // Uncomment for Kalman filter initialization
+    // kalmanEstimate = initial;
 }
 
 // -------------------------------------------------------------------------
-// Read & Smooth POT Value (Kalman Filter + Deadzone + Adaptive Smoothing)
+// Reads and smooths the potentiometer value (adaptive EMA + deadzone)
 // -------------------------------------------------------------------------
-// This function reads the raw analog value, applies a Kalman filter to smooth it,
-// and then uses an adaptive blend: if the change is large (above the deadzone),
-// the filter updates quickly; if the change is small, it updates slowly to avoid jitter.
 int readPOT() {
-    int rawValue = analogRead(POT_PIN);
+    int raw = analogRead(POT_PIN);
 
-    // Deadzone: ignore small fluctuations when idle
-    if (abs(rawValue - lastStableValue) < DEADZONE_THRESHOLD) {
+    // Deadzone: ignore small fluctuations
+    if (abs(raw - lastStableValue) < DEADZONE_THRESHOLD) {
         return lastStableValue;
     }
 
-    // Kalman Filter: Predict & Correct
+    // Uncomment for Kalman filter update (advanced users)
+    /*
     kalmanError += kalmanProcessNoise;
     float kalmanGain = kalmanError / (kalmanError + kalmanMeasurementNoise);
-    kalmanEstimate += kalmanGain * (rawValue - kalmanEstimate);
+    kalmanEstimate += kalmanGain * (raw - kalmanEstimate);
     kalmanError *= (1.0f - kalmanGain);
+    */
 
-    // Adaptive Smoothing: Determine blending factor based on how large the change is.
-    // If the change is large, use MOVING_BLEND (faster update);
-    // if small, use IDLE_BLEND (more stable when idle).    
-    float blendFactor;
-    if (abs(rawValue - lastStableValue) > DEADZONE_THRESHOLD) {
-        blendFactor = MOVING_BLEND;  // Fast update when a significant change occurs
-    } else {
-        blendFactor = IDLE_BLEND;    // Slow update when changes are minor
-    }
-    
-    // Blend the new raw value with the previous estimate
-    kalmanEstimate = (blendFactor * rawValue) + ((1.0f - blendFactor) * kalmanEstimate);
+    // Adaptive smoothing: fast when moving, slow when idle
+    float blend = (abs(raw - lastStableValue) > DEADZONE_THRESHOLD) ? MOVING_BLEND : IDLE_BLEND;
+    potEstimate = blend * raw + (1.0f - blend) * potEstimate;
 
-    lastStableValue = static_cast<int>(kalmanEstimate);  // Update the stable value
+    lastStableValue = static_cast<int>(potEstimate + 0.5f);
     return lastStableValue;
 }
 
 // -------------------------------------------------------------------------
-// Send POT Value via Serial, OSC, and OOCSI
+// Sends the potentiometer value via Serial, OSC, and OOCSI if changed
 // -------------------------------------------------------------------------
-// Sends the filtered potentiometer value only if it has changed from the last
-// value sent, to avoid redundant output.
 void sendPOT() {
-    static int lastSentValue = -1; // Tracks the last sent value (initially -1 so that any valid value is sent)
+    static int lastSent = -1;
     int value = readPOT();
 
     // Only send if the value has changed
-    if (value == lastSentValue)
+    if (value == lastSent)
         return;
-    lastSentValue = value;
+    lastSent = value;
 
-    // Build the address string
-    char address[20];
-    snprintf(address, sizeof(address), "/pot");
+    // You can use snprintf for dynamic address if needed
+    // char address[20];
+    // snprintf(address, sizeof(address), "/pot");
+    const char* address = "/pot";
 
-    if (POT.serial)
-        sendSerial(address, value);
-    if (POT.osc)
-        sendOSC(address, value);
-    if (POT.oocsi)
-        sendOOCSI(CHANNEL, address, value);
+    if (POT.serial) sendSerial(address, value);
+    if (POT.osc)    sendOSC(address, value);
+    if (POT.oocsi)  sendOOCSI(CHANNEL, address, value);
 }
