@@ -44,13 +44,13 @@ TESI is a modular, wireless, and networked interface, leveraging machine learnin
 ### Dependencies
 To work in Max, TESI requires external libraries including:
 * (modulo)[https://cycling74.com/packages/modulo]
-* (modulo-plus)[https://github.com/francesco-di-maggio/modulo-plus]
+* (oocsi-max)[https://github.com/francesco-di-maggio/oocsi-max]
 * (odot)[https://cycling74.com/packages/odot]
 * (Sadam Library)[https://cycling74.com/packages/sadam-library]
 * (FluCoMa)[https://www.flucoma.org/]
 
 ### Networked Interaction & Distributed Control
-TESI operates as part of a system of interconnected objects, using OOCSI for decentralized communication between multiple devices. This enables:
+TESI operates as part of a system of interconnected objects, using OOCSI for wireless communication between multiple devices. This enables:
 
 * Real-time multi-agent interaction
 * Collaborative sound generation
