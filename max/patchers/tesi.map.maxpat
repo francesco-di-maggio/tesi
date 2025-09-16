@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 7,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 96.0, 1174.0, 560.0 ],
+		"rect" : [ 34.0, 93.0, 1174.0, 560.0 ],
 		"openrect" : [ 0.0, 0.0, 1174.296875, 559.75390625 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "Ableton Sans Medium",
@@ -22,6 +22,17 @@
 		"helpsidebarclosed" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontname" : "Ableton Sans Medium",
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1747.0, 381.0, 150.0, 21.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -32,7 +43,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -218,7 +229,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -325,7 +336,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 1787.0, 777.0, 58.0, 23.0 ],
+					"patching_rect" : [ 670.0, 81.0, 58.0, 23.0 ],
 					"text" : "loadbang"
 				}
 
@@ -337,7 +348,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1787.0, 802.0, 82.0, 23.0 ],
+					"patching_rect" : [ 670.0, 106.0, 82.0, 23.0 ],
 					"text" : "a-mo.settings"
 				}
 
@@ -349,7 +360,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1844.0, 852.0, 70.0, 23.0 ],
+					"patching_rect" : [ 727.0, 156.0, 70.0, 23.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -361,7 +372,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1787.0, 827.0, 125.0, 23.0 ],
+					"patching_rect" : [ 670.0, 131.0, 125.0, 23.0 ],
 					"text" : "universal @descend 1"
 				}
 
@@ -476,14 +487,15 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 890.0, 246.0, 456.0, 587.0 ],
+						"rect" : [ 790.0, 207.0, 456.0, 587.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-20",
@@ -540,8 +552,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 299.0, 496.0, 128.0, 62.0 ],
-									"text" : ";\r$1 inlabels 1 2 3 4;\r$1 outlabels T1 T2 T3;\r$1 bang"
+									"patching_rect" : [ 299.0, 496.0, 139.0, 62.0 ],
+									"text" : ";\r$1 inlabels 1 2 3 4;\r$1 outlabels /T1 /T2 /T3;\r$1 bang"
 								}
 
 							}
@@ -565,8 +577,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.0, 496.0, 163.0, 62.0 ],
-									"text" : ";\r$1 inlabels 1 2 3 4;\r$1 outlabels PUSH1 PUSH2;\r$1 bang"
+									"patching_rect" : [ 32.0, 496.0, 177.0, 62.0 ],
+									"text" : ";\r$1 inlabels 1 2 3 4;\r$1 outlabels /PUSH/1 /PUSH/2;\r$1 bang"
 								}
 
 							}
@@ -590,8 +602,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.0, 372.0, 221.0, 62.0 ],
-									"text" : ";\r$1 inlabels 1 2 3 4;\r$1 outlabels B1 B2 B3 B4 B5 B6 B7 B8;\r$1 bang"
+									"patching_rect" : [ 32.0, 372.0, 247.0, 62.0 ],
+									"text" : ";\r$1 inlabels 1 2 3 4;\r$1 outlabels /B1 /B2 /B3 /B4 /B5 /B6 /B7 /B8;\r$1 bang"
 								}
 
 							}
@@ -615,8 +627,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.0, 231.0, 234.0, 76.0 ],
-									"text" : ";\r$1 ins 4;\r$1 inlabels 1 2 3 4;\r$1 outlabels W X Y Z POT LDR MIC DIST;\r$1 bang"
+									"patching_rect" : [ 32.0, 231.0, 261.0, 76.0 ],
+									"text" : ";\r$1 ins 4;\r$1 inlabels 1 2 3 4;\r$1 outlabels /W /X /Y /Z /POT /LDR /MIC /DIST;\r$1 bang"
 								}
 
 							}
@@ -791,23 +803,23 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 935.0, 98.0, 287.0, 573.0 ],
+						"rect" : [ 892.0, 98.0, 292.0, 573.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-4",
+									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 158.0, 205.0, 107.0, 22.0 ],
-									"text" : "sprintf %i — %s"
+									"patching_rect" : [ 158.0, 205.0, 78.0, 22.0 ],
+									"text" : "sprintf %i %s"
 								}
 
 							}
@@ -1007,7 +1019,8 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
+									"destination" : [ "obj-8", 0 ],
+									"midpoints" : [ 167.5, 204.0, 167.5, 204.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1057,13 +1070,6 @@
 									"destination" : [ "obj-58", 2 ],
 									"midpoints" : [ 140.0, 333.0, 111.5, 333.0 ],
 									"source" : [ "obj-3", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-70", 0 ],
-									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -1169,8 +1175,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-68", 1 ],
-									"midpoints" : [ 178.0, 432.0, 97.0, 432.0 ],
+									"midpoints" : [ 178.0, 273.0, 178.0, 273.0, 178.0, 432.0, 97.0, 432.0 ],
 									"source" : [ "obj-70", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-70", 0 ],
+									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -1377,23 +1390,23 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 935.0, 98.0, 287.0, 573.0 ],
+						"rect" : [ 892.0, 98.0, 292.0, 573.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-4",
+									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 158.0, 205.0, 107.0, 22.0 ],
-									"text" : "sprintf %i — %s"
+									"patching_rect" : [ 158.0, 205.0, 78.0, 22.0 ],
+									"text" : "sprintf %i %s"
 								}
 
 							}
@@ -1593,7 +1606,8 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
+									"destination" : [ "obj-8", 0 ],
+									"midpoints" : [ 167.5, 204.0, 167.5, 204.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1643,13 +1657,6 @@
 									"destination" : [ "obj-58", 2 ],
 									"midpoints" : [ 140.0, 333.0, 111.5, 333.0 ],
 									"source" : [ "obj-3", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-70", 0 ],
-									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -1755,8 +1762,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-68", 1 ],
-									"midpoints" : [ 178.0, 432.0, 97.0, 432.0 ],
+									"midpoints" : [ 178.0, 273.0, 178.0, 273.0, 178.0, 432.0, 97.0, 432.0 ],
 									"source" : [ "obj-70", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-70", 0 ],
+									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -1892,13 +1906,13 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 7,
+							"revision" : 8,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 935.0, 98.0, 354.0, 573.0 ],
+						"rect" : [ 892.0, 98.0, 292.0, 573.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
 								"box" : 								{
@@ -1907,8 +1921,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 158.0, 205.0, 107.0, 22.0 ],
-									"text" : "sprintf %i — %s"
+									"patching_rect" : [ 158.0, 205.0, 78.0, 22.0 ],
+									"text" : "sprintf %i %s"
 								}
 
 							}
@@ -2367,14 +2381,14 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 30.0, 74.0, 23.0 ],
-					"text" : "receive TESI"
+					"patching_rect" : [ 30.0, 30.0, 73.0, 23.0 ],
+					"text" : "receive map"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"active1" : [ 0.594473705410263, 0.720560630419913, 0.928309050695498, 1.0 ],
+					"active1" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
 					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 					"bubblesize" : 16,
 					"emptycolor" : [ 0.670588235294118, 0.776470588235294, 0.796078431372549, 1.0 ],
@@ -2402,7 +2416,7 @@
 
 					}
 ,
-					"stored1" : [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1.0 ]
+					"stored1" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
 			}
@@ -2563,6 +2577,8 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 553.5, 640.0, 163.0, 23.0 ],
 					"priority" : 					{
+						"mo.ctlouts::channel" : 1,
+						"mo.noteouts::channel" : 1,
 						"mo.crosspatch::ins" : -1,
 						"mo.crosspatch::outs" : -1,
 						"mo.crosspatch::crosspatch" : 1,
@@ -2572,6 +2588,7 @@
 						"mo.prepend::[4]::set" : 1,
 						"mo.prepend::[5]::set" : 1,
 						"mo.prepend::[6]::set" : 1,
+						"mo.prepend::mute" : 1,
 						"mo.prepend::[7]::set" : 1,
 						"mo.prepend::[8]::set" : 1,
 						"mo.crosspatch[1]::ins" : -1,
@@ -2583,12 +2600,15 @@
 						"mo.prepend[1]::[4]::set" : 1,
 						"mo.prepend[1]::[5]::set" : 1,
 						"mo.prepend[1]::[6]::set" : 1,
+						"mo.prepend[1]::mute" : 1,
 						"mo.prepend[1]::[7]::set" : 1,
 						"mo.prepend[1]::[8]::set" : 1,
+						"mo.noteouts[1]::channel" : 1,
 						"mo.crosspatch[2]::ins" : -1,
 						"mo.crosspatch[2]::outs" : -1,
 						"mo.crosspatch[2]::crosspatch" : 1,
 						"mo.prepend[2]::[1]::set" : 1,
+						"mo.prepend[2]::mute" : 1,
 						"mo.prepend[2]::[2]::set" : 1
 					}
 ,
@@ -2990,7 +3010,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-80", 0 ],
-					"midpoints" : [ 1796.5, 801.0, 1796.5, 801.0 ],
+					"midpoints" : [ 679.5, 105.0, 679.5, 105.0 ],
 					"source" : [ "obj-79", 0 ]
 				}
 
@@ -2998,7 +3018,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-86", 0 ],
-					"midpoints" : [ 1796.5, 828.0, 1796.5, 828.0 ],
+					"midpoints" : [ 679.5, 132.0, 679.5, 132.0 ],
 					"source" : [ "obj-80", 0 ]
 				}
 

@@ -6,7 +6,8 @@
 
 #define SECRET_SSID          "TESI2025"
 #define SECRET_PASSWORD      "happypatching"
-#define SECRET_IP            "192.168.8.100" 
+#define SECRET_IP            "192.168.8.100"
+#define SECRET_HOSTSERVER    "oocsi.id.tue.nl" 
 #define SECRET_OUTPORT       8001
 #define SECRET_OOCSI_NAME    "TESI_####"          
 #define SECRET_CHANNEL       "TESICHANNEL"

@@ -1,8 +1,6 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-// #define USE_OOCSI  // Comment this line to disable OOCSI everywhere
-
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WiFiUdp.h>
@@ -23,8 +21,8 @@ struct SensorConfig {
     uint8_t osc;                   // 1 = OSC enabled, 0 = disabled
     uint8_t serial;                // 1 = Serial output enabled, 0 = disabled
     uint8_t oocsi;                 // 1 = OOCSI output enabled, 0 = disabled
-    unsigned long interval;     // Time interval for sensor updates (ms)
-    unsigned long lastUpdate;   // Timestamp of the last update
+    unsigned long interval;        // Time interval for sensor updates (ms)
+    unsigned long lastUpdate;      // Timestamp of the last update
 };
 
 extern SensorConfig BATTERY, LDR, MIC, POT, DISTANCE, QUAT, PUSH, CAP;
@@ -42,6 +40,9 @@ extern WiFiUDP UDP;
 // -------------------------------------------------------------------------
 // OOCSI Configuration
 // -------------------------------------------------------------------------
+
+#define USE_OOCSI  // Comment this line to disable OOCSI everywhere
+
 extern const char* OOCSIName;        // OOCSI name for the device
 extern const char* CHANNEL;          // OOCSI channel for communication
 extern OOCSI oocsi;                  // OOCSI object for managing connections

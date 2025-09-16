@@ -3,12 +3,12 @@
 // -------------------------------------------------------------------------
 // Device Identity
 // -------------------------------------------------------------------------
-const int DEVICE_INDEX = 2;             // Set to 1 for board 1 (change as needed)
+const int DEVICE_INDEX = 1;             // Set to 1 for board 1 (change as needed)
 const char* BASE_ADDRESS = "/tesi";     // Base address for OSC and OOCSI messages
 
 // -------------------------------------------------------------------------
 // Sensor Configuration
-// Use 1 for enabled/true, 0 for disabled/false
+// Use 1 for enabled/true, 0 for disabled/false = ON/OFF, OSC, Serial, OOCSI
 // -------------------------------------------------------------------------
 SensorConfig BATTERY  = {1, 1, 0, 0, 4000, 0};
 SensorConfig LDR      = {1, 1, 0, 0,   20, 0};
@@ -16,7 +16,7 @@ SensorConfig MIC      = {1, 1, 0, 0,   40, 0};
 SensorConfig POT      = {1, 1, 0, 0,   10, 0};
 SensorConfig DISTANCE = {1, 1, 0, 0,   20, 0};
 SensorConfig QUAT     = {1, 1, 0, 0,   40, 0};
-SensorConfig PUSH     = {1, 1, 0, 0,    5, 0};
+SensorConfig PUSH     = {1, 0, 0, 1,    5, 0};
 SensorConfig CAP      = {1, 1, 0, 0,    5, 0};
 
 // -------------------------------------------------------------------------
@@ -24,7 +24,7 @@ SensorConfig CAP      = {1, 1, 0, 0,    5, 0};
 // -------------------------------------------------------------------------
 const char* SSID = SECRET_SSID;
 const char* PASS = SECRET_PASSWORD;
-const char* HOSTSERVER = SECRET_IP; // OOCSI server host (IP or hostname)
+const char* HOSTSERVER = SECRET_HOSTSERVER; // OOCSI server host (IP or hostname)
 const IPAddress OUT_IP(SECRET_IP);  // Output IP address for OOCSI (from string)
 const unsigned int OUT_PORT = SECRET_OUTPORT;
 WiFiUDP UDP;
