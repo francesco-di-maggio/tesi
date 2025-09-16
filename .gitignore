@@ -37,7 +37,7 @@ fp-info-cache
 *backups/
 *Backup/
 
-# Ableton Live icon files
+# Ableton Live
 Icon?
 # *.als
 # *.asd
@@ -46,3 +46,6 @@ Icon?
 
 # OOCSI
 *.log
+
+# Arduino
+secrets.h
