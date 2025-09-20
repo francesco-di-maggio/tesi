@@ -36,16 +36,19 @@ fp-info-cache
 # Backups
 *backups/
 *Backup/
+*.backup
 
 # Ableton Live
 Icon?
 # *.als
 # *.asd
 # *.cfg
-# *.backup
 
 # OOCSI
 *.log
 
 # Arduino
 secrets.h
+
+# VS Code
+.vscode/

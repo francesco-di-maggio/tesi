@@ -22,6 +22,300 @@
 		"helpsidebarclosed" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-74",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 9,
+							"minor" : 0,
+							"revision" : 8,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"classnamespace" : "box",
+						"rect" : [ 59.0, 108.0, 299.0, 473.0 ],
+						"gridsize" : [ 15.0, 15.0 ],
+						"subpatcher_template" : " ",
+						"visible" : 1,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 56.0, 400.0, 210.0, 35.0 ],
+									"presentation_linecount" : 3,
+									"text" : ";\r#SM deleteoutport \"TESI $1\" coremidi"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-76",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 180.0, 274.0, 49.0, 22.0 ],
+									"text" : "midiout"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 125.0, 102.0, 57.0, 22.0 ],
+									"text" : "tosymbol"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 56.0, 274.0, 38.0, 22.0 ],
+									"text" : "zl.reg"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 56.0, 345.0, 173.0, 35.0 ],
+									"text" : ";\r#SM createoutport $1 coremidi"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-70",
+									"maxclass" : "newobj",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 125.0, 38.0, 68.0, 22.0 ],
+									"text" : "r #0-ID"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-64",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 56.0, 227.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-58",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 32.0, 139.0, 43.0, 22.0 ],
+									"text" : "thresh"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-51",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 125.0, 69.5, 52.0, 22.0 ],
+									"text" : "TESI $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-46",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 32.0, 190.0, 43.0, 22.0 ],
+									"text" : "zl.sect"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-45",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 32.0, 102.0, 80.0, 22.0 ],
+									"text" : "route append"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-43",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 32.0, 38.0, 70.0, 22.0 ],
+									"text" : "loadmess 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontname" : "Ableton Sans Medium",
+									"fontsize" : 12.0,
+									"id" : "obj-38",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 32.0, 69.0, 51.0, 23.0 ],
+									"text" : "midiinfo"
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"midpoints" : [ 65.5, 297.0, 65.5, 297.0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 1 ],
+									"midpoints" : [ 134.5, 261.0, 84.5, 261.0 ],
+									"order" : 0,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-46", 1 ],
+									"midpoints" : [ 134.5, 177.0, 65.5, 177.0 ],
+									"order" : 1,
+									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-45", 0 ],
+									"midpoints" : [ 41.5, 93.0, 41.5, 93.0 ],
+									"source" : [ "obj-38", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-38", 0 ],
+									"midpoints" : [ 41.5, 63.0, 41.5, 63.0 ],
+									"source" : [ "obj-43", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-58", 0 ],
+									"midpoints" : [ 41.5, 126.0, 41.5, 126.0 ],
+									"source" : [ "obj-45", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-64", 0 ],
+									"midpoints" : [ 65.5, 213.0, 65.5, 213.0 ],
+									"source" : [ "obj-46", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"midpoints" : [ 134.5, 93.0, 134.5, 93.0 ],
+									"source" : [ "obj-51", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-46", 0 ],
+									"midpoints" : [ 41.5, 162.0, 41.5, 162.0 ],
+									"source" : [ "obj-58", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"midpoints" : [ 65.5, 252.0, 65.5, 252.0 ],
+									"source" : [ "obj-64", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-51", 0 ],
+									"midpoints" : [ 134.5, 63.0, 134.5, 63.0 ],
+									"source" : [ "obj-70", 0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 670.0, 220.0, 93.0, 23.0 ],
+					"text" : "p createmidiout"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 620.0, 743.5, 106.0, 25.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 932.0, 221.0, 106.0, 25.0 ],
+					"text" : "open mappings"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontname" : "Ableton Sans Medium",
 					"id" : "obj-10",
 					"maxclass" : "comment",
@@ -495,7 +789,6 @@
 						"classnamespace" : "box",
 						"rect" : [ 790.0, 207.0, 456.0, 587.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-20",
@@ -761,8 +1054,6 @@
 					}
 ,
 					"patching_rect" : [ 553.5, 740.0, 63.0, 32.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 904.0, 260.0, 70.0, 32.0 ],
 					"text" : "p map"
 				}
 
@@ -2398,7 +2689,7 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "preset", "int", "preset", "int", "" ],
 					"patching_rect" : [ 554.5, 585.0, 85.0, 24.0 ],
-					"pattrstorage" : "tesi-map-2",
+					"pattrstorage" : "tesi-map-1",
 					"presentation" : 1,
 					"presentation_rect" : [ 904.0, 30.0, 24.0, 165.0 ],
 					"saved_attribute_attributes" : 					{
@@ -2569,7 +2860,7 @@
 			}
 , 			{
 				"box" : 				{
-					"autorestore" : "tesi-map-2.json",
+					"autorestore" : "tesi-map-1.json",
 					"id" : "obj-47",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -2588,9 +2879,9 @@
 						"mo.prepend::[4]::set" : 1,
 						"mo.prepend::[5]::set" : 1,
 						"mo.prepend::[6]::set" : 1,
-						"mo.prepend::mute" : 1,
 						"mo.prepend::[7]::set" : 1,
 						"mo.prepend::[8]::set" : 1,
+						"mo.prepend::mute" : 1,
 						"mo.crosspatch[1]::ins" : -1,
 						"mo.crosspatch[1]::outs" : -1,
 						"mo.crosspatch[1]::crosspatch" : 1,
@@ -2600,27 +2891,29 @@
 						"mo.prepend[1]::[4]::set" : 1,
 						"mo.prepend[1]::[5]::set" : 1,
 						"mo.prepend[1]::[6]::set" : 1,
-						"mo.prepend[1]::mute" : 1,
 						"mo.prepend[1]::[7]::set" : 1,
 						"mo.prepend[1]::[8]::set" : 1,
+						"mo.prepend[1]::mute" : 1,
 						"mo.noteouts[1]::channel" : 1,
 						"mo.crosspatch[2]::ins" : -1,
 						"mo.crosspatch[2]::outs" : -1,
 						"mo.crosspatch[2]::crosspatch" : 1,
 						"mo.prepend[2]::[1]::set" : 1,
-						"mo.prepend[2]::mute" : 1,
-						"mo.prepend[2]::[2]::set" : 1
+						"mo.prepend[2]::[2]::set" : 1,
+						"mo.prepend[2]::[3]::set" : 1,
+						"mo.prepend[2]::[4]::set" : 1,
+						"mo.prepend[2]::mute" : 1
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 100, 157, 454, 285 ],
+						"client_rect" : [ 4, 44, 358, 172 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 100, 157, 551, 285 ]
+						"storage_rect" : [ 583, 69, 1034, 197 ]
 					}
 ,
 					"text" : "pattrstorage @autorestore 1",
-					"varname" : "tesi-map-2"
+					"varname" : "tesi-map-1"
 				}
 
 			}

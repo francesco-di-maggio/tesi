@@ -10,8 +10,8 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 93.0, 720.0, 460.0 ],
-		"openrect" : [ 0.0, 0.0, 720.0, 460.0 ],
+		"rect" : [ 34.0, 89.0, 720.0, 335.0 ],
+		"openrect" : [ 0.0, 0.0, 720.0, 334.8359375 ],
 		"openinpresentation" : 1,
 		"gridonopen" : 2,
 		"gridsize" : [ 10.0, 10.0 ],
@@ -34,7 +34,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 380.0, 453.0, 46.0, 22.0 ],
+					"patching_rect" : [ 380.0, 332.0, 46.0, 22.0 ],
 					"text" : "s oocsi"
 				}
 
@@ -108,7 +108,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 923.0, 585.0, 147.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 519.0, 335.0, 147.0, 20.0 ],
+					"presentation_rect" : [ 519.0, 206.0, 147.0, 20.0 ],
 					"text" : "map sensor data to sound"
 				}
 
@@ -154,7 +154,7 @@
 					"offset" : [ 0.0, 0.0 ],
 					"patching_rect" : [ 890.0, 610.0, 214.0, 84.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 485.0, 359.0, 214.0, 84.0 ],
+					"presentation_rect" : [ 485.0, 230.0, 214.0, 84.0 ],
 					"varname" : "poly-tesi.map",
 					"viewvisibility" : 1
 				}
@@ -179,7 +179,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 940.0, 429.0, 131.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 527.0, 210.0, 131.0, 20.0 ],
+					"presentation_rect" : [ 295.0, 208.0, 131.0, 20.0 ],
 					"text" : "visualize real-time data"
 				}
 
@@ -192,21 +192,8 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 654.0, 429.0, 139.0, 20.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 291.0, 210.0, 139.0, 20.0 ],
+					"presentation_rect" : [ 59.0, 208.0, 139.0, 20.0 ],
 					"text" : "list of connected devices"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-5",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 398.5, 358.0, 177.0, 20.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 40.0, 210.0, 177.0, 20.0 ],
-					"text" : "record real-time data of devices"
 				}
 
 			}
@@ -268,7 +255,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 890.0, 454.0, 214.0, 84.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 485.0, 232.0, 214.0, 84.0 ],
+					"presentation_rect" : [ 253.0, 230.0, 214.0, 84.0 ],
 					"varname" : "poly-tesi.visualize",
 					"viewvisibility" : 1
 				}
@@ -280,7 +267,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 484.0, 453.0, 37.0, 22.0 ],
+					"patching_rect" : [ 484.0, 332.0, 37.0, 22.0 ],
 					"text" : "s osc"
 				}
 
@@ -1415,7 +1402,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 20.0, 503.0, 143.0, 22.0 ],
+					"patching_rect" : [ 20.0, 492.0, 143.0, 22.0 ],
 					"text" : "read tesi-receive, recall 1"
 				}
 
@@ -1475,9 +1462,21 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 888.0, 98.0, 282.0, 607.0 ],
+						"rect" : [ 887.0, 128.0, 282.0, 608.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 191.0, 227.0, 150.0, 33.0 ],
+									"text" : "check for TESI \n---3"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
@@ -1569,7 +1568,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 154.0, 256.0, 61.0, 22.0 ],
-									"text" : "zl.group 3"
+									"text" : "zl.group 1"
 								}
 
 							}
@@ -1932,32 +1931,8 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 616.0, 454.0, 214.0, 84.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 253.0, 232.0, 214.0, 84.0 ],
+					"presentation_rect" : [ 21.0, 230.0, 214.0, 84.0 ],
 					"varname" : "mo.prepend",
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgmode" : 0,
-					"border" : 1,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-43",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "mo.record.maxpat",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 380.0, 272.0, 214.0, 84.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 21.0, 232.0, 214.0, 84.0 ],
-					"varname" : "TESI-1",
 					"viewvisibility" : 1
 				}
 
@@ -2048,7 +2023,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 20.0, 468.0, 58.0, 22.0 ],
+					"patching_rect" : [ 20.0, 454.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -2098,10 +2073,10 @@
 					}
 ,
 					"saved_object_attributes" : 					{
-						"client_rect" : [ 100, 157, 454, 285 ],
+						"client_rect" : [ 4, 44, 358, 172 ],
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0,
-						"storage_rect" : [ 100, 157, 551, 285 ]
+						"storage_rect" : [ 583, 69, 1034, 197 ]
 					}
 ,
 					"text" : "pattrstorage tesi-receive @autorestore 1 @changemode 1 @savemode 2",
@@ -2152,7 +2127,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 507.0, 394.0, 51.0, 20.0 ],
+					"patching_rect" : [ 507.0, 273.0, 51.0, 20.0 ],
 					"text" : "channel"
 				}
 
@@ -2164,7 +2139,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 380.0, 393.0, 123.0, 22.0 ],
+					"patching_rect" : [ 380.0, 272.0, 123.0, 22.0 ],
 					"text" : "route TESICHANNEL"
 				}
 
@@ -2218,14 +2193,14 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
-					"midpoints" : [ 29.5, 492.0, 29.5, 492.0 ],
+					"midpoints" : [ 29.5, 477.0, 29.5, 477.0 ],
 					"source" : [ "obj-12", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-43", 0 ],
+					"destination" : [ "obj-58", 0 ],
 					"midpoints" : [ 719.5, 258.0, 389.5, 258.0 ],
 					"source" : [ "obj-14", 0 ]
 				}
@@ -2241,7 +2216,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-43", 0 ],
+					"destination" : [ "obj-103", 0 ],
+					"midpoints" : [ 224.5, 258.0, 820.5, 258.0 ],
+					"source" : [ "obj-200", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-58", 0 ],
 					"midpoints" : [ 29.5, 258.0, 389.5, 258.0 ],
 					"source" : [ "obj-200", 0 ]
 				}
@@ -2250,7 +2233,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-203", 0 ],
-					"midpoints" : [ 29.5, 528.0, 29.5, 528.0 ],
+					"midpoints" : [ 29.5, 516.0, 29.5, 516.0 ],
 					"source" : [ "obj-21", 0 ]
 				}
 
@@ -2307,7 +2290,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-43", 0 ],
+					"destination" : [ "obj-58", 0 ],
 					"midpoints" : [ 389.5, 237.0, 389.5, 237.0 ],
 					"source" : [ "obj-29", 0 ]
 				}
@@ -2331,16 +2314,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-58", 0 ],
-					"midpoints" : [ 389.5, 357.0, 389.5, 357.0 ],
-					"source" : [ "obj-43", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-209", 0 ],
-					"midpoints" : [ 493.5, 417.0, 493.5, 417.0 ],
+					"midpoints" : [ 493.5, 297.0, 493.5, 297.0 ],
 					"source" : [ "obj-58", 1 ]
 				}
 
@@ -2348,7 +2323,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-34", 0 ],
-					"midpoints" : [ 389.5, 417.0, 389.5, 417.0 ],
+					"midpoints" : [ 389.5, 297.0, 389.5, 297.0 ],
 					"source" : [ "obj-58", 0 ]
 				}
 
@@ -2377,6 +2352,7 @@
 			"obj-14::obj-1" : [ "live.text[34]", "live.text", 0 ],
 			"obj-14::obj-6" : [ "live.text[245]", "live.text", 0 ],
 			"obj-19" : [ "live.text[999]", "live.text", 0 ],
+			"obj-200::obj-115" : [ "live.text[908]", "live.text", 0 ],
 			"obj-200::obj-6" : [ "live.text[218]", "live.text", 0 ],
 			"obj-211::obj-11" : [ "live.numbox[92]", "live.numbox", 0 ],
 			"obj-211::obj-12" : [ "live.text[349]", "live.text", 0 ],
@@ -3712,19 +3688,6 @@
 			"obj-29::obj-33" : [ "live.tab[5]", "live.tab", 0 ],
 			"obj-29::obj-7" : [ "live.text[177]", "live.text", 0 ],
 			"obj-29::obj-70" : [ "live.numbox[9]", "live.numbox", 0 ],
-			"obj-43::obj-13" : [ "live.text[1137]", "live.text", 0 ],
-			"obj-43::obj-14" : [ "live.button[18]", "live.button", 0 ],
-			"obj-43::obj-2" : [ "live.text[1136]", "live.text", 0 ],
-			"obj-43::obj-21" : [ "live.text[1021]", "live.text", 0 ],
-			"obj-43::obj-3" : [ "live.text[1139]", "live.text", 0 ],
-			"obj-43::obj-37" : [ "live.text[1140]", "live.text", 0 ],
-			"obj-43::obj-44" : [ "live.numbox[21]", "live.dial[12]", 0 ],
-			"obj-43::obj-45" : [ "live.text[1130]", "live.text", 0 ],
-			"obj-43::obj-59" : [ "live.numbox[22]", "live.numbox", 0 ],
-			"obj-43::obj-60" : [ "live.button[19]", "live.button", 0 ],
-			"obj-43::obj-85" : [ "live.text[1022]", "live.text", 0 ],
-			"obj-43::obj-9" : [ "live.text[1138]", "live.text", 0 ],
-			"obj-43::obj-92" : [ "live.text[1020]", "live.text", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
@@ -3737,6 +3700,14 @@
 			"parameter_overrides" : 			{
 				"obj-13::obj-9" : 				{
 					"parameter_longname" : "live.text[16]"
+				}
+,
+				"obj-200::obj-115" : 				{
+					"parameter_invisible" : 0,
+					"parameter_longname" : "live.text[908]",
+					"parameter_modmode" : 0,
+					"parameter_type" : 2,
+					"parameter_unitstyle" : 10
 				}
 ,
 				"obj-211::obj-11" : 				{
@@ -8793,20 +8764,6 @@
 				"bootpath" : "~/Documents/Max 9/Packages/modulo/patchers/utility",
 				"patcherrelativepath" : "../../../Max 9/Packages/modulo/patchers/utility",
 				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mo.record.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/modulo/patchers/utility",
-				"patcherrelativepath" : "../../../Max 9/Packages/modulo/patchers/utility",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "mo.record.svg",
-				"bootpath" : "~/Documents/Max 9/Packages/modulo/misc/icons",
-				"patcherrelativepath" : "../../../Max 9/Packages/modulo/misc/icons",
-				"type" : "svg",
 				"implicit" : 1
 			}
 , 			{

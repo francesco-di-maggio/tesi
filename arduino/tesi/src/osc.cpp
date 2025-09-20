@@ -6,7 +6,7 @@
 // -------------------------------------------------------------------------
 // Debug Configuration - Set to 1 to enable both Serial and OSC debug
 // -------------------------------------------------------------------------
-#define DEBUG 1
+#define DEBUG 1 // Set to 1 to enable debug messages
 
 Preferences preferences;
 
