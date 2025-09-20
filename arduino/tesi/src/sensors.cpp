@@ -20,6 +20,6 @@ void setupSensors() {
     initMPR121();
     initVL53L1X();
     initBNO055();
-
+    
     Serial.println(F("All sensors initialized successfully."));
 }

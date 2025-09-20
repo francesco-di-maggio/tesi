@@ -27,13 +27,13 @@ constexpr int DIST_CHANGE_THRESHOLD = 1;       // Only send if filtered value ch
 // -------------------------------------------------------------------------
 void initVL53L1X() {
     if (!VL53_SENSOR.begin(0x29, &Wire)) {
-        Serial.println(F("No VL53L1X detected. Check wiring or I2C ADDR!"));
+        Serial.println(F("VL53L1X FAILED - Check wiring or I2C ADDR!"));
         return;
     }
-    Serial.println(F("VL53L1X initialized!"));
+    Serial.println(F("VL53L1X OK"));
 
     if (!VL53_SENSOR.startRanging()) {
-        Serial.println(F("Couldn't start ranging"));
+        Serial.println(F("VL53L1X ranging FAILED"));
         return;
     }
 

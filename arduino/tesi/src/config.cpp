@@ -24,10 +24,16 @@ SensorConfig CAP      = {1, 1, 0, 0,    5, 0};
 // -------------------------------------------------------------------------
 const char* SSID = SECRET_SSID;
 const char* PASS = SECRET_PASSWORD;
-const char* HOSTSERVER = SECRET_HOSTSERVER; // OOCSI server host (IP or hostname)
-const IPAddress OUT_IP(SECRET_IP);  // Output IP address for OOCSI (from string)
+const char* HOSTSERVER = SECRET_HOSTSERVER;
+
+// OSC/UDP Configuration
+IPAddress OUT_IP(SECRET_IP);  // Dynamic output IP address (can be changed via OSC)
 const unsigned int OUT_PORT = SECRET_OUTPORT;
+
+// OSC/UDP Configuration  
+const unsigned int IN_PORT = SECRET_INPORT;
 WiFiUDP UDP;
+WiFiUDP listenUDP;
 
 // -------------------------------------------------------------------------
 // OOCSI Configuration

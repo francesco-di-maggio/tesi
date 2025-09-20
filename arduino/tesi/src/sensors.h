@@ -34,7 +34,7 @@ void initMPR121();
 void initVL53L1X();
 void initBNO055();
 
-// Initializes all sensors (recommended for setup)
+// Initializes all sensors
 void setupSensors();
 
 #endif // SENSORS_H

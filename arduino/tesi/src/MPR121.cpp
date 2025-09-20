@@ -7,10 +7,10 @@
 // -------------------------------------------------------------------------
 void initMPR121() {
     if (!CAP_SENSOR.begin(0x5A, &Wire)) { // Use the global instance
-        Serial.println(F("MPR121 not found. Check wiring!"));
+        Serial.println(F("MPR121 FAILED - Check wiring!"));
         return;
     }
-    Serial.println(F("MPR121 initialized!"));
+    Serial.println(F("MPR121 OK"));
 }
 
 // -------------------------------------------------------------------------

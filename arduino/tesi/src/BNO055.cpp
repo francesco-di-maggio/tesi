@@ -9,11 +9,11 @@
 // -------------------------------------------------------------------------
 void initBNO055() {
     if (!BNO_SENSOR.begin()) {
-        Serial.println(F("No BNO055 detected. Check wiring or I2C ADDR!"));
+        Serial.println(F("BNO055 FAILED - Check wiring or I2C ADDR!"));
         return;
     }
     BNO_SENSOR.setExtCrystalUse(true);
-    Serial.println(F("BNO055 initialized!"));
+    Serial.println(F("BNO055 OK"));
 }
 
 // -------------------------------------------------------------------------

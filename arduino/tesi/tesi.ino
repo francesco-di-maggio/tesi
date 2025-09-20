@@ -2,7 +2,7 @@
     TESI (Tangible and Embodied Interaction)
      
     ©2025 Francesco Di Maggio
-    Modified: 05-05-2025
+    Modified: 20-09-2025
    
     - Designed for Adafruit HUZZAH32 Feather / ESP32 Feather V2
     - Using WiFi (ADC#2 won't work!)
@@ -13,9 +13,14 @@
     - Read MAX4466 (mic level) on pin 3
     - Read POT on pin 2
     - Read PUSH1 on pin 26
-    - Read PUSH2 on pin ?
-    - Write RGB Led on pins ?
-    - Send each value as a separate message using: OSC/SERIAL/OOCSI
+    - Write RGB Led on pins 14, 15, 27
+    - Send sensor data via OSC/UDP
+    - Remote OSC configuration with hybrid addressing:
+      * Explicit:    /2/tesi/config/* → broadcast (255.255.255.255:9001)
+      * Generic:       /tesi/config/* → direct IP (192.168.8.xxx:9001)  
+      * Broadcast: /all/tesi/config/* → all devices (255.255.255.255:9001)
+    - Configurable settings in secrets.h
+    - Flash memory persistence for IP settings
 ------------------------------------------------------------------------ */
 
 #include "src/config.h"
@@ -23,6 +28,7 @@
 #include "src/network.h"
 #include "src/sensors.h"
 #include "src/stream.h"
+#include "src/osc.h"
 
 // -------------------------------------------------------------------------
 // SETUP 
@@ -39,13 +45,15 @@ void setup() {
 
   setColor(255, 0, 0); // RED LIGHT: Booting
 
-  // printMacAddress(); // Uncomment if you want to print MAC address
+  // printMacAddress();
 
   setupWiFi();
 
-  #if defined(USE_OOCSI) // Chnage this in config.h
+  #if defined(USE_OOCSI) // Change this in config.h
   setupOOCSI();
   #endif
+
+  setupOSC();
 
   setupSensors();
 
@@ -61,5 +69,8 @@ void setup() {
 // -------------------------------------------------------------------------
 void loop() {
   unsigned long now = millis();
+  
   streamSensors(now);
+
+  listenOSC();
 }

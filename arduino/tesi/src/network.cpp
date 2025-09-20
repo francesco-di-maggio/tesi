@@ -13,7 +13,7 @@ void setupWiFi() {
     int attempts = 0;
 
     // Attempt to connect to WiFi with a limit on the number of attempts
-    while (WiFi.status() != WL_CONNECTED && attempts < 10) {
+    while (WiFi.status() != WL_CONNECTED && attempts < 20) {
         delay(500);
         Serial.print(F("."));
         attempts++;
@@ -22,8 +22,9 @@ void setupWiFi() {
 
     if (WiFi.status() == WL_CONNECTED) {
         Serial.println(F("WiFi Connected!"));
-        Serial.print(F("IP Address: "));
-        Serial.println(WiFi.localIP());
+        // Serial.print(F("Device IP: "));
+        // Serial.println(WiFi.localIP());
+        
         // Optional: Enable WiFi power saving
         // esp_wifi_set_ps(WIFI_PS_MIN_MODEM);
         // esp_wifi_set_max_tx_power(50);
