@@ -11,15 +11,17 @@ Adafruit_MPR121 CAP_SENSOR = Adafruit_MPR121();
 // Initialize All Sensors
 // -------------------------------------------------------------------------
 void setupSensors() {
-    Serial.println(F("Initializing I2C Communication..."));
+    Serial.println(F("3. Initializing sensors..."));
+    Serial.println();
     Wire.begin();  // Start I2C communication
 
-    // Initialize individual sensors in logical order
     initPOT();
     initLDR();
     initMPR121();
     initVL53L1X();
     initBNO055();
     
-    Serial.println(F("All sensors initialized successfully."));
+    Serial.println();
+    Serial.println(F("Sensors initialized successfully!"));
+    Serial.println();
 }

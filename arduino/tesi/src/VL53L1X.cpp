@@ -30,10 +30,10 @@ void initVL53L1X() {
         Serial.println(F("VL53L1X FAILED - Check wiring or I2C ADDR!"));
         return;
     }
-    Serial.println(F("VL53L1X OK"));
+    Serial.println(F("   VL53L1X > OK"));
 
     if (!VL53_SENSOR.startRanging()) {
-        Serial.println(F("VL53L1X ranging FAILED"));
+        Serial.println(F("   VL53L1X ranging FAILED"));
         return;
     }
 

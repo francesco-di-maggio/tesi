@@ -40,7 +40,6 @@
 						"rect" : [ 59.0, 108.0, 299.0, 473.0 ],
 						"gridsize" : [ 15.0, 15.0 ],
 						"subpatcher_template" : " ",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-8",
@@ -50,7 +49,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 56.0, 400.0, 210.0, 35.0 ],
-									"presentation_linecount" : 3,
 									"text" : ";\r#SM deleteoutport \"TESI $1\" coremidi"
 								}
 
@@ -303,6 +301,7 @@
 , 			{
 				"box" : 				{
 					"bubble" : 1,
+					"fontname" : "Ableton Sans Medium",
 					"id" : "obj-7",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -1614,9 +1613,9 @@
 					"numoutlets" : 2,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 1364.0, 465.0, 214.0, 99.0 ],
+					"patching_rect" : [ 1364.0, 465.0, 214.0, 84.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 462.0, 412.0, 214.0, 99.0 ],
+					"presentation_rect" : [ 462.0, 412.0, 214.0, 84.0 ],
 					"varname" : "mo.pads[1]",
 					"viewvisibility" : 1
 				}
@@ -2679,7 +2678,7 @@
 			}
 , 			{
 				"box" : 				{
-					"active1" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
+					"active1" : [ 0.594473705410263, 0.720560630419913, 0.928309050695498, 1.0 ],
 					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 					"bubblesize" : 16,
 					"emptycolor" : [ 0.670588235294118, 0.776470588235294, 0.796078431372549, 1.0 ],
@@ -2707,7 +2706,7 @@
 
 					}
 ,
-					"stored1" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"stored1" : [ 0.079348079365577, 0.07934804057877, 0.079348050547289, 1.0 ]
 				}
 
 			}

@@ -10,7 +10,7 @@ void initMPR121() {
         Serial.println(F("MPR121 FAILED - Check wiring!"));
         return;
     }
-    Serial.println(F("MPR121 OK"));
+    Serial.println(F("   MPR121  > OK"));
 }
 
 // -------------------------------------------------------------------------

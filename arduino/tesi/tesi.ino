@@ -1,5 +1,5 @@
 /* -------------------------------------------------------------------------
-    TESI (Tangible and Embodied Interaction)
+    TESI (Tangible and Embodied Sound Interaction)
      
     ©2025 Francesco Di Maggio
     Modified: 20-09-2025
@@ -35,7 +35,16 @@
 // -------------------------------------------------------------------------
 void setup() {
   Serial.begin(115200);
-  Serial.println(F("Starting Serial Communication"));
+  delay(100); // Brief pause to separate from ESP32 boot messages
+
+  Serial.println();
+  Serial.println(F("══════════════════════"));
+  Serial.println();
+  Serial.println(F("Initializing system..."));
+  Serial.println();
+  Serial.print(F("> TESI "));
+  Serial.println(DEVICE_INDEX);
+  Serial.println();
 
   pinMode(PUSH1_PIN, INPUT_PULLUP);
   pinMode(PUSH2_PIN, INPUT_PULLUP);
@@ -57,7 +66,13 @@ void setup() {
 
   setupSensors();
 
-  Serial.println(F("READY TO GO!"));
+  Serial.print(F("> TESI "));
+  Serial.println(DEVICE_INDEX);
+  Serial.println();
+  Serial.println(F("System initialization complete!"));
+  Serial.println(); 
+  Serial.println(F("═══════════════════════════════"));
+  Serial.println();
 
   setColor(0, 255, 0); 
   delay(500); 

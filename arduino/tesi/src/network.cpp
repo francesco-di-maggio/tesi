@@ -6,24 +6,29 @@
 // WiFi Setup Function
 // -------------------------------------------------------------------------
 void setupWiFi() {
-    Serial.print(F("Connecting to WiFi: "));
-    Serial.println(SSID);
+    Serial.print(F("1. Connecting to WiFi"));
 
     WiFi.begin(SSID, PASS);
     int attempts = 0;
 
-    // Attempt to connect to WiFi with a limit on the number of attempts
     while (WiFi.status() != WL_CONNECTED && attempts < 20) {
         delay(500);
         Serial.print(F("."));
         attempts++;
     }
     Serial.println();
+    Serial.println();
 
     if (WiFi.status() == WL_CONNECTED) {
-        Serial.println(F("WiFi Connected!"));
-        // Serial.print(F("Device IP: "));
-        // Serial.println(WiFi.localIP());
+        Serial.println(F("WiFi connected successfully!"));
+        Serial.println();
+        Serial.print(F("   WiFi: "));
+        Serial.println(SSID);
+        Serial.print(F("   IP: "));
+        Serial.println(OUT_IP);
+        Serial.print(F("   Port: "));
+        Serial.println(OUT_PORT);
+        Serial.println();
         
         // Optional: Enable WiFi power saving
         // esp_wifi_set_ps(WIFI_PS_MIN_MODEM);
@@ -31,6 +36,7 @@ void setupWiFi() {
         // WiFi.setSleep(true);
     } else {
         Serial.println(F("WiFi connection FAILED!"));
+        Serial.println();
     }
 }
 
@@ -43,9 +49,11 @@ void setupOOCSI() {
         Serial.println(F("Connecting to OOCSI..."));
         oocsi.connect(OOCSIName, HOSTSERVER, SSID, PASS);
         oocsi.subscribe(CHANNEL);
-        Serial.println(F("OOCSI setup attempted."));
+        Serial.println(F("OOCSI setup complete"));
+        Serial.println();
     } else {
-        Serial.println(F("WiFi NOT connected. Skip OOCSI setup!"));
+        Serial.println(F("WiFi not connected - Skipping OOCSI setup"));
+        Serial.println();
     }
 #endif
 }

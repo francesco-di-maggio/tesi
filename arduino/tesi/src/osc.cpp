@@ -17,34 +17,34 @@ void setupOSC() {
         uint32_t savedIP = preferences.getUInt("target_ip", 0);
         if (savedIP != 0) {
             OUT_IP = IPAddress(savedIP);
-            #if DEBUG
-            Serial.print("Target IP: ");
-            Serial.println(OUT_IP);
-            #endif
+            // #if DEBUG
+            // Serial.print("   Target IP: ");
+            // Serial.println(OUT_IP);
+            // Serial.println();
+            // #endif
         }
     }
     
     listenUDP.begin(IN_PORT);
     
-    // Serial.print("OSC port: ");
-    // Serial.println(IN_PORT);
-    Serial.print("Send OSC messages to: ");
-    Serial.print(WiFi.localIP());
-    Serial.print(":");
+    Serial.println(F("2. Initializing OSC..."));
+    Serial.println();
+    Serial.print(F("   IP: "));
+    Serial.println(WiFi.localIP());
+    Serial.print(F("   Port: "));
     Serial.println(IN_PORT);
-    Serial.println("OSC Commands:");
-    Serial.print("  /");
+    Serial.println();
+
+    Serial.println(F("   Commands:"));
+    Serial.println(F("      ip, status, sensors, reboot, led"));
+    Serial.println();
+    Serial.println(F("   Format:"));
+    Serial.print(F("      /"));
     Serial.print(DEVICE_INDEX);
-    Serial.println("/tesi/config/* - Target this device");
-    Serial.println("  /all/tesi/config/*  - Target all devices");
-    Serial.println("  /tesi/config/*      - Direct IP only");
-    Serial.println("Commands: ip, status, sensors, reboot, led");
-    Serial.println("Examples:");
-    Serial.print("  /");
-    Serial.print(DEVICE_INDEX);
-    Serial.println("/tesi/config/led 255 0 0");
-    Serial.println("  /all/tesi/config/status");
-    Serial.println("  /tesi/config/sensors");    
+    Serial.println(F("/tesi/config/*    → Broadcast to this device"));
+    Serial.println(F("      /all/tesi/config/*  → Broadcast to all devices"));
+    Serial.println(F("      /tesi/config/*      → Direct IP targeting"));
+    Serial.println();
 }
 
 void listenOSC() {

@@ -13,8 +13,7 @@ void initBNO055() {
         return;
     }
     BNO_SENSOR.setExtCrystalUse(true);
-    Serial.println(F("BNO055 OK"));
-}
+    Serial.println(F("   BNO055  > OK"));}
 
 // -------------------------------------------------------------------------
 // Hysteresis Threshold Settings
