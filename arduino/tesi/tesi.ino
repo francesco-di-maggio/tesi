@@ -83,9 +83,8 @@ void setup() {
 // LOOP
 // -------------------------------------------------------------------------
 void loop() {
-  unsigned long now = millis();
+  listenOSC();  
   
+  unsigned long now = millis();
   streamSensors(now);
-
-  listenOSC();
 }

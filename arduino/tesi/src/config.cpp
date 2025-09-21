@@ -10,9 +10,9 @@ const char* BASE_ADDRESS = "/tesi";     // Base address for OSC and OOCSI messag
 // Sensor Configuration
 // Use 1 for enabled/true, 0 for disabled/false = ON/OFF, OSC, Serial, OOCSI
 // -------------------------------------------------------------------------
-SensorConfig BATTERY  = {1, 1, 0, 0, 4000, 0};
+SensorConfig BATTERY  = {1, 1, 0, 0, 5000, 0};
 SensorConfig LDR      = {1, 1, 0, 0,   20, 0};
-SensorConfig MIC      = {1, 1, 0, 0,   40, 0};
+SensorConfig MIC      = {1, 1, 0, 0,   30, 0};
 SensorConfig POT      = {1, 1, 0, 0,   10, 0};
 SensorConfig DISTANCE = {1, 1, 0, 0,   20, 0};
 SensorConfig QUAT     = {1, 1, 0, 0,   40, 0};

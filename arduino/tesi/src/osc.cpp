@@ -10,18 +10,25 @@
 
 Preferences preferences;
 
+// Pre-computed address strings for fast matching
+char deviceIP[30], deviceReboot[30], deviceStatus[30], deviceSensors[30], deviceLED[30];
+char responseAddr[30];
+
 void setupOSC() {
     preferences.begin("osc-config", false);
+    
+    // Pre-compute all device-specific addresses once for fast matching
+    sprintf(deviceIP, "/%d/tesi/config/ip", DEVICE_INDEX);
+    sprintf(deviceReboot, "/%d/tesi/config/reboot", DEVICE_INDEX);
+    sprintf(deviceStatus, "/%d/tesi/config/status", DEVICE_INDEX);
+    sprintf(deviceSensors, "/%d/tesi/config/sensors", DEVICE_INDEX);
+    sprintf(deviceLED, "/%d/tesi/config/led", DEVICE_INDEX);
+    sprintf(responseAddr, "/%d/tesi/config/response", DEVICE_INDEX);
     
     if (preferences.isKey("target_ip")) {
         uint32_t savedIP = preferences.getUInt("target_ip", 0);
         if (savedIP != 0) {
             OUT_IP = IPAddress(savedIP);
-            // #if DEBUG
-            // Serial.print("   Target IP: ");
-            // Serial.println(OUT_IP);
-            // Serial.println();
-            // #endif
         }
     }
     
@@ -48,100 +55,84 @@ void setupOSC() {
 }
 
 void listenOSC() {
-    OSCMessage msg;
     int size = listenUDP.parsePacket();
+    if (size == 0) return; // Quick exit if no data
     
-    if (size > 0) {
-        while (size--) {
-            msg.fill(listenUDP.read());
-        }
-        
-        if (!msg.hasError()) {
-            char addr[50];  // Single shared buffer instead of 5 separate ones
-            
-            // Check for individual device commands first
-            sprintf(addr, "/%d/tesi/config/ip", DEVICE_INDEX);
-            if (msg.fullMatch(addr)) {
-                handleSetIP(msg);
-                return;
-            }
-            
-            sprintf(addr, "/%d/tesi/config/reboot", DEVICE_INDEX);
-            if (msg.fullMatch(addr)) {
-                handleReboot(msg);
-                return;
-            }
-            
-            sprintf(addr, "/%d/tesi/config/status", DEVICE_INDEX);
-            if (msg.fullMatch(addr)) {
-                handleStatus(msg);
-                return;
-            }
-            
-            sprintf(addr, "/%d/tesi/config/sensors", DEVICE_INDEX);
-            if (msg.fullMatch(addr)) {
-                handleSensors(msg);
-                return;
-            }
-            
-            sprintf(addr, "/%d/tesi/config/led", DEVICE_INDEX);
-            if (msg.fullMatch(addr)) {
-                handleLED(msg);
-                return;
-            }
-            
-            // Check for /all broadcast commands
-            if (msg.fullMatch("/all/tesi/config/ip")) {
-                handleSetIP(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/all/tesi/config/reboot")) {
-                handleReboot(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/all/tesi/config/status")) {
-                handleStatus(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/all/tesi/config/sensors")) {
-                handleSensors(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/all/tesi/config/led")) {
-                handleLED(msg);
-                return;
-            }
-            
-            // Check for generic commands (direct IP targeting)
-            if (msg.fullMatch("/tesi/config/ip")) {
-                handleSetIP(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/tesi/config/reboot")) {
-                handleReboot(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/tesi/config/status")) {
-                handleStatus(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/tesi/config/sensors")) {
-                handleSensors(msg);
-                return;
-            }
-            
-            if (msg.fullMatch("/tesi/config/led")) {
-                handleLED(msg);
-                return;
-            }
-        }
+    OSCMessage msg;
+    while (size--) {
+        msg.fill(listenUDP.read());
+    }
+    
+    if (msg.hasError()) return; // Quick exit on error
+    
+    // Priority order: LED first for performance, then device-specific, broadcast, generic
+    
+    // LED commands (highest priority for performance)
+    if (msg.fullMatch(deviceLED)) {
+        handleLED(msg);
+        return;
+    }
+    if (msg.fullMatch("/all/tesi/config/led")) {
+        handleLED(msg);
+        return;
+    }
+    if (msg.fullMatch("/tesi/config/led")) {
+        handleLED(msg);
+        return;
+    }
+    
+    // Other device-specific commands
+    if (msg.fullMatch(deviceIP)) {
+        handleSetIP(msg);
+        return;
+    }
+    if (msg.fullMatch(deviceStatus)) {
+        handleStatus(msg);
+        return;
+    }
+    if (msg.fullMatch(deviceSensors)) {
+        handleSensors(msg);
+        return;
+    }
+    if (msg.fullMatch(deviceReboot)) {
+        handleReboot(msg);
+        return;
+    }
+    
+    // Broadcast commands
+    if (msg.fullMatch("/all/tesi/config/ip")) {
+        handleSetIP(msg);
+        return;
+    }
+    if (msg.fullMatch("/all/tesi/config/status")) {
+        handleStatus(msg);
+        return;
+    }
+    if (msg.fullMatch("/all/tesi/config/sensors")) {
+        handleSensors(msg);
+        return;
+    }
+    if (msg.fullMatch("/all/tesi/config/reboot")) {
+        handleReboot(msg);
+        return;
+    }
+    
+    // Generic commands (direct IP targeting)
+    if (msg.fullMatch("/tesi/config/ip")) {
+        handleSetIP(msg);
+        return;
+    }
+    if (msg.fullMatch("/tesi/config/status")) {
+        handleStatus(msg);
+        return;
+    }
+    if (msg.fullMatch("/tesi/config/sensors")) {
+        handleSensors(msg);
+        return;
+    }
+    if (msg.fullMatch("/tesi/config/reboot")) {
+        handleReboot(msg);
+        return;
     }
 }
 
@@ -154,7 +145,7 @@ void handleSetIP(OSCMessage &msg) {
         if (newIP.fromString(ipStr)) {
             #if DEBUG
             Serial.print("IP updated: ");
-            Serial.print(OUT_IP);      // Print old IP before updating
+            Serial.print(OUT_IP);
             Serial.print(" → ");
             Serial.println(newIP);
             #endif
@@ -198,18 +189,12 @@ void handleReboot(OSCMessage &msg) {
 
 void handleStatus(OSCMessage &msg) {
     #if DEBUG
-    // Get memory info
-    size_t freeHeap = ESP.getFreeHeap();
-    size_t totalHeap = ESP.getHeapSize();
-    
-    char statusMsg[150];
-    sprintf(statusMsg, "Device %d - Target: %s - Listen: %s:%d - Heap: %zuKB/%zuKB", 
+    char statusMsg[100];
+    sprintf(statusMsg, "Device %d - Target: %s - Listen: %s:%d", 
             DEVICE_INDEX, 
             OUT_IP.toString().c_str(),
             WiFi.localIP().toString().c_str(),
-            IN_PORT,
-            freeHeap / 1024,
-            totalHeap / 1024);
+            IN_PORT);
     
     Serial.println(statusMsg);
     sendConfigConfirmation(statusMsg);
@@ -222,10 +207,6 @@ void saveIPToFlash(IPAddress ip) {
 }
 
 void sendConfigConfirmation(const char* message) {
-    const char responseFormat[] = "/%d/tesi/config/response";
-    char responseAddr[50];
-    sprintf(responseAddr, responseFormat, DEVICE_INDEX);
-    
     OSCMessage confirmMsg(responseAddr);
     confirmMsg.add(DEVICE_INDEX);
     confirmMsg.add(message);
