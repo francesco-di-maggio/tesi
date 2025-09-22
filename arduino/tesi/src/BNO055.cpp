@@ -13,28 +13,16 @@ void initBNO055() {
         return;
     }
     BNO_SENSOR.setExtCrystalUse(true);
-    Serial.println(F("   BNO055  > OK"));}
-
-// -------------------------------------------------------------------------
-// Hysteresis Threshold Settings
-// -------------------------------------------------------------------------
-constexpr float THRESHOLD_HIGH_DEG = 2.5f;
-constexpr float DEG2RAD = 3.14159265f / 180.0f;
-constexpr float thresholdHigh = THRESHOLD_HIGH_DEG * DEG2RAD;
-
-// -------------------------------------------------------------------------
-// Reads the quaternion from BNO_SENSOR and stores the components in quatValues as [w, x, y, z].
-// -------------------------------------------------------------------------
-void readQuat(float quatValues[4]) {
-    imu::Quaternion quat = BNO_SENSOR.getQuat();
-    quatValues[0] = quat.w();
-    quatValues[1] = quat.x();
-    quatValues[2] = quat.y();
-    quatValues[3] = quat.z();
+    Serial.println(F("   BNO055  > OK"));
 }
 
 // -------------------------------------------------------------------------
-// Helper function to calculate the angle difference between two quaternions.
+// BNO055 Parameters
+// -------------------------------------------------------------------------
+constexpr float THRESHOLD = 2.5f;      // Angle threshold in degrees for sending updates
+
+// -------------------------------------------------------------------------
+// Helper function to calculate the angle difference between two quaternions
 // -------------------------------------------------------------------------
 static float calculateAngleDifference(const float* currentQuat, const float* lastQuat) {
     float dot = lastQuat[0] * currentQuat[0] +
@@ -47,36 +35,48 @@ static float calculateAngleDifference(const float* currentQuat, const float* las
 }
 
 // -------------------------------------------------------------------------
-// Helper function to send quaternion data via Serial, OSC, and OOCSI.
+// Reads and filters the quaternion data
 // -------------------------------------------------------------------------
-static void sendQuatData(const float* quatValues) {
-    const char* address = "/quat";
-    if (QUAT.serial) sendSerial(address, quatValues, 4);
-    if (QUAT.osc)    sendOSC(address, quatValues, 4);
-    if (QUAT.oocsi)  sendOOCSI(CHANNEL, address, quatValues, 4);
-}
-
-// -------------------------------------------------------------------------
-// Sends quaternion data based on hysteresis thresholds.
-// -------------------------------------------------------------------------
-void sendQUAT() {
-    float quatValues[4];
-    readQuat(quatValues);
+bool readQUAT(float quatValues[4]) {
+    imu::Quaternion quat = BNO_SENSOR.getQuat();
+    quatValues[0] = quat.w();
+    quatValues[1] = quat.x();
+    quatValues[2] = quat.y();
+    quatValues[3] = quat.z();
 
     static float lastSentQuat[4] = {0, 0, 0, 0};
     static bool firstRun = true;
 
     if (firstRun) {
-        memcpy(lastSentQuat, quatValues, sizeof(lastSentQuat));
-        sendQuatData(quatValues);
+        memcpy(lastSentQuat, quatValues, sizeof(float) * 4);
         firstRun = false;
-        return;
+        return true;
     }
 
     float angleDiff = calculateAngleDifference(quatValues, lastSentQuat);
+    float thresholdRad = THRESHOLD * (3.14159265f / 180.0f);
 
-    if (angleDiff >= thresholdHigh) {
-        memcpy(lastSentQuat, quatValues, sizeof(lastSentQuat));
-        sendQuatData(quatValues);
+    if (angleDiff >= thresholdRad) {
+        memcpy(lastSentQuat, quatValues, sizeof(float) * 4);
+        return true;
     }
+
+    return false;
+}
+
+
+
+// -------------------------------------------------------------------------
+// Sends quaternion data via Serial, OSC, and OOCSI
+// -------------------------------------------------------------------------
+void sendQUAT() {
+    static float lastSentValue[4] = {-999, -999, -999, -999};
+    float quatValues[4];
+
+    if (!readQUAT(quatValues)) return;
+
+    const char* address = "/quat";
+    if (QUAT.serial) sendSerial(address, quatValues, 4);
+    if (QUAT.osc)    sendOSC(address, quatValues, 4);
+    if (QUAT.oocsi)  sendOOCSI(CHANNEL, address, quatValues, 4);
 }

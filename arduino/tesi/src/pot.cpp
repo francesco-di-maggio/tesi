@@ -1,22 +1,18 @@
 #include "pot.h"
 #include <Arduino.h>
-#include <stdio.h> // For snprintf if needed
+#include <stdio.h>
 
 // -------------------------------------------------------------------------
-// Smoothing and Deadzone Parameters
+// Potentiometer Parameters
 // -------------------------------------------------------------------------
-constexpr int DEADZONE_THRESHOLD = 15;     // Ignore small changes (higher = more stable)
-constexpr float MOVING_BLEND = 0.8f;       // Fast update on big change
-constexpr float IDLE_BLEND = 0.2f;         // Slow update when idle
-
-// Uncomment below for Kalman filter support (advanced users)
-// static float kalmanEstimate = 0.0f;
-// static float kalmanError = 1.0f;
-// constexpr float kalmanProcessNoise = 0.005f;
-// constexpr float kalmanMeasurementNoise = 1.5f;
+constexpr int DEADZONE = 10;           // Ignore small changes (higher = less sensitive)
+constexpr float BLEND = 0.5f;          // EMA smoothing factor (higher = more responsive, lower = smoother)
+constexpr int THRESHOLD = 10;          // Only send if change exceeds this value (higher = less output)
+constexpr int EDGE_SNAP = 15;          // Snap to 0/4095 within this range
 
 static float potEstimate = 0.0f;
 static int lastStableValue = 0;
+static int lastSentPotValue = -1;      // Track last sent value for threshold comparison
 
 // -------------------------------------------------------------------------
 // Initializes the potentiometer filter with the current value
@@ -25,56 +21,44 @@ void initPOT() {
     int initial = analogRead(POT_PIN);
     potEstimate = initial;
     lastStableValue = initial;
-
-    // Uncomment for Kalman filter initialization
-    // kalmanEstimate = initial;
 }
 
 // -------------------------------------------------------------------------
-// Reads and smooths the potentiometer value (adaptive EMA + deadzone)
+// Reads and filters the potentiometer value
 // -------------------------------------------------------------------------
 int readPOT() {
     int raw = analogRead(POT_PIN);
 
+    // Edge snapping for reliable min/max values
+    if (raw <= EDGE_SNAP) raw = 0;
+    if (raw >= (4095 - EDGE_SNAP)) raw = 4095;
+
     // Deadzone: ignore small fluctuations
-    if (abs(raw - lastStableValue) < DEADZONE_THRESHOLD) {
+    if (abs(raw - lastStableValue) < DEADZONE) {
         return lastStableValue;
     }
 
-    // Uncomment for Kalman filter update (advanced users)
-    /*
-    kalmanError += kalmanProcessNoise;
-    float kalmanGain = kalmanError / (kalmanError + kalmanMeasurementNoise);
-    kalmanEstimate += kalmanGain * (raw - kalmanEstimate);
-    kalmanError *= (1.0f - kalmanGain);
-    */
-
-    // Adaptive smoothing: fast when moving, slow when idle
-    float blend = (abs(raw - lastStableValue) > DEADZONE_THRESHOLD) ? MOVING_BLEND : IDLE_BLEND;
-    potEstimate = blend * raw + (1.0f - blend) * potEstimate;
+    // Exponential moving average filter
+    potEstimate = BLEND * raw + (1.0f - BLEND) * potEstimate;
 
     lastStableValue = static_cast<int>(potEstimate + 0.5f);
     return lastStableValue;
 }
 
 // -------------------------------------------------------------------------
-// Sends the potentiometer value via Serial, OSC, and OOCSI if changed
+// Sends potentiometer value via Serial, OSC, and OOCSI
 // -------------------------------------------------------------------------
 void sendPOT() {
-    static int lastSent = -1;
     int value = readPOT();
+    
+    // Only send if change exceeds threshold
+    if (abs(value - lastSentPotValue) >= THRESHOLD) {
+        const char* address = "/pot";
 
-    // Only send if the value has changed
-    if (value == lastSent)
-        return;
-    lastSent = value;
+        if (POT.serial) sendSerial(address, value);
+        if (POT.osc)    sendOSC(address, value);
+        if (POT.oocsi)  sendOOCSI(CHANNEL, address, value);
 
-    // You can use snprintf for dynamic address if needed
-    // char address[20];
-    // snprintf(address, sizeof(address), "/pot");
-    const char* address = "/pot";
-
-    if (POT.serial) sendSerial(address, value);
-    if (POT.osc)    sendOSC(address, value);
-    if (POT.oocsi)  sendOOCSI(CHANNEL, address, value);
+        lastSentPotValue = value;
+    }
 }

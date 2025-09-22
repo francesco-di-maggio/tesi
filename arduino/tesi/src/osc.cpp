@@ -4,14 +4,14 @@
 #include <ESP.h>
 
 // -------------------------------------------------------------------------
-// Debug Configuration - Set to 1 to enable both Serial and OSC debug
+// Debug Configuration - Controllable via OSC
 // -------------------------------------------------------------------------
-#define DEBUG 1 // Set to 1 to enable debug messages
+bool debugEnabled = false; // Default debug state (0=off for performance)
 
 Preferences preferences;
 
 // Pre-computed address strings for fast matching
-char deviceIP[30], deviceReboot[30], deviceStatus[30], deviceSensors[30], deviceLED[30];
+char deviceIP[30], deviceReboot[30], deviceStatus[30], deviceSensors[30], deviceLED[30], deviceDebug[30];
 char responseAddr[30];
 
 void setupOSC() {
@@ -23,6 +23,7 @@ void setupOSC() {
     sprintf(deviceStatus, "/%d/tesi/config/status", DEVICE_INDEX);
     sprintf(deviceSensors, "/%d/tesi/config/sensors", DEVICE_INDEX);
     sprintf(deviceLED, "/%d/tesi/config/led", DEVICE_INDEX);
+    sprintf(deviceDebug, "/%d/tesi/config/debug", DEVICE_INDEX);
     sprintf(responseAddr, "/%d/tesi/config/response", DEVICE_INDEX);
     
     if (preferences.isKey("target_ip")) {
@@ -43,7 +44,7 @@ void setupOSC() {
     Serial.println();
 
     Serial.println(F("   Commands:"));
-    Serial.println(F("      ip, status, sensors, reboot, led"));
+    Serial.println(F("      ip, status, sensors, reboot, led, debug"));
     Serial.println();
     Serial.println(F("   Format:"));
     Serial.print(F("      /"));
@@ -98,6 +99,10 @@ void listenOSC() {
         handleReboot(msg);
         return;
     }
+    if (msg.fullMatch(deviceDebug)) {
+        handleDebug(msg);
+        return;
+    }
     
     // Broadcast commands
     if (msg.fullMatch("/all/tesi/config/ip")) {
@@ -114,6 +119,10 @@ void listenOSC() {
     }
     if (msg.fullMatch("/all/tesi/config/reboot")) {
         handleReboot(msg);
+        return;
+    }
+    if (msg.fullMatch("/all/tesi/config/debug")) {
+        handleDebug(msg);
         return;
     }
     
@@ -134,6 +143,10 @@ void listenOSC() {
         handleReboot(msg);
         return;
     }
+    if (msg.fullMatch("/tesi/config/debug")) {
+        handleDebug(msg);
+        return;
+    }
 }
 
 void handleSetIP(OSCMessage &msg) {
@@ -143,62 +156,62 @@ void handleSetIP(OSCMessage &msg) {
         
         IPAddress newIP;
         if (newIP.fromString(ipStr)) {
-            #if DEBUG
-            Serial.print("IP updated: ");
-            Serial.print(OUT_IP);
-            Serial.print(" → ");
-            Serial.println(newIP);
-            #endif
+            if (debugEnabled) {
+                Serial.print("IP updated: ");
+                Serial.print(OUT_IP);
+                Serial.print(" → ");
+                Serial.println(newIP);
+            }
             
             saveIPToFlash(newIP);
             OUT_IP = newIP;
             
-            #if DEBUG
-            char confirmMsg[80];
-            sprintf(confirmMsg, "Device %d IP updated to %s", 
-                    DEVICE_INDEX, newIP.toString().c_str());
-            sendConfigConfirmation(confirmMsg);
-            #endif
+            if (debugEnabled) {
+                char confirmMsg[80];
+                sprintf(confirmMsg, "Device %d IP updated to %s", 
+                        DEVICE_INDEX, newIP.toString().c_str());
+                sendConfigConfirmation(confirmMsg);
+            }
         } else {
-            #if DEBUG
-            char errorMsg[60];
-            sprintf(errorMsg, "Device %d: Invalid IP format", DEVICE_INDEX);
-            sendConfigConfirmation(errorMsg);
-            #endif
+            if (debugEnabled) {
+                char errorMsg[60];
+                sprintf(errorMsg, "Device %d: Invalid IP format", DEVICE_INDEX);
+                sendConfigConfirmation(errorMsg);
+            }
         }
     } else {
-        #if DEBUG
-        char usageMsg[80];
-        sprintf(usageMsg, "Usage: /%d/tesi/config/ip <ip.address>", DEVICE_INDEX);
-        sendConfigConfirmation(usageMsg);
-        #endif
+        if (debugEnabled) {
+            char usageMsg[80];
+            sprintf(usageMsg, "Usage: /%d/tesi/config/ip <ip.address>", DEVICE_INDEX);
+            sendConfigConfirmation(usageMsg);
+        }
     }
 }
 
 void handleReboot(OSCMessage &msg) {
-    #if DEBUG
-    Serial.println("Reboot command received");
-    char rebootMsg[50];
-    sprintf(rebootMsg, "Device %d rebooting...", DEVICE_INDEX);
-    sendConfigConfirmation(rebootMsg);
-    #endif
+    if (debugEnabled) {
+        Serial.println("Reboot command received");
+        char rebootMsg[50];
+        sprintf(rebootMsg, "Device %d rebooting...", DEVICE_INDEX);
+        sendConfigConfirmation(rebootMsg);
+    }
     
     delay(1000);
     ESP.restart();
 }
 
 void handleStatus(OSCMessage &msg) {
-    #if DEBUG
-    char statusMsg[100];
-    sprintf(statusMsg, "Device %d - Target: %s - Listen: %s:%d", 
-            DEVICE_INDEX, 
-            OUT_IP.toString().c_str(),
-            WiFi.localIP().toString().c_str(),
-            IN_PORT);
-    
-    Serial.println(statusMsg);
-    sendConfigConfirmation(statusMsg);
-    #endif
+    if (debugEnabled) {
+        char statusMsg[100];
+        sprintf(statusMsg, "Device %d - Target: %s - Listen: %s:%d", 
+                DEVICE_INDEX, 
+                OUT_IP.toString().c_str(),
+                WiFi.localIP().toString().c_str(),
+                IN_PORT);
+        
+        Serial.println(statusMsg);
+        sendConfigConfirmation(statusMsg);
+    }
 }
 
 void saveIPToFlash(IPAddress ip) {
@@ -217,16 +230,30 @@ void sendConfigConfirmation(const char* message) {
 }
 
 void handleSensors(OSCMessage &msg) {
-    #if DEBUG
-    char sensorMsg[120];
-    sprintf(sensorMsg, "Device %d Sensors - BAT:%d LDR:%d MIC:%d POT:%d DIST:%d QUAT:%d PUSH:%d CAP:%d", 
-            DEVICE_INDEX,
-            BATTERY.enabled, LDR.enabled, MIC.enabled, POT.enabled,
-            DISTANCE.enabled, QUAT.enabled, PUSH.enabled, CAP.enabled);
-    
-    Serial.println(sensorMsg);
-    sendConfigConfirmation(sensorMsg);
-    #endif
+    if (debugEnabled) {
+        char sensorMsg[120];
+        sprintf(sensorMsg, "Device %d Sensors - BAT:%d LDR:%d MIC:%d POT:%d DIST:%d QUAT:%d PUSH:%d CAP:%d", 
+                DEVICE_INDEX,
+                BATTERY.enabled, LDR.enabled, MIC.enabled, POT.enabled,
+                DISTANCE.enabled, QUAT.enabled, PUSH.enabled, CAP.enabled);
+        
+        Serial.println(sensorMsg);
+        sendConfigConfirmation(sensorMsg);
+    }
+}
+
+void handleDebug(OSCMessage &msg) {
+    if (msg.size() == 1 && msg.isInt(0)) {
+        int debugState = msg.getInt(0);
+        debugEnabled = (debugState != 0);
+        
+        // Always send confirmation (even if debug was off)
+        char confirmMsg[60];
+        sprintf(confirmMsg, "Device %d debug %s", 
+                DEVICE_INDEX, debugEnabled ? "enabled" : "disabled");
+        Serial.println(confirmMsg);
+        sendConfigConfirmation(confirmMsg);
+    }
 }
 
 void handleLED(OSCMessage &msg) {

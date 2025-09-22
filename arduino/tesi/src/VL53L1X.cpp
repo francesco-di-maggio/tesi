@@ -3,24 +3,14 @@
 #include <Arduino.h>
 
 // -------------------------------------------------------------------------
-// Kalman Filter Variables for VL53L1X
+// Distance Sensor Parameters
 // -------------------------------------------------------------------------
-static float kalmanEstimate = 0.0f;       // Current filtered distance (mm)
-static float kalmanError = 1.0f;          // Estimate uncertainty
-constexpr float kalmanProcessNoise = 0.05f;     // Increase for faster adaptation
-constexpr float kalmanMeasurementNoise = 2.0f;  // Lower for more responsiveness
+constexpr int DEADZONE = 4;        // Minimum change to trigger update (higher = less sensitive)
+constexpr float BLEND = 0.6f;      // EMA smoothing factor (higher = more responsive, lower = smoother)
+constexpr int THRESHOLD = 8;       // Only send if change exceeds this value (higher = less output)
 
-// -------------------------------------------------------------------------
-// Adaptive Blending Parameters for VL53L1X
-// -------------------------------------------------------------------------
-constexpr int DIST_DEADZONE = 5;               // Minimum raw difference (in mm) to trigger an update
-constexpr float DIST_MOVING_BLEND = 0.8f;      // Fast blend factor when a significant change occurs
-constexpr float DIST_IDLE_BLEND = 0.2f;        // Slow blend factor when change is minor
-
-// -------------------------------------------------------------------------
-// Update Threshold (for sending)
-// -------------------------------------------------------------------------
-constexpr int DIST_CHANGE_THRESHOLD = 1;       // Only send if filtered value changes by at least 1 mm
+static float distanceEstimate = 0.0f;
+static int lastStableDistance = 0;
 
 // -------------------------------------------------------------------------
 // Initializes the VL53L1X sensor and filter
@@ -37,20 +27,20 @@ void initVL53L1X() {
         return;
     }
 
-    VL53_SENSOR.setTimingBudget(50);  // Set timing budget in ms
+    VL53_SENSOR.setTimingBudget(50);
 
-    // Wait until a valid measurement is available to initialize the filter.
+    // Initialize filter with first valid measurement
     int distance = -1;
     while (distance == -1) {
         if (VL53_SENSOR.dataReady()) {
             distance = VL53_SENSOR.distance();
-            if (distance == -1)
-                continue;
+            if (distance == -1) continue;
             VL53_SENSOR.clearInterrupt();
         }
         delay(5);
     }
-    kalmanEstimate = (float)distance;
+    distanceEstimate = (float)distance;
+    lastStableDistance = distance;
 }
 
 // -------------------------------------------------------------------------
@@ -62,42 +52,33 @@ int readDistance() {
     if (VL53_SENSOR.dataReady()) {
         rawDistance = VL53_SENSOR.distance();
         if (rawDistance == -1)
-            return (int)kalmanEstimate;  // Return last estimate on error
+            return lastStableDistance;  // Return last stable value on error
         VL53_SENSOR.clearInterrupt();
     } else {
-        // If no new data is available, return the last estimate.
-        return (int)kalmanEstimate;
+        return lastStableDistance;  // No new data available
     }
 
-    // Deadzone: if the raw reading hasn't changed significantly, return the last stable value.
-    static int lastStableDistance = (int)kalmanEstimate;
-    if (abs(rawDistance - lastStableDistance) < DIST_DEADZONE) {
+    // Deadzone: ignore small changes
+    if (abs(rawDistance - lastStableDistance) < DEADZONE) {
         return lastStableDistance;
     }
 
-    // Kalman Filter update:
-    kalmanError += kalmanProcessNoise;
-    float kalmanGain = kalmanError / (kalmanError + kalmanMeasurementNoise);
-    kalmanEstimate += kalmanGain * ((float)rawDistance - kalmanEstimate);
-    kalmanError *= (1.0f - kalmanGain);
-
-    // Adaptive Blending:
-    float blendFactor = (abs(rawDistance - lastStableDistance) > DIST_DEADZONE) ? DIST_MOVING_BLEND : DIST_IDLE_BLEND;
-    kalmanEstimate = blendFactor * rawDistance + (1.0f - blendFactor) * kalmanEstimate;
-
-    lastStableDistance = (int)kalmanEstimate;
+    // Exponential moving average filter
+    distanceEstimate = BLEND * rawDistance + (1.0f - BLEND) * distanceEstimate;
+    lastStableDistance = static_cast<int>(distanceEstimate + 0.5f);
     return lastStableDistance;
 }
 
 // -------------------------------------------------------------------------
-// Sends the filtered distance via Serial, OSC, and OOCSI if changed
+// Sends the filtered distance via Serial, OSC, and OOCSI
 // -------------------------------------------------------------------------
 void sendDistance() {
     static int lastSentValue = -1;
     int value = readDistance();
 
-    if (abs(value - lastSentValue) < DIST_CHANGE_THRESHOLD)
+    if (abs(value - lastSentValue) < THRESHOLD)
         return;
+    
     lastSentValue = value;
 
     const char* address = "/distance";

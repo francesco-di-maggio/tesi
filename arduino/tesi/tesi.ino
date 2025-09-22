@@ -87,4 +87,6 @@ void loop() {
   
   unsigned long now = millis();
   streamSensors(now);
+
+  // delay(1);
 }

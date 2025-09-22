@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 0.0, 59.0, 1246.0, 735.0 ],
+		"rect" : [ 0.0, 58.0, 1406.0, 840.0 ],
 		"openrect" : [ 0.0, 0.0, 574.0, 358.0 ],
 		"openinpresentation" : 1,
 		"default_fontname" : "Ableton Sans Medium",
@@ -22,6 +22,54 @@
 		"helpsidebarclosed" : 1,
 		"title" : "TESI #1",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-100",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1320.0, 430.0, 35.0, 23.0 ],
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-98",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1380.0, 130.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-96",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1450.0, 213.0, 94.0, 23.0 ],
+					"text" : "0. 1966."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-94",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 1310.0, 190.0, 79.0, 23.0 ],
+					"text" : "mo.minmax 1",
+					"varname" : "mo.minmax"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-75",
 					"maxclass" : "newobj",
@@ -114,6 +162,10 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 907.0, 154.0, 28.0, 23.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "in 1"
 				}
 
@@ -854,6 +906,10 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 851.0, 854.0, 36.0, 23.0 ],
+					"saved_object_attributes" : 					{
+						"attr_comment" : ""
+					}
+,
 					"text" : "out 1"
 				}
 
@@ -901,7 +957,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1371.0, 379.0, 95.0, 23.0 ],
+					"patching_rect" : [ 1232.0, 351.0, 95.0, 23.0 ],
 					"text" : "mo.smooth 0.05",
 					"varname" : "mo.smooth[2]"
 				}
@@ -1752,8 +1808,8 @@
 					"numinlets" : 5,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1371.0, 334.0, 98.0, 23.0 ],
-					"text" : "zmap 10 400 0 1"
+					"patching_rect" : [ 1371.0, 334.0, 91.0, 23.0 ],
+					"text" : "zmap 5 500 0 1"
 				}
 
 			}
@@ -2833,14 +2889,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-70", 0 ],
-					"midpoints" : [ 1380.5, 405.0, 1380.5, 405.0 ],
-					"source" : [ "obj-41", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
 					"midpoints" : [ 1739.5, 705.0, 1941.5, 705.0 ],
 					"order" : 0,
@@ -3247,15 +3295,33 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-89", 0 ],
-					"midpoints" : [ 1380.5, 324.0, 1380.5, 324.0 ],
+					"destination" : [ "obj-100", 0 ],
+					"order" : 1,
 					"source" : [ "obj-88", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-41", 0 ],
+					"destination" : [ "obj-89", 0 ],
+					"midpoints" : [ 1380.5, 324.0, 1380.5, 324.0 ],
+					"order" : 0,
+					"source" : [ "obj-88", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-94", 0 ],
+					"midpoints" : [ 1380.5, 324.0, 1296.0, 324.0, 1296.0, 186.0, 1319.5, 186.0 ],
+					"order" : 2,
+					"source" : [ "obj-88", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-70", 0 ],
 					"midpoints" : [ 1380.5, 360.0, 1380.5, 360.0 ],
 					"source" : [ "obj-89", 0 ]
 				}
@@ -3308,6 +3374,22 @@
 					"destination" : [ "obj-5", 0 ],
 					"midpoints" : [ 304.5, 372.0, 304.5, 372.0 ],
 					"source" : [ "obj-93", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-96", 1 ],
+					"midpoints" : [ 1379.5, 216.0, 1437.0, 216.0, 1437.0, 198.0, 1534.5, 198.0 ],
+					"source" : [ "obj-94", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-94", 1 ],
+					"midpoints" : [ 1389.5, 177.0, 1379.5, 177.0 ],
+					"source" : [ "obj-98", 0 ]
 				}
 
 			}

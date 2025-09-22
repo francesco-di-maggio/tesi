@@ -13,6 +13,7 @@ void handleSetIP(OSCMessage &msg);
 void handleReboot(OSCMessage &msg);
 void handleStatus(OSCMessage &msg);
 void handleSensors(OSCMessage &msg);
+void handleDebug(OSCMessage &msg);
 void handleLED(OSCMessage &msg);
 void saveIPToFlash(IPAddress ip);
 void sendConfigConfirmation(const char* message);

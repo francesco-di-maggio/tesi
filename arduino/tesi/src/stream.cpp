@@ -30,11 +30,10 @@ void streamSensors(unsigned long now) {
         }
     }
 
-    // Send heartbeat ping
-    sendPing();
-
     // Maintain OOCSI connection and process messages
     #if defined(USE_OOCSI)
+    // Send heartbeat ping
+    sendPing();
     loopOOCSI();
     #endif
 }

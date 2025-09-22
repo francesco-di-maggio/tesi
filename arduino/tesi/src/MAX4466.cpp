@@ -2,59 +2,77 @@
 #include <Arduino.h>
 
 // -------------------------------------------------------------------------
-// Microphone Reading and Filtering Parameters
+// Microphone Parameters
 // -------------------------------------------------------------------------
-constexpr int SAMPLE_WINDOW = 50;         // ms: window for peak-to-peak measurement
-constexpr int MIC_BASELINE = 400;         // ADC units: ambient noise baseline
-constexpr int MIC_CHANGE_THRESHOLD = 5;   // Minimum change to trigger send
-constexpr float ALPHA = 0.5f;             // EMA smoothing factor (0=slow, 1=fast)
+constexpr int SAMPLES = 40;            // Fixed sample count per reading
+constexpr int DEADZONE = 40;           // Minimum output value to consider (acts as silence threshold)
+constexpr int BASELINE = 200;          // Ambient noise baseline (subtracts electrical noise)
+constexpr float BLEND = 0.4f;          // EMA smoothing factor (higher = more responsive)
+constexpr float DECAY = 0.95f;         // Natural decay factor when no new signal
+constexpr int THRESHOLD = 20;          // Only send if change exceeds this value
+constexpr int GAIN = 6;                // Signal amplification for good resolution
 
-static int lastMicLevel = 0;
+static int lastStableMIC = 0;
 
 // -------------------------------------------------------------------------
-// Initializes the MAX4466 microphone sensor (optional for analog pin)
+// Initializes the microphone sensor
 // -------------------------------------------------------------------------
 void initMAX4466() {
     pinMode(MIC_PIN, INPUT);
-    Serial.println(F("MAX4466 Microphone initialized!"));
+    
+    // Initialize filter with baseline reading
+    lastStableMIC = 0;
+    
+    Serial.println(F("   MAX4466 > OK"));
 }
 
 // -------------------------------------------------------------------------
-// Reads and filters the microphone level (peak-to-peak amplitude)
+// Reads and filters the microphone level
 // -------------------------------------------------------------------------
 int readMIC() {
-    unsigned long startMillis = millis();
     unsigned int signalMax = 0;
     unsigned int signalMin = 4095;
-
-    // Collect data for SAMPLE_WINDOW milliseconds
-    while (millis() - startMillis < SAMPLE_WINDOW) {
+    
+    // Take fixed number of samples
+    for (int i = 0; i < SAMPLES; i++) {
         int micValue = analogRead(MIC_PIN);
-        if (micValue < 4095) { // Discard spurious high readings
-            if (micValue > signalMax) signalMax = micValue;
-            if (micValue < signalMin) signalMin = micValue;
-        }
+        if (micValue > signalMax) signalMax = micValue;
+        if (micValue < signalMin) signalMin = micValue;
     }
 
     int peakToPeak = signalMax - signalMin;
-    int adjustedValue = peakToPeak - MIC_BASELINE;
+    
+    int adjustedValue = (peakToPeak - BASELINE) * GAIN;
     if (adjustedValue < 0) adjustedValue = 0;
+    
+    // If we have a new signal above deadzone, use it
+    if (adjustedValue >= DEADZONE) {
+        // EMA filter for new signal
+        float micEstimate = BLEND * adjustedValue + (1.0f - BLEND) * lastStableMIC;
+        lastStableMIC = static_cast<int>(micEstimate + 0.5f);
+    } else {
+        // Natural decay when no new signal
+        lastStableMIC = static_cast<int>(lastStableMIC * DECAY + 0.5f);
+        
+        // Only return zero if we've decayed below deadzone
+        if (lastStableMIC < DEADZONE) {
+            lastStableMIC = 0;
+        }
+    }
 
-    // EMA filter
-    float newLevel = ALPHA * adjustedValue + (1.0f - ALPHA) * lastMicLevel;
-    lastMicLevel = static_cast<int>(newLevel + 0.5f);
-
-    return lastMicLevel;
+    return lastStableMIC;
 }
 
 // -------------------------------------------------------------------------
-// Sends the microphone level via Serial, OSC, and OOCSI if it changes
+// Sends the microphone level via Serial, OSC, and OOCSI
 // -------------------------------------------------------------------------
 void sendMIC() {
     static int lastSentValue = -1;
     int value = readMIC();
 
-    if (abs(value - lastSentValue) < MIC_CHANGE_THRESHOLD) return;
+    if (abs(value - lastSentValue) < THRESHOLD) 
+        return;
+    
     lastSentValue = value;
 
     const char* address = "/mic";

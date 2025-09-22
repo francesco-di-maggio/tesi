@@ -15,7 +15,7 @@ SensorConfig LDR      = {1, 1, 0, 0,   20, 0};
 SensorConfig MIC      = {1, 1, 0, 0,   30, 0};
 SensorConfig POT      = {1, 1, 0, 0,   10, 0};
 SensorConfig DISTANCE = {1, 1, 0, 0,   20, 0};
-SensorConfig QUAT     = {1, 1, 0, 0,   40, 0};
+SensorConfig QUAT     = {1, 1, 0, 0,   30, 0};
 SensorConfig PUSH     = {1, 1, 0, 0,    5, 0};
 SensorConfig CAP      = {1, 1, 0, 0,    5, 0};
 

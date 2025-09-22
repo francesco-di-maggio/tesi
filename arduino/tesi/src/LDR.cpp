@@ -4,8 +4,9 @@
 // -------------------------------------------------------------------------
 // LDR Filter and Smoothing Parameters
 // -------------------------------------------------------------------------
-constexpr int LDR_DEADZONE = 10;         // Ignore small changes
-constexpr float LDR_BLEND = 0.3f;        // EMA smoothing factor (0=slow, 1=fast)
+constexpr int DEADZONE = 5;        // Ignore small changes (higher = less sensitive)
+constexpr float BLEND = 0.3f;      // EMA smoothing factor (higher = more responsive, lower = smoother)
+constexpr int THRESHOLD = 10;      // Only send if change exceeds this value (higher = less output)
 
 static float ldrEstimate = 0.0f;
 static int lastStableLDR = 0;
@@ -26,23 +27,26 @@ int readLDR() {
     int raw = analogRead(LDR_PIN);
 
     // Deadzone: ignore small changes
-    if (abs(raw - lastStableLDR) < LDR_DEADZONE) {
+    if (abs(raw - lastStableLDR) < DEADZONE) {
         return lastStableLDR;
     }
 
     // Exponential moving average filter
-    ldrEstimate = LDR_BLEND * raw + (1.0f - LDR_BLEND) * ldrEstimate;
+    ldrEstimate = BLEND * raw + (1.0f - BLEND) * ldrEstimate;
     lastStableLDR = static_cast<int>(ldrEstimate + 0.5f);
     return lastStableLDR;
 }
 
 // -------------------------------------------------------------------------
-// Sends the LDR value via configured protocols (only if changed)
+// Sends the LDR value via configured protocols
 // -------------------------------------------------------------------------
 void sendLDR() {
     static int lastSent = -1;
     int value = readLDR();
-    if (value == lastSent) return;
+    
+    if (abs(value - lastSent) < THRESHOLD)
+        return;
+    
     lastSent = value;
 
     const char* address = "/ldr";
