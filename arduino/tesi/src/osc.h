@@ -10,6 +10,7 @@
 void setupOSC();
 void listenOSC();
 void handleSetIP(OSCMessage &msg);
+void handleClear(OSCMessage &msg);
 void handleReboot(OSCMessage &msg);
 void handleStatus(OSCMessage &msg);
 void handleSensors(OSCMessage &msg);

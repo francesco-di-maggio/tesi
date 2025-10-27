@@ -23,7 +23,6 @@ struct SensorConfig {
             uint8_t osc : 1;       // 1 = OSC enabled, 0 = disabled
             uint8_t serial : 1;    // 1 = Serial output enabled, 0 = disabled
             uint8_t oocsi : 1;     // 1 = OOCSI output enabled, 0 = disabled
-            uint8_t reserved : 4;  // Reserved for future flags
         };
         uint8_t flags;             // Access all flags as single byte
     };

@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 9,
 			"minor" : 0,
-			"revision" : 8,
+			"revision" : 9,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -23,36 +23,26 @@
 		"title" : "TESI #1",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-100",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1320.0, 430.0, 35.0, 23.0 ],
-					"text" : "print"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-98",
 					"maxclass" : "toggle",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1380.0, 130.0, 24.0, 24.0 ]
+					"patching_rect" : [ 1370.0, 154.0, 24.0, 24.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-96",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1450.0, 213.0, 94.0, 23.0 ],
-					"text" : "0. 1966."
+					"patching_rect" : [ 1319.0, 230.0, 70.0, 37.0 ],
+					"text" : "99999. -99999."
 				}
 
 			}
@@ -162,10 +152,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 907.0, 154.0, 28.0, 23.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "in 1"
 				}
 
@@ -460,7 +446,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -858,7 +844,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 851.0, 384.0, 88.0, 23.0 ],
-					"text" : "mo.smooth 0.1",
+					"text" : "mo.smooth 0.3",
 					"varname" : "mo.smooth"
 				}
 
@@ -906,10 +892,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 851.0, 854.0, 36.0, 23.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
 					"text" : "out 1"
 				}
 
@@ -947,19 +929,6 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 295.0, 384.0, 81.0, 23.0 ],
 					"text" : "/BATTERY $1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-41",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1232.0, 351.0, 95.0, 23.0 ],
-					"text" : "mo.smooth 0.05",
-					"varname" : "mo.smooth[2]"
 				}
 
 			}
@@ -1024,7 +993,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1350,7 +1319,7 @@
 						"appversion" : 						{
 							"major" : 9,
 							"minor" : 0,
-							"revision" : 8,
+							"revision" : 9,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3295,14 +3264,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-100", 0 ],
-					"order" : 1,
-					"source" : [ "obj-88", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-89", 0 ],
 					"midpoints" : [ 1380.5, 324.0, 1380.5, 324.0 ],
 					"order" : 0,
@@ -3314,7 +3275,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-94", 0 ],
 					"midpoints" : [ 1380.5, 324.0, 1296.0, 324.0, 1296.0, 186.0, 1319.5, 186.0 ],
-					"order" : 2,
+					"order" : 1,
 					"source" : [ "obj-88", 0 ]
 				}
 
@@ -3380,7 +3341,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-96", 1 ],
-					"midpoints" : [ 1379.5, 216.0, 1437.0, 216.0, 1437.0, 198.0, 1534.5, 198.0 ],
+					"midpoints" : [ 1379.5, 216.0, 1379.5, 216.0 ],
 					"source" : [ "obj-94", 1 ]
 				}
 
@@ -3388,7 +3349,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-94", 1 ],
-					"midpoints" : [ 1389.5, 177.0, 1379.5, 177.0 ],
+					"midpoints" : [ 1379.5, 180.0, 1379.5, 180.0 ],
 					"source" : [ "obj-98", 0 ]
 				}
 

@@ -11,7 +11,7 @@ bool debugEnabled = false; // Default debug state (0=off for performance)
 Preferences preferences;
 
 // Pre-computed address strings for fast matching
-char deviceIP[30], deviceReboot[30], deviceStatus[30], deviceSensors[30], deviceLED[30], deviceDebug[30];
+char deviceIP[30], deviceReboot[30], deviceStatus[30], deviceSensors[30], deviceLED[30], deviceDebug[30], deviceClear[30];
 char responseAddr[30];
 
 void setupOSC() {
@@ -24,13 +24,21 @@ void setupOSC() {
     sprintf(deviceSensors, "/%d/tesi/config/sensors", DEVICE_INDEX);
     sprintf(deviceLED, "/%d/tesi/config/led", DEVICE_INDEX);
     sprintf(deviceDebug, "/%d/tesi/config/debug", DEVICE_INDEX);
+    sprintf(deviceClear, "/%d/tesi/config/clear", DEVICE_INDEX);
     sprintf(responseAddr, "/%d/tesi/config/response", DEVICE_INDEX);
     
     if (preferences.isKey("target_ip")) {
         uint32_t savedIP = preferences.getUInt("target_ip", 0);
         if (savedIP != 0) {
+            Serial.print(F("   Stored IP: "));
+            Serial.println(IPAddress(savedIP));
+            Serial.println();
             OUT_IP = IPAddress(savedIP);
         }
+    } else {
+        Serial.print(F("   Default IP: "));
+        Serial.println(OUT_IP);
+        Serial.println();
     }
     
     listenUDP.begin(IN_PORT);
@@ -44,7 +52,7 @@ void setupOSC() {
     Serial.println();
 
     Serial.println(F("   Commands:"));
-    Serial.println(F("      ip, status, sensors, reboot, led, debug"));
+    Serial.println(F("      ip, status, sensors, reboot, led, debug, clear"));
     Serial.println();
     Serial.println(F("   Format:"));
     Serial.print(F("      /"));
@@ -103,6 +111,10 @@ void listenOSC() {
         handleDebug(msg);
         return;
     }
+    if (msg.fullMatch(deviceClear)) {
+        handleClear(msg);
+        return;
+    }
     
     // Broadcast commands
     if (msg.fullMatch("/all/tesi/config/ip")) {
@@ -156,12 +168,10 @@ void handleSetIP(OSCMessage &msg) {
         
         IPAddress newIP;
         if (newIP.fromString(ipStr)) {
-            if (debugEnabled) {
-                Serial.print("IP updated: ");
-                Serial.print(OUT_IP);
-                Serial.print(" → ");
-                Serial.println(newIP);
-            }
+            Serial.print(F("   Target IP updated: "));
+            Serial.print(OUT_IP);
+            Serial.print(F(" >>> "));
+            Serial.println(newIP);
             
             saveIPToFlash(newIP);
             OUT_IP = newIP;
@@ -186,6 +196,21 @@ void handleSetIP(OSCMessage &msg) {
             sendConfigConfirmation(usageMsg);
         }
     }
+}
+
+void handleClear(OSCMessage &msg) {
+    Serial.print(F("   Clearing stored IP from flash... "));
+    preferences.remove("target_ip");
+    
+    // Reset to secrets.h default
+    OUT_IP = IPAddress(SECRET_IP);
+    
+    Serial.print(F(">>> Reset to secrets.h: "));
+    Serial.println(OUT_IP);
+    
+    char clearMsg[60];
+    sprintf(clearMsg, "Device %d: Stored IP cleared, using secrets.h default", DEVICE_INDEX);
+    sendConfigConfirmation(clearMsg);
 }
 
 void handleReboot(OSCMessage &msg) {
