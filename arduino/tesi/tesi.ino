@@ -54,7 +54,7 @@ void setup() {
 
   setColor(255, 0, 0); // RED LIGHT: Booting
 
-  // printMacAddress();
+  printMacAddress();
 
   setupWiFi();
 

@@ -4,63 +4,69 @@
 // -------------------------------------------------------------------------
 // Microphone Parameters
 // -------------------------------------------------------------------------
-constexpr int SAMPLES = 40;            // Fixed sample count per reading
-constexpr int DEADZONE = 40;           // Minimum output value to consider (acts as silence threshold)
-constexpr int BASELINE = 200;          // Ambient noise baseline (subtracts electrical noise)
-constexpr float BLEND = 0.4f;          // EMA smoothing factor (higher = more responsive)
-constexpr float DECAY = 0.95f;         // Natural decay factor when no new signal
-constexpr int THRESHOLD = 20;          // Only send if change exceeds this value
-constexpr int GAIN = 6;                // Signal amplification for good resolution
+constexpr unsigned long SAMPLE_WINDOW = 50;  // Sampling window in ms (50ms = 20Hz update rate)
+constexpr int BASELINE = 600;                // Baseline to subtract (adjust based on your room's idle level)
+constexpr int NOISE_FLOOR = 100;             // Minimum peak-to-peak to ignore electrical/ambient noise
+constexpr int DEADZONE = 175;                // Minimum output to consider as actual sound (zero when quiet)
+constexpr float SMOOTHING = 0.2f;            // Lower = heavier smoothing, less transient response
+constexpr int THRESHOLD = 25;                // Send threshold for change detection
+constexpr float GAIN = 3.0f;                 // Higher gain for better sensitivity to quiet sounds
 
-static int lastStableMIC = 0;
+static float smoothedMIC = 0.0f;
 
 // -------------------------------------------------------------------------
 // Initializes the microphone sensor
 // -------------------------------------------------------------------------
 void initMAX4466() {
     pinMode(MIC_PIN, INPUT);
-    
-    // Initialize filter with baseline reading
-    lastStableMIC = 0;
-    
+
+    // Initialize smoothed value
+    smoothedMIC = 0.0f;
+
     Serial.println(F("   MAX4466 > OK"));
 }
 
 // -------------------------------------------------------------------------
-// Reads and filters the microphone level
+// Reads and filters the microphone level for ambient room noise
 // -------------------------------------------------------------------------
 int readMIC() {
+    unsigned long startMillis = millis();
     unsigned int signalMax = 0;
     unsigned int signalMin = 4095;
-    
-    // Take fixed number of samples
-    for (int i = 0; i < SAMPLES; i++) {
+
+    // Sample over fixed time window for consistent measurements
+    while (millis() - startMillis < SAMPLE_WINDOW) {
         int micValue = analogRead(MIC_PIN);
         if (micValue > signalMax) signalMax = micValue;
         if (micValue < signalMin) signalMin = micValue;
     }
 
+    // Calculate peak-to-peak amplitude
     int peakToPeak = signalMax - signalMin;
-    
-    int adjustedValue = (peakToPeak - BASELINE) * GAIN;
+
+    // Subtract baseline (idle room noise level)
+    int adjustedValue = peakToPeak - BASELINE;
     if (adjustedValue < 0) adjustedValue = 0;
-    
-    // If we have a new signal above deadzone, use it
-    if (adjustedValue >= DEADZONE) {
-        // EMA filter for new signal
-        float micEstimate = BLEND * adjustedValue + (1.0f - BLEND) * lastStableMIC;
-        lastStableMIC = static_cast<int>(micEstimate + 0.5f);
-    } else {
-        // Natural decay when no new signal
-        lastStableMIC = static_cast<int>(lastStableMIC * DECAY + 0.5f);
-        
-        // Only return zero if we've decayed below deadzone
-        if (lastStableMIC < DEADZONE) {
-            lastStableMIC = 0;
-        }
+
+    // Ignore values below noise floor
+    if (adjustedValue < NOISE_FLOOR) {
+        adjustedValue = 0;
     }
 
-    return lastStableMIC;
+    // Apply gain
+    float rawValue = adjustedValue * GAIN;
+    if (rawValue > 4095) rawValue = 4095;
+
+    // Smooth the signal for stable control parameter
+    smoothedMIC = SMOOTHING * rawValue + (1.0f - SMOOTHING) * smoothedMIC;
+
+    // Apply deadzone - output zero when truly quiet
+    int outputValue = static_cast<int>(smoothedMIC + 0.5f);
+    if (outputValue < DEADZONE) {
+        outputValue = 0;
+    }
+
+    return outputValue;
 }
 
 // -------------------------------------------------------------------------
