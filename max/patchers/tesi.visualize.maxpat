@@ -9,8 +9,7 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 513.0, 418.0, 574.0, 358.0 ],
-        "openrect": [ 0.0, 0.0, 574.0, 358.0 ],
+        "openrect": [ 200.0, 200.0, 593.0, 378.0 ],
         "openrectmode": 0,
         "openinpresentation": 1,
         "default_fontname": "Ableton Sans Medium",
@@ -20,7 +19,7 @@
         "toolbars_unpinned_last_save": 3,
         "subpatcher_template": " ",
         "helpsidebarclosed": 1,
-        "title": "TESI #1",
+        "title": "TESI #2",
         "boxes": [
             {
                 "box": {
@@ -64,8 +63,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 1289.0, 423.0, 70.0, 23.0 ],
-                    "text": "0. 2311."
+                    "patching_rect": [ 1289.0, 423.0, 70.0, 23.0 ]
                 }
             },
             {
@@ -156,6 +154,10 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 907.0, 154.0, 28.0, 23.0 ],
+                    "saved_object_attributes": {
+                        "attr_comment": "",
+                        "c": ""
+                    },
                     "text": "in 1"
                 }
             },
@@ -334,7 +336,7 @@
                     "numoutlets": 0,
                     "patching_rect": [ 982.0, 212.0, 212.0, 25.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 150.0, 33.0, 212.0, 25.0 ],
+                    "presentation_rect": [ 159.99998998641968, 43.10810589790344, 212.0, 25.0 ],
                     "text": "set LDR/DISTANCE maximum value"
                 }
             },
@@ -357,7 +359,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1880.0, 190.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 0.0, 0.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 10.0, 10.0, 70.0, 70.0 ],
                     "varname": "mo.number[1]",
                     "viewvisibility": 1
                 }
@@ -709,7 +711,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1162.0, 480.0, 70.0, 214.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 432.07142651081085, 72.0, 70.0, 214.0 ],
+                    "presentation_rect": [ 442.04630320412764, 82.297292470932, 70.0, 214.0 ],
                     "varname": "mo.vslider[4]",
                     "viewvisibility": 1
                 }
@@ -733,7 +735,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1090.0, 480.0, 70.0, 214.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 360.0476176738739, 72.0, 70.0, 214.0 ],
+                    "presentation_rect": [ 370.0385860034397, 82.297292470932, 70.0, 214.0 ],
                     "varname": "mo.vslider[3]",
                     "viewvisibility": 1
                 }
@@ -757,7 +759,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1018.0, 480.0, 70.0, 214.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 288.02380883693695, 72.0, 70.0, 214.0 ],
+                    "presentation_rect": [ 298.0308688027518, 82.297292470932, 70.0, 214.0 ],
                     "varname": "mo.vslider[2]",
                     "viewvisibility": 1
                 }
@@ -782,7 +784,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 851.0, 384.0, 88.0, 23.0 ],
-                    "text": "mo.smooth 0.3",
+                    "text": "mo.smooth 0.2",
                     "varname": "mo.smooth"
                 }
             },
@@ -826,6 +828,10 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 851.0, 854.0, 36.0, 23.0 ],
+                    "saved_object_attributes": {
+                        "attr_comment": "",
+                        "c": ""
+                    },
                     "text": "out 1"
                 }
             },
@@ -881,7 +887,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 907.0, 188.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 72.0, 0.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 82.00771720068795, 10.0, 70.0, 70.0 ],
                     "varname": "mo.pad[10]",
                     "viewvisibility": 1
                 }
@@ -926,7 +932,6 @@
                         },
                         "classnamespace": "box",
                         "rect": [ 59.0, 115.0, 273.0, 555.0 ],
-                        "visible": 1,
                         "boxes": [
                             {
                                 "box": {
@@ -1601,7 +1606,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1825.0, 624.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 144.0, 144.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 153.91890931129456, 153.91890931129456, 70.0, 70.0 ],
                     "varname": "mo.pad[9]",
                     "viewvisibility": 1
                 }
@@ -1625,7 +1630,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 295.0, 299.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 504.07142651081085, 0.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 514.0540204048157, 10.0, 70.0, 70.0 ],
                     "varname": "mo.number",
                     "viewvisibility": 1
                 }
@@ -1705,7 +1710,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1604.0, 624.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 144.0, 216.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 153.91890931129456, 226.21620178222656, 70.0, 70.0 ],
                     "varname": "mo.sliders[4]",
                     "viewvisibility": 1
                 }
@@ -1751,7 +1756,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 452.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 432.07142651081085, 288.07142651081085, 70.0, 70.0 ],
+                    "presentation_rect": [ 442.04630320412764, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad[7]",
                     "viewvisibility": 1
                 }
@@ -1775,7 +1780,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 524.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 504.0952353477478, 288.07142651081085, 70.0, 70.0 ],
+                    "presentation_rect": [ 514.0540204048156, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad[8]",
                     "viewvisibility": 1
                 }
@@ -1909,7 +1914,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1730.0, 624.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 144.0, 72.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 154.0154344013759, 82.297292470932, 70.0, 70.0 ],
                     "varname": "mo.pad[6]",
                     "viewvisibility": 1
                 }
@@ -1933,7 +1938,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1497.0, 480.0, 70.0, 214.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 504.0952353477478, 72.0, 70.0, 214.0 ],
+                    "presentation_rect": [ 514.0540204048156, 82.297292470932, 70.0, 214.0 ],
                     "varname": "mo.sliders[3]",
                     "viewvisibility": 1
                 }
@@ -1957,7 +1962,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 1371.0, 480.0, 70.0, 214.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 0.0, 72.0, 70.0, 214.0 ],
+                    "presentation_rect": [ 10.0, 82.297292470932, 70.0, 214.0 ],
                     "varname": "mo.sliders[2]",
                     "viewvisibility": 1
                 }
@@ -1981,7 +1986,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 851.0, 480.0, 70.0, 214.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 72.0, 72.0, 70.0, 214.0 ],
+                    "presentation_rect": [ 82.00771720068795, 82.297292470932, 70.0, 214.0 ],
                     "varname": "mo.vslider",
                     "viewvisibility": 1
                 }
@@ -2005,7 +2010,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 946.0, 480.0, 70.0, 214.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 216.0, 72.0, 70.0, 214.0 ],
+                    "presentation_rect": [ 226.02315160206385, 82.297292470932, 70.0, 214.0 ],
                     "varname": "mo.vslider[1]",
                     "viewvisibility": 1
                 }
@@ -2062,7 +2067,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 20.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 0.0, 288.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 10.0, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad",
                     "viewvisibility": 1
                 }
@@ -2086,7 +2091,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 92.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 72.0, 288.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 82.00771720068795, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad[1]",
                     "viewvisibility": 1
                 }
@@ -2110,7 +2115,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 164.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 144.0, 288.0, 70.0, 70.0 ],
+                    "presentation_rect": [ 154.0154344013759, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad[2]",
                     "viewvisibility": 1
                 }
@@ -2134,7 +2139,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 236.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 216.0, 288.07142651081085, 70.0, 70.0 ],
+                    "presentation_rect": [ 226.02315160206385, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad[3]",
                     "viewvisibility": 1
                 }
@@ -2158,7 +2163,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 308.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 288.02380883693695, 288.07142651081085, 70.0, 70.0 ],
+                    "presentation_rect": [ 298.0308688027518, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad[4]",
                     "viewvisibility": 1
                 }
@@ -2182,7 +2187,7 @@
                     "outlettype": [ "" ],
                     "patching_rect": [ 380.0, 596.0, 70.0, 70.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 360.0476176738739, 288.07142651081085, 70.0, 70.0 ],
+                    "presentation_rect": [ 370.0385860034397, 298.51349425315857, 70.0, 70.0 ],
                     "varname": "mo.pad[5]",
                     "viewvisibility": 1
                 }
