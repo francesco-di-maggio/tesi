@@ -5,9 +5,10 @@
 // -------------------------------------------------------------------------
 // Distance Sensor Parameters
 // -------------------------------------------------------------------------
-constexpr int DEADZONE = 4;        // Minimum change to trigger update (higher = less sensitive)
-constexpr float BLEND = 0.6f;      // EMA smoothing factor (higher = more responsive, lower = smoother)
-constexpr int THRESHOLD = 8;       // Only send if change exceeds this value (higher = less output)
+constexpr int DEADZONE = 15;        // Minimum change to trigger filter update (mm) - blocks sensor noise
+constexpr float BLEND = 0.75f;      // EMA smoothing factor (higher = more responsive, lower = smoother)
+constexpr int THRESHOLD = 10;       // Only send if change exceeds this value (mm) - reduces output traffic
+constexpr int TIMING_BUDGET = 50;   // Sensor timing budget in ms: 20ms=~1.3m, 50ms=~3m, 100ms=~4m range
 
 static float distanceEstimate = 0.0f;
 static int lastStableDistance = 0;
@@ -27,18 +28,27 @@ void initVL53L1X() {
         return;
     }
 
-    VL53_SENSOR.setTimingBudget(50);
+    VL53_SENSOR.setTimingBudget(TIMING_BUDGET);
 
     // Initialize filter with first valid measurement
     int distance = -1;
-    while (distance == -1) {
+    unsigned long timeout = millis() + 2000;
+    while (distance == -1 && millis() < timeout) {
         if (VL53_SENSOR.dataReady()) {
             distance = VL53_SENSOR.distance();
-            if (distance == -1) continue;
-            VL53_SENSOR.clearInterrupt();
+            if (distance != -1) {
+                VL53_SENSOR.clearInterrupt();
+                break;
+            }
         }
         delay(5);
     }
+
+    if (distance == -1) {
+        Serial.println(F("   VL53L1X: No initial reading, using default"));
+        distance = 500; // Reasonable default
+    }
+
     distanceEstimate = (float)distance;
     lastStableDistance = distance;
 }
@@ -47,23 +57,25 @@ void initVL53L1X() {
 // Reads and filters the distance (in mm) from VL53L1X
 // -------------------------------------------------------------------------
 int readDistance() {
-    int rawDistance = -1;
-
-    if (VL53_SENSOR.dataReady()) {
-        rawDistance = VL53_SENSOR.distance();
-        if (rawDistance == -1)
-            return lastStableDistance;  // Return last stable value on error
-        VL53_SENSOR.clearInterrupt();
-    } else {
+    if (!VL53_SENSOR.dataReady()) {
         return lastStableDistance;  // No new data available
     }
 
-    // Deadzone: ignore small changes
-    if (abs(rawDistance - lastStableDistance) < DEADZONE) {
-        return lastStableDistance;
+    int rawDistance = VL53_SENSOR.distance();
+    VL53_SENSOR.clearInterrupt();
+
+    // Check for sensor errors (explicit failure or bad status)
+    if (rawDistance == -1 || VL53_SENSOR.vl_status != 0) {
+        return lastStableDistance;  // Return last stable value on error
     }
 
-    // Exponential moving average filter
+    // Check deadzone: ignore small changes to reduce noise and outliers
+    int diff = rawDistance - lastStableDistance;
+    if (diff < DEADZONE && diff > -DEADZONE) {
+        return lastStableDistance;  // Within deadzone, no update needed
+    }
+
+    // Apply exponential moving average filter for smoothing
     distanceEstimate = BLEND * rawDistance + (1.0f - BLEND) * distanceEstimate;
     lastStableDistance = static_cast<int>(distanceEstimate + 0.5f);
     return lastStableDistance;
@@ -76,9 +88,12 @@ void sendDistance() {
     static int lastSentValue = -1;
     int value = readDistance();
 
-    if (abs(value - lastSentValue) < THRESHOLD)
+    // Only send if change exceeds threshold
+    int diff = value - lastSentValue;
+    if (diff < THRESHOLD && diff > -THRESHOLD) {
         return;
-    
+    }
+
     lastSentValue = value;
 
     const char* address = "/distance";

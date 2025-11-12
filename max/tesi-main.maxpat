@@ -1881,13 +1881,14 @@
                     "patching_rect": [ 20.0, 543.0, 399.0, 22.0 ],
                     "priority": {
                         "mo.prepend::[1]::set": 1,
+                        "mo.prepend::[2]::set": 1,
                         "mo.prepend::mute": 1
                     },
                     "saved_object_attributes": {
-                        "client_rect": [ 4, 44, 358, 172 ],
+                        "client_rect": [ 100, 157, 941, 805 ],
                         "parameter_enable": 0,
                         "parameter_mappable": 0,
-                        "storage_rect": [ 583, 69, 1034, 197 ]
+                        "storage_rect": [ 100, 168, 862, 803 ]
                     },
                     "text": "pattrstorage tesi-receive @autorestore 1 @changemode 1 @savemode 3",
                     "varname": "tesi-receive"
@@ -2017,6 +2018,15 @@
                 "patchline": {
                     "destination": [ "obj-103", 0 ],
                     "midpoints": [ 224.5, 258.0, 820.5, 258.0 ],
+                    "order": 1,
+                    "source": [ "obj-200", 1 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-23", 0 ],
+                    "midpoints": [ 224.5, 258.0, 899.5, 258.0 ],
+                    "order": 0,
                     "source": [ "obj-200", 1 ]
                 }
             },
@@ -2266,6 +2276,123 @@
             "obj-211::obj-6.1::obj-97::obj-125::obj-6::obj-13": [ "live.numbox[253]", "live.numbox", 0 ],
             "obj-211::obj-6.1::obj-97::obj-13": [ "live.numbox[252]", "live.numbox", 0 ],
             "obj-211::obj-6.1::obj-97::obj-15": [ "live.text[199]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-10::obj-2": [ "live.text[342]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-10::obj-22": [ "live.text[343]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-10::obj-48": [ "live.text[341]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-10::obj-6": [ "live.text[340]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-15::obj-2": [ "live.text[345]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-15::obj-22": [ "live.text[346]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-15::obj-48": [ "live.text[344]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-15::obj-6": [ "live.text[347]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-16::obj-2": [ "live.text[480]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-16::obj-22": [ "live.text[339]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-16::obj-48": [ "live.text[338]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-16::obj-6": [ "live.text[337]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-17::obj-2": [ "live.text[335]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-17::obj-22": [ "live.text[336]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-17::obj-48": [ "live.text[334]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-17::obj-6": [ "live.text[333]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-18::obj-21": [ "live.text[356]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-18::obj-3": [ "slider-[26]", "slider-", 0 ],
+            "obj-211::obj-6.2::obj-18::obj-35": [ "live.text[358]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-18::obj-38": [ "live.text[357]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-18::obj-56": [ "live.numbox[158]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-21::obj-2": [ "live.text[332]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-21::obj-22": [ "live.text[329]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-21::obj-48": [ "live.text[331]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-21::obj-6": [ "live.text[330]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-28::obj-125::obj-6::obj-12": [ "live.text[426]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-28::obj-125::obj-6::obj-13": [ "live.numbox[169]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-28::obj-13": [ "live.numbox[170]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-28::obj-15": [ "live.text[427]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-2::obj-2": [ "live.text[422]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-2::obj-22": [ "live.text[423]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-2::obj-48": [ "live.text[425]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-2::obj-6": [ "live.text[424]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-30::obj-21": [ "live.text[359]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-30::obj-3": [ "slider-[27]", "slider-", 0 ],
+            "obj-211::obj-6.2::obj-30::obj-35": [ "live.text[361]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-30::obj-38": [ "live.text[360]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-30::obj-56": [ "live.numbox[159]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-31::obj-125::obj-6::obj-12": [ "live.text[482]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-31::obj-125::obj-6::obj-13": [ "live.numbox[177]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-31::obj-13": [ "live.numbox[178]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-31::obj-15": [ "live.text[483]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-36::obj-39": [ "live.numbox[176]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-36::obj-6": [ "live.text[481]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-39::obj-21": [ "live.text[363]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-39::obj-3": [ "slider-[28]", "slider-", 0 ],
+            "obj-211::obj-6.2::obj-39::obj-35": [ "live.text[362]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-39::obj-38": [ "live.text[364]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-39::obj-56": [ "live.numbox[167]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-42::obj-2": [ "live.text[365]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-42::obj-22": [ "live.text[366]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-42::obj-48": [ "live.text[290]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-42::obj-6": [ "live.text[367]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-47::obj-2": [ "live.text[374]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-47::obj-22": [ "live.text[371]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-47::obj-48": [ "live.text[373]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-47::obj-6": [ "live.text[372]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-48::obj-2": [ "live.text[370]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-48::obj-22": [ "live.text[368]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-48::obj-48": [ "live.text[369]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-48::obj-6": [ "live.text[291]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-52::obj-125::obj-6::obj-12": [ "live.text[385]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-52::obj-125::obj-6::obj-13": [ "live.numbox[171]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-52::obj-13": [ "live.numbox[172]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-52::obj-15": [ "live.text[348]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-54::obj-21": [ "live.text[387]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-54::obj-3": [ "slider-[29]", "slider-", 0 ],
+            "obj-211::obj-6.2::obj-54::obj-35": [ "live.text[386]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-54::obj-38": [ "live.text[388]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-54::obj-56": [ "live.numbox[173]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-55::obj-7::obj-13": [ "live.text[420]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-55::obj-7::obj-16": [ "live.text[413]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-55::obj-7::obj-18": [ "live.text[421]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-55::obj-7::obj-37": [ "live.text[380]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-55::obj-7::obj-8": [ "live.numbox[160]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-56::obj-21": [ "dial-[1]", "dial-", 0 ],
+            "obj-211::obj-6.2::obj-56::obj-35": [ "live.text[376]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-56::obj-6": [ "live.text[375]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-57::obj-21": [ "live.text[391]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-57::obj-3": [ "slider-[30]", "slider-", 0 ],
+            "obj-211::obj-6.2::obj-57::obj-35": [ "live.text[390]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-57::obj-38": [ "live.text[389]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-57::obj-56": [ "live.numbox[174]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-58::obj-21": [ "live.text[394]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-58::obj-3": [ "slider-[31]", "slider-", 0 ],
+            "obj-211::obj-6.2::obj-58::obj-35": [ "live.text[393]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-58::obj-38": [ "live.text[392]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-58::obj-56": [ "live.numbox[175]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-65::obj-21": [ "live.text[355]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-65::obj-3": [ "slider-[25]", "slider-", 0 ],
+            "obj-211::obj-6.2::obj-65::obj-35": [ "live.text[354]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-65::obj-38": [ "live.text[419]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-65::obj-56": [ "live.numbox[157]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-6::obj-2": [ "live.text[325]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-6::obj-22": [ "live.text[327]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-6::obj-48": [ "live.text[328]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-6::obj-6": [ "live.text[326]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-73::obj-2": [ "live.text[412]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-73::obj-22": [ "live.text[378]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-73::obj-48": [ "live.text[411]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-73::obj-6": [ "live.text[379]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-74::obj-7::obj-13": [ "live.text[383]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-74::obj-7::obj-16": [ "live.text[382]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-74::obj-7::obj-18": [ "live.text[384]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-74::obj-7::obj-37": [ "live.text[381]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-74::obj-7::obj-8": [ "live.numbox[161]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-93::obj-39": [ "live.numbox[168]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-93::obj-6": [ "live.text[377]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-94::obj-13": [ "live.text[485]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-94::obj-16": [ "live.text[484]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-94::obj-18": [ "live.text[486]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-94::obj-37": [ "live.text[487]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-94::obj-8": [ "live.numbox[179]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-97::obj-125::obj-6::obj-12": [ "live.text[488]", "live.text", 0 ],
+            "obj-211::obj-6.2::obj-97::obj-125::obj-6::obj-13": [ "live.numbox[180]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-97::obj-13": [ "live.numbox[181]", "live.numbox", 0 ],
+            "obj-211::obj-6.2::obj-97::obj-15": [ "live.text[531]", "live.text", 0 ],
             "obj-211::obj-8": [ "live.text[94]", "live.text", 0 ],
             "obj-22::obj-11": [ "live.numbox[537]", "live.numbox", 0 ],
             "obj-22::obj-12": [ "live.text[822]", "live.text", 0 ],
@@ -2639,6 +2766,373 @@
             "obj-22::obj-6.1::obj-78::obj-37": [ "live.numbox[314]", "live.numbox", 0 ],
             "obj-22::obj-6.1::obj-78::obj-39": [ "live.numbox[315]", "live.numbox", 0 ],
             "obj-22::obj-6.1::obj-78::obj-42": [ "live.text[1073]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-107::obj-2": [ "live.text[699]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-123::obj-2": [ "live.text[697]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-1::obj-2": [ "live.text[700]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-36::obj-2": [ "live.text[753]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-40::obj-2": [ "live.text[754]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-41::obj-2": [ "live.text[497]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-42::obj-2": [ "live.text[871]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-43::obj-2": [ "live.text[498]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-44::obj-2": [ "live.text[812]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-45::obj-2": [ "live.text[499]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-46::obj-2": [ "live.text[829]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-47::obj-2": [ "live.text[623]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-48::obj-2": [ "live.text[624]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-49::obj-2": [ "live.text[755]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-50::obj-2": [ "live.text[756]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-56": [ "live.numbox[237]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-74::obj-2": [ "live.text[698]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-15::obj-9": [ "live.text[757]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-1": [ "live.text[762]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-43": [ "live.text[832]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-46": [ "live.text[830]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-48": [ "live.text[760]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-50": [ "live.text[763]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-51": [ "live.text[758]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-52": [ "live.numbox[262]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-53": [ "live.text[831]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-55": [ "live.text[761]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-62": [ "live.numbox[261]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-1::obj-64": [ "live.text[759]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-21::obj-13": [ "live.numbox[182]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-21::obj-9": [ "live.text[489]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-107::obj-2": [ "live.text[617]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-123::obj-2": [ "live.text[615]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-1::obj-2": [ "live.text[667]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-36::obj-2": [ "live.text[693]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-40::obj-2": [ "live.text[694]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-41::obj-2": [ "live.text[695]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-42::obj-2": [ "live.text[696]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-43::obj-2": [ "live.text[618]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-44::obj-2": [ "live.text[619]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-45::obj-2": [ "live.text[620]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-46::obj-2": [ "live.text[621]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-47::obj-2": [ "live.text[622]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-48::obj-2": [ "live.text[630]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-49::obj-2": [ "live.text[631]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-50::obj-2": [ "live.text[632]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-56": [ "live.numbox[234]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-74::obj-2": [ "live.text[616]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-28::obj-9": [ "live.text[633]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-34::obj-1": [ "live.text[635]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-34::obj-18": [ "live.text[638]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-34::obj-2": [ "live.text[636]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-34::obj-31": [ "live.text[634]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-34::obj-37": [ "live.numbox[235]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-34::obj-39": [ "live.numbox[236]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-34::obj-42": [ "live.text[637]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-107::obj-35": [ "live.text[442]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-107::obj-53": [ "live.text[443]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-107::obj-66": [ "live.numbox[216]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-107::obj-72": [ "live.numbox[217]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-12": [ "live.text[553]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-123::obj-35": [ "live.text[406]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-123::obj-53": [ "live.text[405]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-123::obj-66": [ "live.numbox[212]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-123::obj-72": [ "live.numbox[213]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-1::obj-35": [ "live.text[444]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-1::obj-53": [ "live.text[445]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-1::obj-66": [ "live.numbox[218]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-1::obj-72": [ "live.numbox[219]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-36::obj-35": [ "live.text[446]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-36::obj-53": [ "live.text[447]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-36::obj-66": [ "live.numbox[220]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-36::obj-72": [ "live.numbox[221]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-40::obj-35": [ "live.text[448]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-40::obj-53": [ "live.text[449]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-40::obj-66": [ "live.numbox[222]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-40::obj-72": [ "live.numbox[223]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-41::obj-35": [ "live.text[504]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-41::obj-53": [ "live.text[503]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-41::obj-66": [ "live.numbox[224]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-41::obj-72": [ "live.numbox[225]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-42::obj-35": [ "live.text[541]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-42::obj-53": [ "live.text[540]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-42::obj-66": [ "live.numbox[396]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-42::obj-72": [ "live.numbox[397]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-43::obj-35": [ "live.text[542]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-43::obj-53": [ "live.text[493]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-43::obj-66": [ "live.numbox[411]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-43::obj-72": [ "live.numbox[412]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-44::obj-35": [ "live.text[494]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-44::obj-53": [ "live.text[543]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-44::obj-66": [ "live.numbox[227]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-44::obj-72": [ "live.numbox[226]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-45::obj-35": [ "live.text[545]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-45::obj-53": [ "live.text[544]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-45::obj-66": [ "live.numbox[229]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-45::obj-72": [ "live.numbox[228]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-46::obj-35": [ "live.text[547]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-46::obj-53": [ "live.text[546]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-46::obj-66": [ "live.numbox[398]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-46::obj-72": [ "live.numbox[230]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-47::obj-35": [ "live.text[549]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-47::obj-53": [ "live.text[548]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-47::obj-66": [ "live.numbox[399]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-47::obj-72": [ "live.numbox[400]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-48::obj-35": [ "live.text[551]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-48::obj-53": [ "live.text[550]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-48::obj-66": [ "live.numbox[413]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-48::obj-72": [ "live.numbox[414]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-49::obj-35": [ "live.text[451]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-49::obj-53": [ "live.text[450]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-49::obj-66": [ "live.numbox[415]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-49::obj-72": [ "live.numbox[416]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-50::obj-35": [ "live.text[452]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-50::obj-53": [ "live.text[453]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-50::obj-66": [ "live.numbox[417]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-50::obj-72": [ "live.numbox[418]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-53": [ "live.text[552]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-56": [ "live.numbox[419]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-72": [ "live.numbox[231]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-74::obj-35": [ "live.text[415]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-74::obj-53": [ "live.text[414]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-74::obj-66": [ "live.numbox[214]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-42::obj-74::obj-72": [ "live.numbox[215]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-107::obj-15": [ "live.text[457]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-107::obj-18": [ "live.text[496]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-107::obj-48": [ "live.text[407]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-107::obj-8": [ "live.text[458]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-123::obj-15": [ "live.text[555]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-123::obj-18": [ "live.text[556]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-123::obj-48": [ "live.text[557]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-123::obj-8": [ "live.text[554]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-1::obj-15": [ "live.text[408]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-1::obj-18": [ "live.text[459]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-1::obj-48": [ "live.text[409]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-1::obj-8": [ "live.text[460]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-2": [ "live.text[579]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-36::obj-15": [ "live.text[461]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-36::obj-18": [ "live.text[462]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-36::obj-48": [ "live.text[463]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-36::obj-8": [ "live.text[505]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-4": [ "live.text[578]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-40::obj-15": [ "live.text[507]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-40::obj-18": [ "live.text[464]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-40::obj-48": [ "live.text[506]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-40::obj-8": [ "live.text[465]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-41::obj-15": [ "live.text[509]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-41::obj-18": [ "live.text[466]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-41::obj-48": [ "live.text[508]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-41::obj-8": [ "live.text[467]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-42::obj-15": [ "live.text[628]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-42::obj-18": [ "live.text[416]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-42::obj-48": [ "live.text[468]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-42::obj-8": [ "live.text[417]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-43::obj-15": [ "live.text[682]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-43::obj-18": [ "live.text[683]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-43::obj-48": [ "live.text[629]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-43::obj-8": [ "live.text[681]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-44::obj-15": [ "live.text[471]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-44::obj-18": [ "live.text[558]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-44::obj-48": [ "live.text[469]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-44::obj-8": [ "live.text[470]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-45::obj-15": [ "live.text[510]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-45::obj-18": [ "live.text[511]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-45::obj-48": [ "live.text[472]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-45::obj-8": [ "live.text[473]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-46::obj-15": [ "live.text[560]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-46::obj-18": [ "live.text[561]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-46::obj-48": [ "live.text[512]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-46::obj-8": [ "live.text[559]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-47::obj-15": [ "live.text[563]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-47::obj-18": [ "live.text[564]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-47::obj-48": [ "live.text[565]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-47::obj-8": [ "live.text[562]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-48::obj-15": [ "live.text[567]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-48::obj-18": [ "live.text[568]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-48::obj-48": [ "live.text[569]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-48::obj-8": [ "live.text[566]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-49::obj-15": [ "live.text[571]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-49::obj-18": [ "live.text[572]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-49::obj-48": [ "live.text[573]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-49::obj-8": [ "live.text[570]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-5": [ "live.text[580]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-50::obj-15": [ "live.text[574]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-50::obj-18": [ "live.text[575]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-50::obj-48": [ "live.text[576]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-50::obj-8": [ "live.text[577]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-56": [ "live.numbox[232]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-74::obj-15": [ "live.text[455]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-74::obj-18": [ "live.text[456]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-74::obj-48": [ "live.text[495]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-49::obj-74::obj-8": [ "live.text[454]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-107::obj-20": [ "Show Particle Settings[19]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-107::obj-24": [ "live.text[587]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-107::obj-35": [ "live.text[588]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-107::obj-8": [ "live.text[665]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-107::obj-9": [ "slider-[34]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-123::obj-20": [ "Show Particle Settings[17]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-123::obj-24": [ "live.text[582]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-123::obj-35": [ "live.text[583]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-123::obj-8": [ "live.text[581]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-123::obj-9": [ "slider-[32]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-1::obj-20": [ "Show Particle Settings[20]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-1::obj-24": [ "live.text[666]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-1::obj-35": [ "live.text[684]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-1::obj-8": [ "live.text[589]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-1::obj-9": [ "slider-[35]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-35": [ "live.text[70]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-36::obj-20": [ "Show Particle Settings[21]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-36::obj-24": [ "live.text[590]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-36::obj-35": [ "live.text[591]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-36::obj-8": [ "live.text[592]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-36::obj-9": [ "slider-[36]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-38": [ "live.text[71]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-4": [ "live.text[613]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-40::obj-20": [ "Show Particle Settings[22]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-40::obj-24": [ "live.text[594]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-40::obj-35": [ "live.text[595]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-40::obj-8": [ "live.text[593]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-40::obj-9": [ "slider-[37]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-41::obj-20": [ "Show Particle Settings[23]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-41::obj-24": [ "live.text[596]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-41::obj-35": [ "live.text[598]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-41::obj-8": [ "live.text[597]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-41::obj-9": [ "slider-[38]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-42::obj-20": [ "Show Particle Settings[24]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-42::obj-24": [ "live.text[686]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-42::obj-35": [ "live.text[687]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-42::obj-8": [ "live.text[685]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-42::obj-9": [ "slider-[39]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-43::obj-20": [ "Show Particle Settings[25]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-43::obj-24": [ "live.text[689]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-43::obj-35": [ "live.text[690]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-43::obj-8": [ "live.text[688]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-43::obj-9": [ "slider-[40]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-44::obj-20": [ "Show Particle Settings[26]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-44::obj-24": [ "live.text[692]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-44::obj-35": [ "live.text[749]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-44::obj-8": [ "live.text[691]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-44::obj-9": [ "slider-[41]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-45::obj-20": [ "Show Particle Settings[27]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-45::obj-24": [ "live.text[824]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-45::obj-35": [ "live.text[599]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-45::obj-8": [ "live.text[752]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-45::obj-9": [ "slider-[42]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-46::obj-20": [ "Show Particle Settings[28]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-46::obj-24": [ "live.text[601]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-46::obj-35": [ "live.text[602]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-46::obj-8": [ "live.text[600]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-46::obj-9": [ "slider-[43]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-47::obj-20": [ "Show Particle Settings[29]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-47::obj-24": [ "live.text[604]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-47::obj-35": [ "live.text[605]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-47::obj-8": [ "live.text[603]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-47::obj-9": [ "slider-[44]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-48::obj-20": [ "Show Particle Settings[30]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-48::obj-24": [ "live.text[607]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-48::obj-35": [ "live.text[608]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-48::obj-8": [ "live.text[606]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-48::obj-9": [ "slider-[45]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-49::obj-20": [ "Show Particle Settings[31]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-49::obj-24": [ "live.text[610]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-49::obj-35": [ "live.text[611]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-49::obj-8": [ "live.text[609]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-49::obj-9": [ "slider-[46]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-50::obj-20": [ "Show Particle Settings[32]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-50::obj-24": [ "live.text[475]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-50::obj-35": [ "live.text[612]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-50::obj-8": [ "live.text[474]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-50::obj-9": [ "slider-[47]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-56": [ "live.numbox[233]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-74::obj-20": [ "Show Particle Settings[18]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-74::obj-24": [ "live.text[585]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-74::obj-35": [ "live.text[586]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-74::obj-8": [ "live.text[584]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-4::obj-74::obj-9": [ "slider-[33]", "slider-[2]", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-107::obj-35": [ "live.text[398]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-107::obj-53": [ "live.text[397]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-107::obj-66": [ "live.numbox[190]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-107::obj-68": [ "live.numbox[189]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-107::obj-72": [ "live.numbox[191]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-123::obj-35": [ "live.text[396]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-123::obj-53": [ "live.text[395]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-123::obj-66": [ "live.numbox[183]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-123::obj-68": [ "live.numbox[185]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-123::obj-72": [ "live.numbox[184]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-1::obj-35": [ "live.text[502]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-1::obj-53": [ "live.text[501]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-1::obj-66": [ "live.numbox[254]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-1::obj-68": [ "live.numbox[192]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-1::obj-72": [ "live.numbox[255]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-36::obj-35": [ "live.text[431]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-36::obj-53": [ "live.text[430]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-36::obj-66": [ "live.numbox[258]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-36::obj-68": [ "live.numbox[257]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-36::obj-72": [ "live.numbox[256]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-40::obj-35": [ "live.text[433]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-40::obj-53": [ "live.text[432]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-40::obj-66": [ "live.numbox[259]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-40::obj-68": [ "live.numbox[299]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-40::obj-72": [ "live.numbox[260]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-41::obj-35": [ "live.text[435]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-41::obj-53": [ "live.text[434]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-41::obj-66": [ "live.numbox[344]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-41::obj-68": [ "live.numbox[343]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-41::obj-72": [ "live.numbox[345]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-42::obj-35": [ "live.text[437]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-42::obj-53": [ "live.text[436]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-42::obj-66": [ "live.numbox[347]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-42::obj-68": [ "live.numbox[346]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-42::obj-72": [ "live.numbox[348]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-43::obj-35": [ "live.text[491]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-43::obj-53": [ "live.text[490]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-43::obj-66": [ "live.numbox[393]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-43::obj-68": [ "live.numbox[392]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-43::obj-72": [ "live.numbox[349]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-44::obj-35": [ "live.text[492]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-44::obj-53": [ "live.text[399]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-44::obj-66": [ "live.numbox[395]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-44::obj-68": [ "live.numbox[394]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-44::obj-72": [ "live.numbox[193]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-45::obj-35": [ "live.text[536]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-45::obj-53": [ "live.text[400]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-45::obj-66": [ "live.numbox[195]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-45::obj-68": [ "live.numbox[194]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-45::obj-72": [ "live.numbox[196]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-46::obj-35": [ "live.text[538]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-46::obj-53": [ "live.text[537]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-46::obj-66": [ "live.numbox[198]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-46::obj-68": [ "live.numbox[197]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-46::obj-72": [ "live.numbox[199]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-47::obj-35": [ "live.text[539]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-47::obj-53": [ "live.text[627]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-47::obj-66": [ "live.numbox[200]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-47::obj-68": [ "live.numbox[202]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-47::obj-72": [ "live.numbox[201]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-48::obj-35": [ "live.text[402]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-48::obj-53": [ "live.text[401]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-48::obj-66": [ "live.numbox[204]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-48::obj-68": [ "live.numbox[203]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-48::obj-72": [ "live.numbox[205]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-49::obj-35": [ "live.text[404]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-49::obj-53": [ "live.text[403]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-49::obj-66": [ "live.numbox[410]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-49::obj-68": [ "live.numbox[409]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-49::obj-72": [ "live.numbox[206]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-5": [ "live.text[441]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-50::obj-35": [ "live.text[439]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-50::obj-53": [ "live.text[438]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-50::obj-66": [ "live.numbox[209]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-50::obj-68": [ "live.numbox[208]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-50::obj-72": [ "live.numbox[207]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-53": [ "live.text[440]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-56": [ "live.numbox[210]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-72": [ "live.numbox[211]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-74::obj-35": [ "live.text[429]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-74::obj-53": [ "live.text[428]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-74::obj-66": [ "live.numbox[187]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-74::obj-68": [ "live.numbox[186]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-65::obj-74::obj-72": [ "live.numbox[188]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-78::obj-1": [ "live.text[746]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-78::obj-18": [ "live.text[745]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-78::obj-2": [ "live.text[744]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-78::obj-31": [ "live.text[614]", "live.text", 0 ],
+            "obj-22::obj-6.2::obj-78::obj-37": [ "live.numbox[455]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-78::obj-39": [ "live.numbox[456]", "live.numbox", 0 ],
+            "obj-22::obj-6.2::obj-78::obj-42": [ "live.text[747]", "live.text", 0 ],
             "obj-22::obj-8": [ "live.text[823]", "live.text", 0 ],
             "obj-28::obj-107::obj-2": [ "live.text[2]", "live.text", 0 ],
             "obj-28::obj-123::obj-2": [ "live.text[1346]", "live.text", 0 ],
@@ -2666,6 +3160,14 @@
             "obj-29::obj-33": [ "live.tab[5]", "live.tab", 0 ],
             "obj-29::obj-7": [ "live.text[177]", "live.text", 0 ],
             "obj-29::obj-70": [ "live.numbox[9]", "live.numbox", 0 ],
+            "parameterbanks": {
+                "0": {
+                    "index": 0,
+                    "name": "",
+                    "parameters": [ "-", "-", "-", "-", "-", "-", "-", "-" ],
+                    "buttons": [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+                }
+            },
             "parameter_overrides": {
                 "obj-13::obj-9": {
                     "parameter_longname": "live.text[16]"
@@ -2678,7 +3180,7 @@
                     "parameter_unitstyle": 10
                 },
                 "obj-211::obj-11": {
-                    "parameter_range": [ 1, 1 ]
+                    "parameter_range": [ 1, 2 ]
                 },
                 "obj-211::obj-6.1::obj-10::obj-2": {
                     "parameter_longname": "live.text[30]"
@@ -2991,11 +3493,340 @@
                 "obj-211::obj-6.1::obj-94::obj-8": {
                     "parameter_longname": "live.numbox[18]"
                 },
+                "obj-211::obj-6.2::obj-10::obj-2": {
+                    "parameter_longname": "live.text[342]"
+                },
+                "obj-211::obj-6.2::obj-10::obj-22": {
+                    "parameter_longname": "live.text[343]"
+                },
+                "obj-211::obj-6.2::obj-10::obj-48": {
+                    "parameter_longname": "live.text[341]"
+                },
+                "obj-211::obj-6.2::obj-10::obj-6": {
+                    "parameter_longname": "live.text[340]"
+                },
+                "obj-211::obj-6.2::obj-15::obj-2": {
+                    "parameter_longname": "live.text[345]"
+                },
+                "obj-211::obj-6.2::obj-15::obj-22": {
+                    "parameter_longname": "live.text[346]"
+                },
+                "obj-211::obj-6.2::obj-15::obj-48": {
+                    "parameter_longname": "live.text[344]"
+                },
+                "obj-211::obj-6.2::obj-15::obj-6": {
+                    "parameter_longname": "live.text[347]"
+                },
+                "obj-211::obj-6.2::obj-16::obj-2": {
+                    "parameter_longname": "live.text[480]"
+                },
+                "obj-211::obj-6.2::obj-16::obj-22": {
+                    "parameter_longname": "live.text[339]"
+                },
+                "obj-211::obj-6.2::obj-16::obj-48": {
+                    "parameter_longname": "live.text[338]"
+                },
+                "obj-211::obj-6.2::obj-16::obj-6": {
+                    "parameter_longname": "live.text[337]"
+                },
+                "obj-211::obj-6.2::obj-17::obj-2": {
+                    "parameter_longname": "live.text[335]"
+                },
+                "obj-211::obj-6.2::obj-17::obj-22": {
+                    "parameter_longname": "live.text[336]"
+                },
+                "obj-211::obj-6.2::obj-17::obj-48": {
+                    "parameter_longname": "live.text[334]"
+                },
+                "obj-211::obj-6.2::obj-17::obj-6": {
+                    "parameter_longname": "live.text[333]"
+                },
+                "obj-211::obj-6.2::obj-18::obj-21": {
+                    "parameter_longname": "live.text[356]"
+                },
+                "obj-211::obj-6.2::obj-18::obj-35": {
+                    "parameter_longname": "live.text[358]"
+                },
+                "obj-211::obj-6.2::obj-18::obj-38": {
+                    "parameter_longname": "live.text[357]"
+                },
+                "obj-211::obj-6.2::obj-18::obj-56": {
+                    "parameter_longname": "live.numbox[158]"
+                },
+                "obj-211::obj-6.2::obj-21::obj-2": {
+                    "parameter_longname": "live.text[332]"
+                },
+                "obj-211::obj-6.2::obj-21::obj-22": {
+                    "parameter_longname": "live.text[329]"
+                },
+                "obj-211::obj-6.2::obj-21::obj-48": {
+                    "parameter_longname": "live.text[331]"
+                },
+                "obj-211::obj-6.2::obj-21::obj-6": {
+                    "parameter_longname": "live.text[330]"
+                },
+                "obj-211::obj-6.2::obj-28::obj-125::obj-6::obj-12": {
+                    "parameter_longname": "live.text[426]"
+                },
+                "obj-211::obj-6.2::obj-28::obj-125::obj-6::obj-13": {
+                    "parameter_longname": "live.numbox[169]"
+                },
+                "obj-211::obj-6.2::obj-28::obj-13": {
+                    "parameter_longname": "live.numbox[170]"
+                },
+                "obj-211::obj-6.2::obj-28::obj-15": {
+                    "parameter_longname": "live.text[427]"
+                },
+                "obj-211::obj-6.2::obj-2::obj-2": {
+                    "parameter_longname": "live.text[422]"
+                },
+                "obj-211::obj-6.2::obj-2::obj-22": {
+                    "parameter_longname": "live.text[423]"
+                },
+                "obj-211::obj-6.2::obj-2::obj-48": {
+                    "parameter_longname": "live.text[425]"
+                },
+                "obj-211::obj-6.2::obj-2::obj-6": {
+                    "parameter_longname": "live.text[424]"
+                },
+                "obj-211::obj-6.2::obj-30::obj-21": {
+                    "parameter_longname": "live.text[359]"
+                },
+                "obj-211::obj-6.2::obj-30::obj-35": {
+                    "parameter_longname": "live.text[361]"
+                },
+                "obj-211::obj-6.2::obj-30::obj-38": {
+                    "parameter_longname": "live.text[360]"
+                },
+                "obj-211::obj-6.2::obj-30::obj-56": {
+                    "parameter_longname": "live.numbox[159]"
+                },
+                "obj-211::obj-6.2::obj-31::obj-125::obj-6::obj-12": {
+                    "parameter_longname": "live.text[482]"
+                },
+                "obj-211::obj-6.2::obj-31::obj-125::obj-6::obj-13": {
+                    "parameter_longname": "live.numbox[177]"
+                },
+                "obj-211::obj-6.2::obj-31::obj-13": {
+                    "parameter_longname": "live.numbox[178]"
+                },
+                "obj-211::obj-6.2::obj-31::obj-15": {
+                    "parameter_longname": "live.text[483]"
+                },
+                "obj-211::obj-6.2::obj-36::obj-39": {
+                    "parameter_longname": "live.numbox[176]",
+                    "parameter_unitstyle": 0
+                },
+                "obj-211::obj-6.2::obj-36::obj-6": {
+                    "parameter_longname": "live.text[481]"
+                },
+                "obj-211::obj-6.2::obj-39::obj-21": {
+                    "parameter_longname": "live.text[363]"
+                },
+                "obj-211::obj-6.2::obj-39::obj-35": {
+                    "parameter_longname": "live.text[362]"
+                },
+                "obj-211::obj-6.2::obj-39::obj-38": {
+                    "parameter_longname": "live.text[364]"
+                },
+                "obj-211::obj-6.2::obj-39::obj-56": {
+                    "parameter_longname": "live.numbox[167]"
+                },
+                "obj-211::obj-6.2::obj-42::obj-2": {
+                    "parameter_longname": "live.text[365]"
+                },
+                "obj-211::obj-6.2::obj-42::obj-22": {
+                    "parameter_longname": "live.text[366]"
+                },
+                "obj-211::obj-6.2::obj-42::obj-48": {
+                    "parameter_longname": "live.text[290]"
+                },
+                "obj-211::obj-6.2::obj-42::obj-6": {
+                    "parameter_longname": "live.text[367]"
+                },
+                "obj-211::obj-6.2::obj-47::obj-2": {
+                    "parameter_longname": "live.text[374]"
+                },
+                "obj-211::obj-6.2::obj-47::obj-22": {
+                    "parameter_longname": "live.text[371]"
+                },
+                "obj-211::obj-6.2::obj-47::obj-48": {
+                    "parameter_longname": "live.text[373]"
+                },
+                "obj-211::obj-6.2::obj-47::obj-6": {
+                    "parameter_longname": "live.text[372]"
+                },
+                "obj-211::obj-6.2::obj-48::obj-2": {
+                    "parameter_longname": "live.text[370]"
+                },
+                "obj-211::obj-6.2::obj-48::obj-22": {
+                    "parameter_longname": "live.text[368]"
+                },
+                "obj-211::obj-6.2::obj-48::obj-48": {
+                    "parameter_longname": "live.text[369]"
+                },
+                "obj-211::obj-6.2::obj-48::obj-6": {
+                    "parameter_longname": "live.text[291]"
+                },
+                "obj-211::obj-6.2::obj-52::obj-125::obj-6::obj-12": {
+                    "parameter_longname": "live.text[385]"
+                },
+                "obj-211::obj-6.2::obj-52::obj-125::obj-6::obj-13": {
+                    "parameter_longname": "live.numbox[171]"
+                },
+                "obj-211::obj-6.2::obj-52::obj-13": {
+                    "parameter_longname": "live.numbox[172]"
+                },
+                "obj-211::obj-6.2::obj-52::obj-15": {
+                    "parameter_longname": "live.text[348]"
+                },
+                "obj-211::obj-6.2::obj-54::obj-21": {
+                    "parameter_longname": "live.text[387]"
+                },
+                "obj-211::obj-6.2::obj-54::obj-35": {
+                    "parameter_longname": "live.text[386]"
+                },
+                "obj-211::obj-6.2::obj-54::obj-38": {
+                    "parameter_longname": "live.text[388]"
+                },
+                "obj-211::obj-6.2::obj-54::obj-56": {
+                    "parameter_longname": "live.numbox[173]"
+                },
+                "obj-211::obj-6.2::obj-55::obj-7::obj-13": {
+                    "parameter_longname": "live.text[420]"
+                },
+                "obj-211::obj-6.2::obj-55::obj-7::obj-16": {
+                    "parameter_longname": "live.text[413]"
+                },
+                "obj-211::obj-6.2::obj-55::obj-7::obj-18": {
+                    "parameter_longname": "live.text[421]"
+                },
+                "obj-211::obj-6.2::obj-55::obj-7::obj-37": {
+                    "parameter_longname": "live.text[380]"
+                },
+                "obj-211::obj-6.2::obj-55::obj-7::obj-8": {
+                    "parameter_longname": "live.numbox[160]"
+                },
+                "obj-211::obj-6.2::obj-56::obj-35": {
+                    "parameter_longname": "live.text[376]"
+                },
+                "obj-211::obj-6.2::obj-56::obj-6": {
+                    "parameter_longname": "live.text[375]"
+                },
+                "obj-211::obj-6.2::obj-57::obj-21": {
+                    "parameter_longname": "live.text[391]"
+                },
+                "obj-211::obj-6.2::obj-57::obj-35": {
+                    "parameter_longname": "live.text[390]"
+                },
+                "obj-211::obj-6.2::obj-57::obj-38": {
+                    "parameter_longname": "live.text[389]"
+                },
+                "obj-211::obj-6.2::obj-57::obj-56": {
+                    "parameter_longname": "live.numbox[174]"
+                },
+                "obj-211::obj-6.2::obj-58::obj-21": {
+                    "parameter_longname": "live.text[394]"
+                },
+                "obj-211::obj-6.2::obj-58::obj-35": {
+                    "parameter_longname": "live.text[393]"
+                },
+                "obj-211::obj-6.2::obj-58::obj-38": {
+                    "parameter_longname": "live.text[392]"
+                },
+                "obj-211::obj-6.2::obj-58::obj-56": {
+                    "parameter_longname": "live.numbox[175]"
+                },
+                "obj-211::obj-6.2::obj-65::obj-21": {
+                    "parameter_longname": "live.text[355]"
+                },
+                "obj-211::obj-6.2::obj-65::obj-35": {
+                    "parameter_longname": "live.text[354]"
+                },
+                "obj-211::obj-6.2::obj-65::obj-38": {
+                    "parameter_longname": "live.text[419]"
+                },
+                "obj-211::obj-6.2::obj-65::obj-56": {
+                    "parameter_longname": "live.numbox[157]"
+                },
+                "obj-211::obj-6.2::obj-6::obj-2": {
+                    "parameter_longname": "live.text[325]"
+                },
+                "obj-211::obj-6.2::obj-6::obj-22": {
+                    "parameter_longname": "live.text[327]"
+                },
+                "obj-211::obj-6.2::obj-6::obj-48": {
+                    "parameter_longname": "live.text[328]"
+                },
+                "obj-211::obj-6.2::obj-6::obj-6": {
+                    "parameter_longname": "live.text[326]"
+                },
+                "obj-211::obj-6.2::obj-73::obj-2": {
+                    "parameter_longname": "live.text[412]"
+                },
+                "obj-211::obj-6.2::obj-73::obj-22": {
+                    "parameter_longname": "live.text[378]"
+                },
+                "obj-211::obj-6.2::obj-73::obj-48": {
+                    "parameter_longname": "live.text[411]"
+                },
+                "obj-211::obj-6.2::obj-73::obj-6": {
+                    "parameter_longname": "live.text[379]"
+                },
+                "obj-211::obj-6.2::obj-74::obj-7::obj-13": {
+                    "parameter_longname": "live.text[383]"
+                },
+                "obj-211::obj-6.2::obj-74::obj-7::obj-16": {
+                    "parameter_longname": "live.text[382]"
+                },
+                "obj-211::obj-6.2::obj-74::obj-7::obj-18": {
+                    "parameter_longname": "live.text[384]"
+                },
+                "obj-211::obj-6.2::obj-74::obj-7::obj-37": {
+                    "parameter_longname": "live.text[381]"
+                },
+                "obj-211::obj-6.2::obj-74::obj-7::obj-8": {
+                    "parameter_longname": "live.numbox[161]"
+                },
+                "obj-211::obj-6.2::obj-93::obj-39": {
+                    "parameter_longname": "live.numbox[168]",
+                    "parameter_unitstyle": 5
+                },
+                "obj-211::obj-6.2::obj-93::obj-6": {
+                    "parameter_longname": "live.text[377]"
+                },
+                "obj-211::obj-6.2::obj-94::obj-13": {
+                    "parameter_longname": "live.text[485]"
+                },
+                "obj-211::obj-6.2::obj-94::obj-16": {
+                    "parameter_longname": "live.text[484]"
+                },
+                "obj-211::obj-6.2::obj-94::obj-18": {
+                    "parameter_longname": "live.text[486]"
+                },
+                "obj-211::obj-6.2::obj-94::obj-37": {
+                    "parameter_longname": "live.text[487]"
+                },
+                "obj-211::obj-6.2::obj-94::obj-8": {
+                    "parameter_longname": "live.numbox[179]"
+                },
+                "obj-211::obj-6.2::obj-97::obj-125::obj-6::obj-12": {
+                    "parameter_longname": "live.text[488]"
+                },
+                "obj-211::obj-6.2::obj-97::obj-125::obj-6::obj-13": {
+                    "parameter_longname": "live.numbox[180]"
+                },
+                "obj-211::obj-6.2::obj-97::obj-13": {
+                    "parameter_longname": "live.numbox[181]"
+                },
+                "obj-211::obj-6.2::obj-97::obj-15": {
+                    "parameter_longname": "live.text[531]"
+                },
                 "obj-211::obj-8": {
                     "parameter_longname": "live.text[94]"
                 },
                 "obj-22::obj-11": {
-                    "parameter_range": [ 1, 1 ]
+                    "parameter_range": [ 1, 2 ]
                 },
                 "obj-22::obj-6.1::obj-15::obj-107::obj-2": {
                     "parameter_longname": "live.text[315]"
@@ -3932,6 +4763,1035 @@
                 },
                 "obj-22::obj-6.1::obj-78::obj-42": {
                     "parameter_longname": "live.text[1073]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-107::obj-2": {
+                    "parameter_longname": "live.text[699]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-123::obj-2": {
+                    "parameter_longname": "live.text[697]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-1::obj-2": {
+                    "parameter_longname": "live.text[700]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-36::obj-2": {
+                    "parameter_longname": "live.text[753]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-40::obj-2": {
+                    "parameter_longname": "live.text[754]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-41::obj-2": {
+                    "parameter_longname": "live.text[497]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-42::obj-2": {
+                    "parameter_longname": "live.text[871]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-43::obj-2": {
+                    "parameter_longname": "live.text[498]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-44::obj-2": {
+                    "parameter_longname": "live.text[812]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-45::obj-2": {
+                    "parameter_longname": "live.text[499]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-46::obj-2": {
+                    "parameter_longname": "live.text[829]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-47::obj-2": {
+                    "parameter_longname": "live.text[623]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-48::obj-2": {
+                    "parameter_longname": "live.text[624]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-49::obj-2": {
+                    "parameter_longname": "live.text[755]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-50::obj-2": {
+                    "parameter_longname": "live.text[756]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-56": {
+                    "parameter_longname": "live.numbox[237]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-74::obj-2": {
+                    "parameter_longname": "live.text[698]"
+                },
+                "obj-22::obj-6.2::obj-15::obj-9": {
+                    "parameter_longname": "live.text[757]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-1": {
+                    "parameter_longname": "live.text[762]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-43": {
+                    "parameter_longname": "live.text[832]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-46": {
+                    "parameter_longname": "live.text[830]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-48": {
+                    "parameter_longname": "live.text[760]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-50": {
+                    "parameter_longname": "live.text[763]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-51": {
+                    "parameter_longname": "live.text[758]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-52": {
+                    "parameter_longname": "live.numbox[262]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-53": {
+                    "parameter_longname": "live.text[831]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-55": {
+                    "parameter_longname": "live.text[761]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-62": {
+                    "parameter_longname": "live.numbox[261]"
+                },
+                "obj-22::obj-6.2::obj-1::obj-64": {
+                    "parameter_longname": "live.text[759]"
+                },
+                "obj-22::obj-6.2::obj-21::obj-13": {
+                    "parameter_longname": "live.numbox[182]"
+                },
+                "obj-22::obj-6.2::obj-21::obj-9": {
+                    "parameter_longname": "live.text[489]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-107::obj-2": {
+                    "parameter_longname": "live.text[617]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-123::obj-2": {
+                    "parameter_longname": "live.text[615]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-1::obj-2": {
+                    "parameter_longname": "live.text[667]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-36::obj-2": {
+                    "parameter_longname": "live.text[693]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-40::obj-2": {
+                    "parameter_longname": "live.text[694]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-41::obj-2": {
+                    "parameter_longname": "live.text[695]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-42::obj-2": {
+                    "parameter_longname": "live.text[696]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-43::obj-2": {
+                    "parameter_longname": "live.text[618]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-44::obj-2": {
+                    "parameter_longname": "live.text[619]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-45::obj-2": {
+                    "parameter_longname": "live.text[620]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-46::obj-2": {
+                    "parameter_longname": "live.text[621]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-47::obj-2": {
+                    "parameter_longname": "live.text[622]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-48::obj-2": {
+                    "parameter_longname": "live.text[630]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-49::obj-2": {
+                    "parameter_longname": "live.text[631]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-50::obj-2": {
+                    "parameter_longname": "live.text[632]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-56": {
+                    "parameter_longname": "live.numbox[234]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-74::obj-2": {
+                    "parameter_longname": "live.text[616]"
+                },
+                "obj-22::obj-6.2::obj-28::obj-9": {
+                    "parameter_longname": "live.text[633]"
+                },
+                "obj-22::obj-6.2::obj-34::obj-1": {
+                    "parameter_longname": "live.text[635]"
+                },
+                "obj-22::obj-6.2::obj-34::obj-18": {
+                    "parameter_longname": "live.text[638]"
+                },
+                "obj-22::obj-6.2::obj-34::obj-2": {
+                    "parameter_longname": "live.text[636]"
+                },
+                "obj-22::obj-6.2::obj-34::obj-31": {
+                    "parameter_longname": "live.text[634]"
+                },
+                "obj-22::obj-6.2::obj-34::obj-37": {
+                    "parameter_longname": "live.numbox[235]"
+                },
+                "obj-22::obj-6.2::obj-34::obj-39": {
+                    "parameter_longname": "live.numbox[236]"
+                },
+                "obj-22::obj-6.2::obj-34::obj-42": {
+                    "parameter_longname": "live.text[637]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-107::obj-35": {
+                    "parameter_longname": "live.text[442]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-107::obj-53": {
+                    "parameter_longname": "live.text[443]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-107::obj-66": {
+                    "parameter_longname": "live.numbox[216]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-107::obj-72": {
+                    "parameter_longname": "live.numbox[217]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-12": {
+                    "parameter_longname": "live.text[553]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-123::obj-35": {
+                    "parameter_longname": "live.text[406]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-123::obj-53": {
+                    "parameter_longname": "live.text[405]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-123::obj-66": {
+                    "parameter_longname": "live.numbox[212]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-123::obj-72": {
+                    "parameter_longname": "live.numbox[213]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-1::obj-35": {
+                    "parameter_longname": "live.text[444]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-1::obj-53": {
+                    "parameter_longname": "live.text[445]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-1::obj-66": {
+                    "parameter_longname": "live.numbox[218]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-1::obj-72": {
+                    "parameter_longname": "live.numbox[219]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-36::obj-35": {
+                    "parameter_longname": "live.text[446]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-36::obj-53": {
+                    "parameter_longname": "live.text[447]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-36::obj-66": {
+                    "parameter_longname": "live.numbox[220]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-36::obj-72": {
+                    "parameter_longname": "live.numbox[221]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-40::obj-35": {
+                    "parameter_longname": "live.text[448]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-40::obj-53": {
+                    "parameter_longname": "live.text[449]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-40::obj-66": {
+                    "parameter_longname": "live.numbox[222]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-40::obj-72": {
+                    "parameter_longname": "live.numbox[223]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-41::obj-35": {
+                    "parameter_longname": "live.text[504]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-41::obj-53": {
+                    "parameter_longname": "live.text[503]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-41::obj-66": {
+                    "parameter_longname": "live.numbox[224]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-41::obj-72": {
+                    "parameter_longname": "live.numbox[225]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-42::obj-35": {
+                    "parameter_longname": "live.text[541]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-42::obj-53": {
+                    "parameter_longname": "live.text[540]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-42::obj-66": {
+                    "parameter_longname": "live.numbox[396]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-42::obj-72": {
+                    "parameter_longname": "live.numbox[397]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-43::obj-35": {
+                    "parameter_longname": "live.text[542]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-43::obj-53": {
+                    "parameter_longname": "live.text[493]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-43::obj-66": {
+                    "parameter_longname": "live.numbox[411]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-43::obj-72": {
+                    "parameter_longname": "live.numbox[412]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-44::obj-35": {
+                    "parameter_longname": "live.text[494]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-44::obj-53": {
+                    "parameter_longname": "live.text[543]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-44::obj-66": {
+                    "parameter_longname": "live.numbox[227]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-44::obj-72": {
+                    "parameter_longname": "live.numbox[226]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-45::obj-35": {
+                    "parameter_longname": "live.text[545]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-45::obj-53": {
+                    "parameter_longname": "live.text[544]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-45::obj-66": {
+                    "parameter_longname": "live.numbox[229]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-45::obj-72": {
+                    "parameter_longname": "live.numbox[228]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-46::obj-35": {
+                    "parameter_longname": "live.text[547]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-46::obj-53": {
+                    "parameter_longname": "live.text[546]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-46::obj-66": {
+                    "parameter_longname": "live.numbox[398]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-46::obj-72": {
+                    "parameter_longname": "live.numbox[230]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-47::obj-35": {
+                    "parameter_longname": "live.text[549]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-47::obj-53": {
+                    "parameter_longname": "live.text[548]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-47::obj-66": {
+                    "parameter_longname": "live.numbox[399]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-47::obj-72": {
+                    "parameter_longname": "live.numbox[400]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-48::obj-35": {
+                    "parameter_longname": "live.text[551]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-48::obj-53": {
+                    "parameter_longname": "live.text[550]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-48::obj-66": {
+                    "parameter_longname": "live.numbox[413]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-48::obj-72": {
+                    "parameter_longname": "live.numbox[414]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-49::obj-35": {
+                    "parameter_longname": "live.text[451]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-49::obj-53": {
+                    "parameter_longname": "live.text[450]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-49::obj-66": {
+                    "parameter_longname": "live.numbox[415]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-49::obj-72": {
+                    "parameter_longname": "live.numbox[416]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-50::obj-35": {
+                    "parameter_longname": "live.text[452]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-50::obj-53": {
+                    "parameter_longname": "live.text[453]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-50::obj-66": {
+                    "parameter_longname": "live.numbox[417]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-50::obj-72": {
+                    "parameter_longname": "live.numbox[418]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-53": {
+                    "parameter_longname": "live.text[552]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-56": {
+                    "parameter_longname": "live.numbox[419]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-72": {
+                    "parameter_longname": "live.numbox[231]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-74::obj-35": {
+                    "parameter_longname": "live.text[415]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-74::obj-53": {
+                    "parameter_longname": "live.text[414]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-74::obj-66": {
+                    "parameter_longname": "live.numbox[214]"
+                },
+                "obj-22::obj-6.2::obj-42::obj-74::obj-72": {
+                    "parameter_longname": "live.numbox[215]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-107::obj-15": {
+                    "parameter_longname": "live.text[457]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-107::obj-18": {
+                    "parameter_longname": "live.text[496]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-107::obj-48": {
+                    "parameter_longname": "live.text[407]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-107::obj-8": {
+                    "parameter_longname": "live.text[458]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-123::obj-15": {
+                    "parameter_longname": "live.text[555]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-123::obj-18": {
+                    "parameter_longname": "live.text[556]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-123::obj-48": {
+                    "parameter_longname": "live.text[557]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-123::obj-8": {
+                    "parameter_longname": "live.text[554]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-1::obj-15": {
+                    "parameter_longname": "live.text[408]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-1::obj-18": {
+                    "parameter_longname": "live.text[459]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-1::obj-48": {
+                    "parameter_longname": "live.text[409]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-1::obj-8": {
+                    "parameter_longname": "live.text[460]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-2": {
+                    "parameter_longname": "live.text[579]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-36::obj-15": {
+                    "parameter_longname": "live.text[461]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-36::obj-18": {
+                    "parameter_longname": "live.text[462]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-36::obj-48": {
+                    "parameter_longname": "live.text[463]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-36::obj-8": {
+                    "parameter_longname": "live.text[505]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-4": {
+                    "parameter_longname": "live.text[578]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-40::obj-15": {
+                    "parameter_longname": "live.text[507]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-40::obj-18": {
+                    "parameter_longname": "live.text[464]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-40::obj-48": {
+                    "parameter_longname": "live.text[506]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-40::obj-8": {
+                    "parameter_longname": "live.text[465]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-41::obj-15": {
+                    "parameter_longname": "live.text[509]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-41::obj-18": {
+                    "parameter_longname": "live.text[466]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-41::obj-48": {
+                    "parameter_longname": "live.text[508]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-41::obj-8": {
+                    "parameter_longname": "live.text[467]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-42::obj-15": {
+                    "parameter_longname": "live.text[628]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-42::obj-18": {
+                    "parameter_longname": "live.text[416]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-42::obj-48": {
+                    "parameter_longname": "live.text[468]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-42::obj-8": {
+                    "parameter_longname": "live.text[417]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-43::obj-15": {
+                    "parameter_longname": "live.text[682]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-43::obj-18": {
+                    "parameter_longname": "live.text[683]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-43::obj-48": {
+                    "parameter_longname": "live.text[629]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-43::obj-8": {
+                    "parameter_longname": "live.text[681]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-44::obj-15": {
+                    "parameter_longname": "live.text[471]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-44::obj-18": {
+                    "parameter_longname": "live.text[558]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-44::obj-48": {
+                    "parameter_longname": "live.text[469]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-44::obj-8": {
+                    "parameter_longname": "live.text[470]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-45::obj-15": {
+                    "parameter_longname": "live.text[510]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-45::obj-18": {
+                    "parameter_longname": "live.text[511]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-45::obj-48": {
+                    "parameter_longname": "live.text[472]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-45::obj-8": {
+                    "parameter_longname": "live.text[473]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-46::obj-15": {
+                    "parameter_longname": "live.text[560]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-46::obj-18": {
+                    "parameter_longname": "live.text[561]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-46::obj-48": {
+                    "parameter_longname": "live.text[512]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-46::obj-8": {
+                    "parameter_longname": "live.text[559]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-47::obj-15": {
+                    "parameter_longname": "live.text[563]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-47::obj-18": {
+                    "parameter_longname": "live.text[564]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-47::obj-48": {
+                    "parameter_longname": "live.text[565]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-47::obj-8": {
+                    "parameter_longname": "live.text[562]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-48::obj-15": {
+                    "parameter_longname": "live.text[567]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-48::obj-18": {
+                    "parameter_longname": "live.text[568]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-48::obj-48": {
+                    "parameter_longname": "live.text[569]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-48::obj-8": {
+                    "parameter_longname": "live.text[566]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-49::obj-15": {
+                    "parameter_longname": "live.text[571]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-49::obj-18": {
+                    "parameter_longname": "live.text[572]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-49::obj-48": {
+                    "parameter_longname": "live.text[573]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-49::obj-8": {
+                    "parameter_longname": "live.text[570]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-5": {
+                    "parameter_longname": "live.text[580]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-50::obj-15": {
+                    "parameter_longname": "live.text[574]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-50::obj-18": {
+                    "parameter_longname": "live.text[575]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-50::obj-48": {
+                    "parameter_longname": "live.text[576]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-50::obj-8": {
+                    "parameter_longname": "live.text[577]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-56": {
+                    "parameter_longname": "live.numbox[232]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-74::obj-15": {
+                    "parameter_longname": "live.text[455]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-74::obj-18": {
+                    "parameter_longname": "live.text[456]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-74::obj-48": {
+                    "parameter_longname": "live.text[495]"
+                },
+                "obj-22::obj-6.2::obj-49::obj-74::obj-8": {
+                    "parameter_longname": "live.text[454]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-107::obj-20": {
+                    "parameter_longname": "Show Particle Settings[19]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-107::obj-24": {
+                    "parameter_longname": "live.text[587]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-107::obj-35": {
+                    "parameter_longname": "live.text[588]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-107::obj-8": {
+                    "parameter_longname": "live.text[665]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-123::obj-20": {
+                    "parameter_longname": "Show Particle Settings[17]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-123::obj-24": {
+                    "parameter_longname": "live.text[582]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-123::obj-35": {
+                    "parameter_longname": "live.text[583]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-123::obj-8": {
+                    "parameter_longname": "live.text[581]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-1::obj-20": {
+                    "parameter_longname": "Show Particle Settings[20]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-1::obj-24": {
+                    "parameter_longname": "live.text[666]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-1::obj-35": {
+                    "parameter_longname": "live.text[684]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-1::obj-8": {
+                    "parameter_longname": "live.text[589]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-36::obj-20": {
+                    "parameter_longname": "Show Particle Settings[21]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-36::obj-24": {
+                    "parameter_longname": "live.text[590]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-36::obj-35": {
+                    "parameter_longname": "live.text[591]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-36::obj-8": {
+                    "parameter_longname": "live.text[592]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-4": {
+                    "parameter_longname": "live.text[613]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-40::obj-20": {
+                    "parameter_longname": "Show Particle Settings[22]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-40::obj-24": {
+                    "parameter_longname": "live.text[594]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-40::obj-35": {
+                    "parameter_longname": "live.text[595]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-40::obj-8": {
+                    "parameter_longname": "live.text[593]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-41::obj-20": {
+                    "parameter_longname": "Show Particle Settings[23]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-41::obj-24": {
+                    "parameter_longname": "live.text[596]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-41::obj-35": {
+                    "parameter_longname": "live.text[598]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-41::obj-8": {
+                    "parameter_longname": "live.text[597]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-42::obj-20": {
+                    "parameter_longname": "Show Particle Settings[24]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-42::obj-24": {
+                    "parameter_longname": "live.text[686]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-42::obj-35": {
+                    "parameter_longname": "live.text[687]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-42::obj-8": {
+                    "parameter_longname": "live.text[685]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-43::obj-20": {
+                    "parameter_longname": "Show Particle Settings[25]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-43::obj-24": {
+                    "parameter_longname": "live.text[689]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-43::obj-35": {
+                    "parameter_longname": "live.text[690]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-43::obj-8": {
+                    "parameter_longname": "live.text[688]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-44::obj-20": {
+                    "parameter_longname": "Show Particle Settings[26]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-44::obj-24": {
+                    "parameter_longname": "live.text[692]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-44::obj-35": {
+                    "parameter_longname": "live.text[749]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-44::obj-8": {
+                    "parameter_longname": "live.text[691]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-45::obj-20": {
+                    "parameter_longname": "Show Particle Settings[27]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-45::obj-24": {
+                    "parameter_longname": "live.text[824]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-45::obj-35": {
+                    "parameter_longname": "live.text[599]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-45::obj-8": {
+                    "parameter_longname": "live.text[752]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-46::obj-20": {
+                    "parameter_longname": "Show Particle Settings[28]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-46::obj-24": {
+                    "parameter_longname": "live.text[601]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-46::obj-35": {
+                    "parameter_longname": "live.text[602]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-46::obj-8": {
+                    "parameter_longname": "live.text[600]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-47::obj-20": {
+                    "parameter_longname": "Show Particle Settings[29]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-47::obj-24": {
+                    "parameter_longname": "live.text[604]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-47::obj-35": {
+                    "parameter_longname": "live.text[605]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-47::obj-8": {
+                    "parameter_longname": "live.text[603]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-48::obj-20": {
+                    "parameter_longname": "Show Particle Settings[30]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-48::obj-24": {
+                    "parameter_longname": "live.text[607]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-48::obj-35": {
+                    "parameter_longname": "live.text[608]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-48::obj-8": {
+                    "parameter_longname": "live.text[606]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-49::obj-20": {
+                    "parameter_longname": "Show Particle Settings[31]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-49::obj-24": {
+                    "parameter_longname": "live.text[610]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-49::obj-35": {
+                    "parameter_longname": "live.text[611]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-49::obj-8": {
+                    "parameter_longname": "live.text[609]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-50::obj-20": {
+                    "parameter_longname": "Show Particle Settings[32]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-50::obj-24": {
+                    "parameter_longname": "live.text[475]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-50::obj-35": {
+                    "parameter_longname": "live.text[612]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-50::obj-8": {
+                    "parameter_longname": "live.text[474]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-56": {
+                    "parameter_longname": "live.numbox[233]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-74::obj-20": {
+                    "parameter_longname": "Show Particle Settings[18]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-74::obj-24": {
+                    "parameter_longname": "live.text[585]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-74::obj-35": {
+                    "parameter_longname": "live.text[586]"
+                },
+                "obj-22::obj-6.2::obj-4::obj-74::obj-8": {
+                    "parameter_longname": "live.text[584]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-107::obj-35": {
+                    "parameter_longname": "live.text[398]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-107::obj-53": {
+                    "parameter_longname": "live.text[397]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-107::obj-66": {
+                    "parameter_longname": "live.numbox[190]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-107::obj-68": {
+                    "parameter_longname": "live.numbox[189]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-107::obj-72": {
+                    "parameter_longname": "live.numbox[191]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-123::obj-35": {
+                    "parameter_longname": "live.text[396]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-123::obj-53": {
+                    "parameter_longname": "live.text[395]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-123::obj-66": {
+                    "parameter_longname": "live.numbox[183]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-123::obj-68": {
+                    "parameter_longname": "live.numbox[185]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-123::obj-72": {
+                    "parameter_longname": "live.numbox[184]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-1::obj-35": {
+                    "parameter_longname": "live.text[502]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-1::obj-53": {
+                    "parameter_longname": "live.text[501]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-1::obj-66": {
+                    "parameter_longname": "live.numbox[254]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-1::obj-68": {
+                    "parameter_longname": "live.numbox[192]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-1::obj-72": {
+                    "parameter_longname": "live.numbox[255]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-36::obj-35": {
+                    "parameter_longname": "live.text[431]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-36::obj-53": {
+                    "parameter_longname": "live.text[430]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-36::obj-66": {
+                    "parameter_longname": "live.numbox[258]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-36::obj-68": {
+                    "parameter_longname": "live.numbox[257]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-36::obj-72": {
+                    "parameter_longname": "live.numbox[256]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-40::obj-35": {
+                    "parameter_longname": "live.text[433]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-40::obj-53": {
+                    "parameter_longname": "live.text[432]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-40::obj-66": {
+                    "parameter_longname": "live.numbox[259]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-40::obj-68": {
+                    "parameter_longname": "live.numbox[299]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-40::obj-72": {
+                    "parameter_longname": "live.numbox[260]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-41::obj-35": {
+                    "parameter_longname": "live.text[435]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-41::obj-53": {
+                    "parameter_longname": "live.text[434]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-41::obj-66": {
+                    "parameter_longname": "live.numbox[344]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-41::obj-68": {
+                    "parameter_longname": "live.numbox[343]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-41::obj-72": {
+                    "parameter_longname": "live.numbox[345]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-42::obj-35": {
+                    "parameter_longname": "live.text[437]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-42::obj-53": {
+                    "parameter_longname": "live.text[436]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-42::obj-66": {
+                    "parameter_longname": "live.numbox[347]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-42::obj-68": {
+                    "parameter_longname": "live.numbox[346]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-42::obj-72": {
+                    "parameter_longname": "live.numbox[348]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-43::obj-35": {
+                    "parameter_longname": "live.text[491]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-43::obj-53": {
+                    "parameter_longname": "live.text[490]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-43::obj-66": {
+                    "parameter_longname": "live.numbox[393]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-43::obj-68": {
+                    "parameter_longname": "live.numbox[392]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-43::obj-72": {
+                    "parameter_longname": "live.numbox[349]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-44::obj-35": {
+                    "parameter_longname": "live.text[492]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-44::obj-53": {
+                    "parameter_longname": "live.text[399]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-44::obj-66": {
+                    "parameter_longname": "live.numbox[395]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-44::obj-68": {
+                    "parameter_longname": "live.numbox[394]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-44::obj-72": {
+                    "parameter_longname": "live.numbox[193]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-45::obj-35": {
+                    "parameter_longname": "live.text[536]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-45::obj-53": {
+                    "parameter_longname": "live.text[400]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-45::obj-66": {
+                    "parameter_longname": "live.numbox[195]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-45::obj-68": {
+                    "parameter_longname": "live.numbox[194]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-45::obj-72": {
+                    "parameter_longname": "live.numbox[196]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-46::obj-35": {
+                    "parameter_longname": "live.text[538]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-46::obj-53": {
+                    "parameter_longname": "live.text[537]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-46::obj-66": {
+                    "parameter_longname": "live.numbox[198]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-46::obj-68": {
+                    "parameter_longname": "live.numbox[197]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-46::obj-72": {
+                    "parameter_longname": "live.numbox[199]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-47::obj-35": {
+                    "parameter_longname": "live.text[539]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-47::obj-53": {
+                    "parameter_longname": "live.text[627]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-47::obj-66": {
+                    "parameter_longname": "live.numbox[200]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-47::obj-68": {
+                    "parameter_longname": "live.numbox[202]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-47::obj-72": {
+                    "parameter_longname": "live.numbox[201]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-48::obj-35": {
+                    "parameter_longname": "live.text[402]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-48::obj-53": {
+                    "parameter_longname": "live.text[401]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-48::obj-66": {
+                    "parameter_longname": "live.numbox[204]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-48::obj-68": {
+                    "parameter_longname": "live.numbox[203]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-48::obj-72": {
+                    "parameter_longname": "live.numbox[205]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-49::obj-35": {
+                    "parameter_longname": "live.text[404]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-49::obj-53": {
+                    "parameter_longname": "live.text[403]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-49::obj-66": {
+                    "parameter_longname": "live.numbox[410]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-49::obj-68": {
+                    "parameter_longname": "live.numbox[409]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-49::obj-72": {
+                    "parameter_longname": "live.numbox[206]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-5": {
+                    "parameter_longname": "live.text[441]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-50::obj-35": {
+                    "parameter_longname": "live.text[439]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-50::obj-53": {
+                    "parameter_longname": "live.text[438]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-50::obj-66": {
+                    "parameter_longname": "live.numbox[209]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-50::obj-68": {
+                    "parameter_longname": "live.numbox[208]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-50::obj-72": {
+                    "parameter_longname": "live.numbox[207]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-53": {
+                    "parameter_longname": "live.text[440]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-56": {
+                    "parameter_longname": "live.numbox[210]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-72": {
+                    "parameter_longname": "live.numbox[211]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-74::obj-35": {
+                    "parameter_longname": "live.text[429]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-74::obj-53": {
+                    "parameter_longname": "live.text[428]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-74::obj-66": {
+                    "parameter_longname": "live.numbox[187]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-74::obj-68": {
+                    "parameter_longname": "live.numbox[186]"
+                },
+                "obj-22::obj-6.2::obj-65::obj-74::obj-72": {
+                    "parameter_longname": "live.numbox[188]"
+                },
+                "obj-22::obj-6.2::obj-78::obj-31": {
+                    "parameter_longname": "live.text[614]"
                 },
                 "obj-28::obj-107::obj-2": {
                     "parameter_longname": "live.text[2]"

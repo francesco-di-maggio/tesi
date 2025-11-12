@@ -3,7 +3,7 @@
 // -------------------------------------------------------------------------
 // Device Identity
 // -------------------------------------------------------------------------
-const int DEVICE_INDEX = 1;             // Set board index (change as needed)
+const int DEVICE_INDEX = 2;             // Set board index (change as needed)
 const char* BASE_ADDRESS = "/tesi";     // Base address for OSC and OOCSI messages
 
 // -------------------------------------------------------------------------
