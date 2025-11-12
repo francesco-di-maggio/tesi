@@ -22,7 +22,7 @@ void printMacAddress();
 template <typename T>
 void sendOSC(const char* address, const T& value, int length = 1) {
     char fullAddress[64];
-    snprintf(fullAddress, sizeof(fullAddress), "/%d%s%s", DEVICE_INDEX, BASE_ADDRESS, address);
+    snprintf(fullAddress, sizeof(fullAddress), "%s/%d%s", BASE_ADDRESS, DEVICE_INDEX, address);
 
     OSCMessage msg(fullAddress);
     if constexpr (std::is_array_v<T> || std::is_pointer_v<T>) {
@@ -43,7 +43,7 @@ void sendOSC(const char* address, const T& value, int length = 1) {
 // -------------------------------------------------------------------------
 template <typename T>
 void sendSerial(const char* label, const T& value, int length = 1) {
-    Serial.printf("%s %d %s %s ", CHANNEL, DEVICE_INDEX, BASE_ADDRESS, label);
+    Serial.printf("%d %s %s ", DEVICE_INDEX, BASE_ADDRESS, label);
 
     if constexpr (std::is_array_v<T> || std::is_pointer_v<T>) {
         for (int i = 0; i < length; i++) {

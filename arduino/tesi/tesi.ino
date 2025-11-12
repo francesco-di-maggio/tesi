@@ -13,12 +13,13 @@
     - Read MAX4466 (mic level) on pin 3
     - Read POT on pin 2
     - Read PUSH1 on pin 26
+    - Read PUSH2 on pin 25
     - Write RGB Led on pins 14, 15, 27
-    - Send sensor data via OSC/UDP
+    - Send sensor data via OSC/UDP, OOCSI, or Serial
     - Remote OSC configuration with hybrid addressing:
-      * Explicit:    /2/tesi/config/* → broadcast (255.255.255.255:9001)
-      * Generic:       /tesi/config/* → direct IP (192.168.8.xxx:9001)  
-      * Broadcast: /all/tesi/config/* → all devices (255.255.255.255:9001)
+      * Generic:       /tesi/config/* → direct IP (e.g., 192.168.8.100:9001)
+      * Specific:    /tesi/2/config/* → specific device (e.g., 192.168.8.101:9001)
+      * Broadcast: /tesi/all/config/* → all devices (subnet broadcast 192.168.8.255:9001)
     - Configurable settings in secrets.h
     - Flash memory persistence for IP settings
 ------------------------------------------------------------------------ */
@@ -35,8 +36,8 @@
 // -------------------------------------------------------------------------
 void setup() {
   Serial.begin(115200);
-  delay(100); // Brief pause to separate from ESP32 boot messages
-
+  delay(1000);
+  
   Serial.println();
   Serial.println(F("══════════════════════"));
   Serial.println();
@@ -74,19 +75,17 @@ void setup() {
   Serial.println(F("═══════════════════════════════"));
   Serial.println();
 
-  setColor(0, 255, 0); 
-  delay(500); 
-  setColor(0, 0, 0); // GREEN LIGHT: Ready, then off
+  setColor(0, 255, 0); delay(500); setColor(0, 0, 0); // GREEN LIGHT: Ready, then off
 }
 
 // -------------------------------------------------------------------------
 // LOOP
 // -------------------------------------------------------------------------
 void loop() {
-  listenOSC();  
-  
+  listenOSC();
+
   unsigned long now = millis();
   streamSensors(now);
 
-  // delay(1);
+  delay(1);
 }

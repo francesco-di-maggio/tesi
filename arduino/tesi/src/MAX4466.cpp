@@ -6,8 +6,8 @@
 // -------------------------------------------------------------------------
 constexpr unsigned long SAMPLE_WINDOW = 50;  // Sampling window in ms (50ms = 20Hz update rate)
 constexpr int BASELINE = 600;                // Baseline to subtract (adjust based on your room's idle level)
-constexpr int NOISE_FLOOR = 100;             // Minimum peak-to-peak to ignore electrical/ambient noise
-constexpr int DEADZONE = 175;                // Minimum output to consider as actual sound (zero when quiet)
+constexpr int NOISE_FLOOR = 150;             // Minimum peak-to-peak to ignore electrical/ambient noise
+constexpr int DEADZONE = 200;                // Minimum output to consider as actual sound (zero when quiet)
 constexpr float SMOOTHING = 0.2f;            // Lower = heavier smoothing, less transient response
 constexpr int THRESHOLD = 25;                // Send threshold for change detection
 constexpr float GAIN = 3.0f;                 // Higher gain for better sensitivity to quiet sounds
