@@ -9,8 +9,8 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 34.0, 92.0, 1372.0, 806.0 ],
-        "openrect": [ 0.0, 0.0, 214.0, 84.0 ],
+        "rect": [ 34.0, 93.0, 1852.0, 953.0 ],
+        "openrect": [ 0.0, 0.0, 214.0, 62.0 ],
         "openrectmode": 0,
         "openinpresentation": 1,
         "default_fontname": "Ableton Sans Medium",
@@ -627,7 +627,7 @@
                         },
                         "valueof": {
                             "parameter_enum": [ "val1", "val2" ],
-                            "parameter_longname": "live.text[94]",
+                            "parameter_longname": "live.text[96]",
                             "parameter_mmax": 1,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.text",
@@ -813,23 +813,6 @@
                     "outlettype": [ "bang" ],
                     "patching_rect": [ 351.0, 26.0, 58.0, 23.0 ],
                     "text": "loadbang"
-                }
-            },
-            {
-                "box": {
-                    "id": "obj-42",
-                    "linecolor": [ 0.0, 0.0, 0.0, 1.0 ],
-                    "maxclass": "live.line",
-                    "numinlets": 1,
-                    "numoutlets": 0,
-                    "patching_rect": [ 351.0, 12.0, 150.44264309008906, 5.0 ],
-                    "presentation": 1,
-                    "presentation_rect": [ 0.0, 61.0, 214.0, 5.0 ],
-                    "saved_attribute_attributes": {
-                        "linecolor": {
-                            "expression": ""
-                        }
-                    }
                 }
             },
             {
@@ -2198,8 +2181,7 @@
                     "id": "obj-6",
                     "maxclass": "newobj",
                     "numinlets": 1,
-                    "numoutlets": 2,
-                    "outlettype": [ "", "" ],
+                    "numoutlets": 0,
                     "patching_rect": [ 30.0, 596.0, 108.0, 23.0 ],
                     "text": "poly~ tesi.visualize",
                     "varname": "poly~"

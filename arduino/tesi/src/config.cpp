@@ -3,7 +3,7 @@
 // -------------------------------------------------------------------------
 // Device Identity
 // -------------------------------------------------------------------------
-const int DEVICE_INDEX = 2;             // Set board index (change as needed)
+const int DEVICE_INDEX = 1;             // Set board index (change as needed)
 const char* BASE_ADDRESS = "/tesi";     // Base address for OSC and OOCSI messages
 
 // -------------------------------------------------------------------------
@@ -18,6 +18,7 @@ SensorConfig DISTANCE = {{1, 1, 0, 0},   20, 0};
 SensorConfig QUAT     = {{1, 1, 0, 0},   40, 0};
 SensorConfig PUSH     = {{1, 1, 0, 0},    5, 0};
 SensorConfig CAP      = {{1, 1, 0, 0},    5, 0};
+SensorConfig PING     = {{1, 1, 0, 0}, 1000, 0};
 
 // -------------------------------------------------------------------------
 // WiFi & OSC/OOCSI Configuration

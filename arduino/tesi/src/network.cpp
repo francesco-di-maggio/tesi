@@ -24,7 +24,7 @@ void setupWiFi() {
         Serial.println();
         Serial.print(F("   WiFi: "));
         Serial.println(SSID);
-        Serial.print(F("   IP: "));
+        Serial.print(F("   Target IP: "));
         Serial.println(OUT_IP);
         Serial.print(F("   Port: "));
         Serial.println(OUT_PORT);

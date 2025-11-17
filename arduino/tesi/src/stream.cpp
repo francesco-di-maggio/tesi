@@ -11,13 +11,13 @@
 // Afterwards, if OOCSI is enabled, it pings OOCSI.
 void streamSensors(unsigned long now) {
     // Array of pointers to SensorConfig structures
-    SensorConfig* const sensors[] = { 
-        &BATTERY, &LDR, &MIC, &POT, &DISTANCE, &QUAT, &PUSH, &CAP 
+    SensorConfig* const sensors[] = {
+        &BATTERY, &LDR, &MIC, &POT, &DISTANCE, &QUAT, &PUSH, &CAP, &PING
     };
 
     // Array of pointers to corresponding send functions.
-    void (*const sendFunctions[])() = { 
-        sendBattery, sendLDR, sendMIC, sendPOT, sendDistance, sendQUAT, sendPUSH, sendButtons 
+    void (*const sendFunctions[])() = {
+        sendBattery, sendLDR, sendMIC, sendPOT, sendDistance, sendQUAT, sendPUSH, sendButtons, sendPing
     };
 
     constexpr size_t sensorCount = sizeof(sensors) / sizeof(sensors[0]);
@@ -32,8 +32,6 @@ void streamSensors(unsigned long now) {
 
     // Maintain OOCSI connection and process messages
     #if defined(USE_OOCSI)
-    // Send heartbeat ping
-    sendPing();
     loopOOCSI();
     #endif
 }

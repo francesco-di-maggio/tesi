@@ -28,5 +28,6 @@ void sendDistance();
 void sendQUAT();
 void sendPUSH();
 void sendButtons();
+void sendPing();
 
 #endif // STREAM_H

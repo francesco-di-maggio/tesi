@@ -78,6 +78,7 @@ SensorConfig SENSOR_NAME = {enabled, osc, serial, oocsi, interval, lastUpdate};
 | Quaternion | `QUAT` | 30ms | BNO055 orientation tracking |
 | Push Button | `PUSH` | 5ms | Discrete input |
 | Capacitive Touch | `CAP` | 5ms | MPR121 touch sensing |
+| Heartbeat Ping | `PING` | 1000ms | Device alive status monitoring |
 
 5. **Update Rates**: Adjust sensor polling intervals in individual sensor configurations
 

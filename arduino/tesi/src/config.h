@@ -31,7 +31,7 @@ struct SensorConfig {
 };
 
 // Sensor configuration instances
-extern SensorConfig BATTERY, LDR, MIC, POT, DISTANCE, QUAT, PUSH, CAP;
+extern SensorConfig BATTERY, LDR, MIC, POT, DISTANCE, QUAT, PUSH, CAP, PING;
 
 // -------------------------------------------------------------------------
 // WiFi & OSC/OOCSI Configuration

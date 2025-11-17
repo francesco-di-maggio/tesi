@@ -4679,7 +4679,7 @@
             },
             {
                 "box": {
-                    "args": [ 2, "@debounce", 300, "@origin", 0.1 ],
+                    "args": [ 2, "@debounce", 250, "@origin", 0.1 ],
                     "bgmode": 0,
                     "border": 1,
                     "clickthrough": 0,
