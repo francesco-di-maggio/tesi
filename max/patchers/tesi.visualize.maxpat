@@ -130,7 +130,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 1299.0, 433.0, 70.0, 23.0 ],
-                    "text": "0. 820."
+                    "text": "0. 937."
                 }
             },
             {
@@ -221,10 +221,6 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 917.0, 164.0, 28.0, 23.0 ],
-                    "saved_object_attributes": {
-                        "attr_comment": "",
-                        "c": ""
-                    },
                     "text": "in 1"
                 }
             },
@@ -994,7 +990,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 59.0, 115.0, 273.0, 555.0 ],
+                        "rect": [ 59.0, 115.0, 244.0, 555.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -1023,10 +1019,10 @@
                                     "id": "obj-12",
                                     "maxclass": "newobj",
                                     "numinlets": 2,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "float" ],
-                                    "patching_rect": [ 30.0, 299.0, 29.5, 22.0 ],
-                                    "text": "f"
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 30.0, 299.0, 38.0, 22.0 ],
+                                    "text": "zl.reg"
                                 }
                             },
                             {
@@ -1177,7 +1173,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-62", 0 ],
-                                    "midpoints": [ 184.0, 342.0, 108.3, 342.0 ],
+                                    "midpoints": [ 184.0, 339.0, 108.3, 339.0 ],
                                     "source": [ "obj-11", 1 ]
                                 }
                             },
@@ -1240,6 +1236,7 @@
                             {
                                 "patchline": {
                                     "destination": [ "obj-14", 2 ],
+                                    "midpoints": [ 108.3, 378.0, 108.3, 378.0 ],
                                     "source": [ "obj-62", 0 ]
                                 }
                             },
@@ -1319,10 +1316,10 @@
                                     "id": "obj-12",
                                     "maxclass": "newobj",
                                     "numinlets": 2,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "float" ],
-                                    "patching_rect": [ 30.0, 355.0, 29.5, 22.0 ],
-                                    "text": "f"
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 30.0, 355.0, 38.0, 22.0 ],
+                                    "text": "zl.reg"
                                 }
                             },
                             {
@@ -1736,7 +1733,7 @@
                                     "numoutlets": 1,
                                     "outlettype": [ "" ],
                                     "patching_rect": [ 79.0, 246.0, 50.0, 22.0 ],
-                                    "text": "922."
+                                    "text": "503."
                                 }
                             },
                             {
@@ -1766,10 +1763,10 @@
                                     "id": "obj-12",
                                     "maxclass": "newobj",
                                     "numinlets": 2,
-                                    "numoutlets": 1,
-                                    "outlettype": [ "float" ],
-                                    "patching_rect": [ 30.0, 329.0, 29.5, 22.0 ],
-                                    "text": "f"
+                                    "numoutlets": 2,
+                                    "outlettype": [ "", "" ],
+                                    "patching_rect": [ 30.0, 329.0, 38.0, 22.0 ],
+                                    "text": "zl.reg"
                                 }
                             },
                             {
