@@ -19,7 +19,7 @@
         "toolbars_unpinned_last_save": 3,
         "subpatcher_template": " ",
         "helpsidebarclosed": 1,
-        "title": "TESI #1",
+        "title": "TESI 1",
         "boxes": [
             {
                 "box": {
@@ -130,7 +130,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 1299.0, 433.0, 70.0, 23.0 ],
-                    "text": "0. 1078."
+                    "text": "0. 820."
                 }
             },
             {
@@ -187,7 +187,7 @@
                     "numinlets": 0,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 361.0, 30.0, 30.0, 30.0 ]
+                    "patching_rect": [ 380.0, 31.5, 30.0, 30.0 ]
                 }
             },
             {
@@ -197,8 +197,8 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 520.0, 364.0, 119.0, 23.0 ],
-                    "text": "sprintf title TESI #%i"
+                    "patching_rect": [ 520.0, 364.0, 112.0, 23.0 ],
+                    "text": "sprintf title TESI %i"
                 }
             },
             {
@@ -221,6 +221,10 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 917.0, 164.0, 28.0, 23.0 ],
+                    "saved_object_attributes": {
+                        "attr_comment": "",
+                        "c": ""
+                    },
                     "text": "in 1"
                 }
             },
@@ -1286,7 +1290,7 @@
                             "modernui": 1
                         },
                         "classnamespace": "box",
-                        "rect": [ 503.0, 160.0, 273.0, 555.0 ],
+                        "rect": [ 987.0, 241.0, 273.0, 555.0 ],
                         "boxes": [
                             {
                                 "box": {
@@ -3046,7 +3050,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-1", 0 ],
-                    "midpoints": [ 370.5, 171.0, 128.5, 171.0 ],
+                    "midpoints": [ 389.5, 171.0, 128.5, 171.0 ],
                     "source": [ "obj-44", 0 ]
                 }
             },
