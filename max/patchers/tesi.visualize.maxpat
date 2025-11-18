@@ -28,7 +28,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "bang" ],
-                    "patching_rect": [ 670.0, 309.0, 23.0, 23.0 ],
+                    "patching_rect": [ 710.0, 309.0, 23.0, 23.0 ],
                     "text": "t b"
                 }
             },
@@ -49,7 +49,7 @@
                     "numoutlets": 1,
                     "offset": [ 0.0, 0.0 ],
                     "outlettype": [ "" ],
-                    "patching_rect": [ 670.0, 352.0, 70.0, 70.0 ],
+                    "patching_rect": [ 710.0, 352.0, 70.0, 70.0 ],
                     "varname": "mo.pad[11]",
                     "viewvisibility": 1
                 }
@@ -130,7 +130,7 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 1299.0, 433.0, 70.0, 23.0 ],
-                    "text": "0. 937."
+                    "text": "0. 466."
                 }
             },
             {
@@ -197,8 +197,8 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 520.0, 364.0, 112.0, 23.0 ],
-                    "text": "sprintf title TESI %i"
+                    "patching_rect": [ 520.0, 364.0, 145.0, 23.0 ],
+                    "text": "sprintf title VISUALIZE %i"
                 }
             },
             {
@@ -221,6 +221,10 @@
                     "numoutlets": 1,
                     "outlettype": [ "" ],
                     "patching_rect": [ 917.0, 164.0, 28.0, 23.0 ],
+                    "saved_object_attributes": {
+                        "attr_comment": "",
+                        "c": ""
+                    },
                     "text": "in 1"
                 }
             },
@@ -2797,7 +2801,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-99", 0 ],
-                    "midpoints": [ 346.1666666666667, 294.0, 679.5, 294.0 ],
+                    "midpoints": [ 346.1666666666667, 294.0, 719.5, 294.0 ],
                     "source": [ "obj-19", 8 ]
                 }
             },
@@ -3474,7 +3478,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-9", 0 ],
-                    "midpoints": [ 679.5, 333.0, 679.5, 333.0 ],
+                    "midpoints": [ 719.5, 333.0, 719.5, 333.0 ],
                     "source": [ "obj-99", 0 ]
                 }
             }
