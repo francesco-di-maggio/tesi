@@ -9838,8 +9838,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "Designed at ### – ###"
-		(at 131.07758 81.36571 0)
+	(gr_text "Designed at d.search lab – TU/e"
+		(at 131.10446 81.36571 0)
 		(layer "F.SilkS")
 		(uuid "7926ebb3-79f2-408f-9af2-8cf4dc844330")
 		(effects
