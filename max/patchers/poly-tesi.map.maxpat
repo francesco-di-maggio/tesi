@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 134.0, 165.0, 214.0, 84.0 ],
+        "rect": [ 34.0, 91.0, 1372.0, 807.0 ],
         "openrect": [ 0.0, 0.0, 214.0, 62.0 ],
         "openrectmode": 0,
         "openinpresentation": 1,
@@ -20,6 +20,128 @@
         "subpatcher_template": " ",
         "helpsidebarclosed": 1,
         "boxes": [
+            {
+                "box": {
+                    "id": "obj-25",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 720.0, 559.0, 29.5, 23.0 ],
+                    "text": "tesi"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-18",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 720.0, 529.5, 67.0, 23.0 ],
+                    "text": "route bang"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-46",
+                    "maxclass": "newobj",
+                    "numinlets": 2,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
+                    "patching_rect": [ 720.0, 500.0, 62.0, 23.0 ],
+                    "text": "route text"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-44",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 650.0, 402.375, 75.0, 23.0 ],
+                    "text": "set $1, bang"
+                }
+            },
+            {
+                "box": {
+                    "bgcolor": [ 0.168627450980392, 0.168627450980392, 0.168627450980392, 0.0 ],
+                    "border": 0.0,
+                    "bordercolor": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "fontface": 0,
+                    "fontname": "Ableton Sans Medium",
+                    "fontsize": 9.5,
+                    "id": "obj-30",
+                    "keymode": 1,
+                    "lines": 1,
+                    "maxclass": "textedit",
+                    "nosymquotes": 1,
+                    "numinlets": 1,
+                    "numoutlets": 4,
+                    "outlettype": [ "", "int", "", "" ],
+                    "parameter_enable": 0,
+                    "patching_rect": [ 650.0, 455.75, 95.5, 15.5 ],
+                    "presentation": 1,
+                    "presentation_rect": [ 50.0, 5.0, 130.89285916090012, 13.0 ],
+                    "rounded": 0.0,
+                    "saved_attribute_attributes": {
+                        "textcolor": {
+                            "expression": "themecolor.live_control_text_selection"
+                        }
+                    },
+                    "text": "TEI26",
+                    "textcolor": [ 0.85, 0.85, 0.85, 1.0 ],
+                    "textjustification": 1,
+                    "varname": "name-"
+                }
+            },
+            {
+                "box": {
+                    "angle": 270.0,
+                    "bgcolor": [ 0.2, 0.2, 0.2, 0.0 ],
+                    "border": 1,
+                    "bordercolor": [ 0.0, 0.0, 0.0, 1.0 ],
+                    "id": "obj-31",
+                    "maxclass": "panel",
+                    "mode": 0,
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 650.0, 455.75, 95.5, 15.5 ],
+                    "presentation": 1,
+                    "presentation_rect": [ 50.0, 5.0, 129.89285916090012, 13.0 ],
+                    "proportion": 0.5,
+                    "rounded": 0
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-2",
+                    "maxclass": "newobj",
+                    "numinlets": 1,
+                    "numoutlets": 3,
+                    "outlettype": [ "", "", "" ],
+                    "patching_rect": [ 563.0, 107.0, 314.0, 23.0 ],
+                    "saved_object_attributes": {
+                        "initial": [ " " ],
+                        "parameter_enable": 0,
+                        "parameter_mappable": 0
+                    },
+                    "text": "pattr name @bindto name- @default_interp 1 @initial \" \"",
+                    "varname": "name"
+                }
+            },
+            {
+                "box": {
+                    "id": "obj-15",
+                    "maxclass": "message",
+                    "numinlets": 2,
+                    "numoutlets": 1,
+                    "outlettype": [ "" ],
+                    "patching_rect": [ 720.0, 607.0, 104.0, 23.0 ],
+                    "text": "target 0, name $1"
+                }
+            },
             {
                 "box": {
                     "id": "obj-10",
@@ -54,7 +176,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -247,7 +369,7 @@
                         },
                         "valueof": {
                             "parameter_longname": "live.numbox[537]",
-                            "parameter_mmax": 2.0,
+                            "parameter_mmax": 4.0,
                             "parameter_mmin": 1.0,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.numbox",
@@ -271,7 +393,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
                     "parameter_enable": 1,
-                    "patching_rect": [ 654.0, 456.0, 45.0, 15.0 ],
+                    "patching_rect": [ 212.0, 30.0, 45.0, 15.0 ],
                     "pictures": [ "unlock.svg", "lock.svg" ],
                     "presentation": 1,
                     "presentation_rect": [ 4.0, 4.0, 46.0, 15.0 ],
@@ -338,7 +460,7 @@
                     "numinlets": 2,
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
-                    "patching_rect": [ 769.0, 404.0, 67.0, 23.0 ],
+                    "patching_rect": [ 811.0, 404.0, 67.0, 23.0 ],
                     "text": "route done"
                 }
             },
@@ -349,7 +471,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 580.0, 534.0, 85.0, 23.0 ],
+                    "patching_rect": [ 580.0, 607.0, 85.0, 23.0 ],
                     "text": "target 0, bang"
                 }
             },
@@ -360,7 +482,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 817.0, 534.0, 129.0, 23.0 ],
+                    "patching_rect": [ 859.0, 607.0, 129.0, 23.0 ],
                     "text": "target $1, $2, target 0"
                 }
             },
@@ -371,7 +493,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "list" ],
-                    "patching_rect": [ 817.0, 452.0, 68.0, 23.0 ],
+                    "patching_rect": [ 859.0, 452.0, 68.0, 23.0 ],
                     "text": "listfunnel 1"
                 }
             },
@@ -491,11 +613,11 @@
                 "box": {
                     "id": "obj-28",
                     "maxclass": "newobj",
-                    "numinlets": 4,
-                    "numoutlets": 4,
-                    "outlettype": [ "", "", "", "" ],
-                    "patching_rect": [ 440.0, 349.0, 229.0, 23.0 ],
-                    "text": "route target open calibrate"
+                    "numinlets": 5,
+                    "numoutlets": 5,
+                    "outlettype": [ "", "", "", "", "" ],
+                    "patching_rect": [ 440.0, 349.0, 299.0, 23.0 ],
+                    "text": "route target open calibrate name"
                 }
             },
             {
@@ -510,7 +632,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -738,7 +860,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1033,7 +1155,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 254.0, 534.0, 77.0, 23.0 ],
+                    "patching_rect": [ 254.0, 607.0, 77.0, 23.0 ],
                     "text": "p open/close"
                 }
             },
@@ -1114,7 +1236,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 10.0,
                     "id": "obj-24",
-                    "items": [ "all", ",", 1, ",", 2 ],
+                    "items": [ "all", ",", 1, ",", 2, ",", 3, ",", 4 ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -1138,7 +1260,7 @@
                     "numinlets": 1,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 30.0, 534.0, 89.0, 23.0 ],
+                    "patching_rect": [ 30.0, 607.0, 89.0, 23.0 ],
                     "text": "prepend voices"
                 }
             },
@@ -1155,7 +1277,7 @@
                     "parameter_enable": 1,
                     "patching_rect": [ 30.0, 30.0, 44.0, 15.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 190.071534, 4.371793, 20.0, 15.0 ],
+                    "presentation_rect": [ 190.0, 4.0, 20.0, 15.0 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -1191,7 +1313,7 @@
                     "patching_rect": [ 152.0, 304.0, 45.0, 213.0 ],
                     "rounded": 0.0,
                     "spacing_y": 0.0,
-                    "tabs": [ "1", "2" ]
+                    "tabs": [ "1", "2", "3", "4" ]
                 }
             },
             {
@@ -1206,7 +1328,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1581,7 +1703,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1742,7 +1864,7 @@
                             }
                         ]
                     },
-                    "patching_rect": [ 152.0, 534.0, 45.0, 23.0 ],
+                    "patching_rect": [ 152.0, 607.0, 45.0, 23.0 ],
                     "text": "p open"
                 }
             },
@@ -1752,7 +1874,7 @@
                     "maxclass": "newobj",
                     "numinlets": 1,
                     "numoutlets": 0,
-                    "patching_rect": [ 30.0, 616.0, 87.0, 23.0 ],
+                    "patching_rect": [ 30.0, 668.0, 87.0, 23.0 ],
                     "text": "poly~ tesi.map",
                     "varname": "poly~"
                 }
@@ -1787,7 +1909,7 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 440.0, 534.0, 59.0, 23.0 ],
+                    "patching_rect": [ 440.0, 607.0, 59.0, 23.0 ],
                     "text": "target $1"
                 }
             }
@@ -1796,7 +1918,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-6", 0 ],
-                    "midpoints": [ 263.5, 603.0, 39.5, 603.0 ],
+                    "midpoints": [ 263.5, 654.0, 39.5, 654.0 ],
                     "source": [ "obj-1", 0 ]
                 }
             },
@@ -1810,7 +1932,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-1", 2 ],
-                    "midpoints": [ 449.5, 519.0, 321.5, 519.0 ],
+                    "midpoints": [ 449.5, 594.0, 321.5, 594.0 ],
                     "order": 1,
                     "source": [ "obj-11", 0 ]
                 }
@@ -1839,6 +1961,27 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-6", 0 ],
+                    "midpoints": [ 729.5, 654.0, 39.5, 654.0 ],
+                    "source": [ "obj-15", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-15", 0 ],
+                    "midpoints": [ 777.5, 594.0, 729.5, 594.0 ],
+                    "source": [ "obj-18", 1 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-25", 0 ],
+                    "midpoints": [ 729.5, 555.0, 729.5, 555.0 ],
+                    "source": [ "obj-18", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-11", 0 ],
                     "midpoints": [ 297.5, 390.0, 449.5, 390.0 ],
                     "source": [ "obj-20", 0 ]
@@ -1847,7 +1990,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-6", 0 ],
-                    "midpoints": [ 449.5, 603.0, 39.5, 603.0 ],
+                    "midpoints": [ 449.5, 654.0, 39.5, 654.0 ],
                     "source": [ "obj-22", 0 ]
                 }
             },
@@ -1856,6 +1999,13 @@
                     "destination": [ "obj-14", 0 ],
                     "midpoints": [ 470.5, 291.0, 470.5, 291.0 ],
                     "source": [ "obj-24", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-15", 0 ],
+                    "midpoints": [ 729.5, 585.0, 729.5, 585.0 ],
+                    "source": [ "obj-25", 0 ]
                 }
             },
             {
@@ -1888,9 +2038,16 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-72", 0 ],
-                    "midpoints": [ 659.5, 390.0, 778.5, 390.0 ],
+                    "destination": [ "obj-44", 0 ],
+                    "midpoints": [ 659.5, 375.0, 659.5, 375.0 ],
                     "source": [ "obj-28", 3 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-72", 0 ],
+                    "midpoints": [ 729.5, 387.0, 820.5, 387.0 ],
+                    "source": [ "obj-28", 4 ]
                 }
             },
             {
@@ -1898,6 +2055,13 @@
                     "destination": [ "obj-1", 0 ],
                     "midpoints": [ 263.5, 426.0, 263.5, 426.0 ],
                     "source": [ "obj-3", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-46", 0 ],
+                    "midpoints": [ 659.5, 486.0, 729.5, 486.0 ],
+                    "source": [ "obj-30", 0 ]
                 }
             },
             {
@@ -1931,7 +2095,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-45", 0 ],
-                    "midpoints": [ 826.5, 477.0, 826.5, 477.0 ],
+                    "midpoints": [ 868.5, 477.0, 868.5, 477.0 ],
                     "source": [ "obj-39", 0 ]
                 }
             },
@@ -1951,9 +2115,23 @@
             },
             {
                 "patchline": {
+                    "destination": [ "obj-30", 0 ],
+                    "midpoints": [ 659.5, 426.0, 659.5, 426.0 ],
+                    "source": [ "obj-44", 0 ]
+                }
+            },
+            {
+                "patchline": {
                     "destination": [ "obj-6", 0 ],
-                    "midpoints": [ 826.5, 603.0, 39.5, 603.0 ],
+                    "midpoints": [ 868.5, 654.0, 39.5, 654.0 ],
                     "source": [ "obj-45", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-18", 0 ],
+                    "midpoints": [ 729.5, 525.0, 729.5, 525.0 ],
+                    "source": [ "obj-46", 0 ]
                 }
             },
             {
@@ -1966,7 +2144,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-6", 0 ],
-                    "midpoints": [ 161.5, 603.0, 39.5, 603.0 ],
+                    "midpoints": [ 161.5, 654.0, 39.5, 654.0 ],
                     "source": [ "obj-53", 0 ]
                 }
             },
@@ -2004,7 +2182,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-6", 0 ],
-                    "midpoints": [ 39.5, 558.0, 39.5, 558.0 ],
+                    "midpoints": [ 39.5, 633.0, 39.5, 633.0 ],
                     "source": [ "obj-63", 0 ]
                 }
             },
@@ -2025,14 +2203,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-6", 0 ],
-                    "midpoints": [ 589.5, 603.0, 39.5, 603.0 ],
+                    "midpoints": [ 589.5, 654.0, 39.5, 654.0 ],
                     "source": [ "obj-71", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-39", 0 ],
-                    "midpoints": [ 826.5, 429.0, 826.5, 429.0 ],
+                    "midpoints": [ 868.5, 429.0, 868.5, 429.0 ],
                     "source": [ "obj-72", 1 ]
                 }
             },

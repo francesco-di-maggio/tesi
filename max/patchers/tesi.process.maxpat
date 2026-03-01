@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
@@ -105,8 +105,6 @@
                     "offset": [ 0.0, 0.0 ],
                     "outlettype": [ "" ],
                     "patching_rect": [ 75.0, 327.0, 70.0, 70.0 ],
-                    "presentation": 1,
-                    "presentation_rect": [ 226.0, 10.0, 70.0, 70.0 ],
                     "varname": "mo.number[1]",
                     "viewvisibility": 1
                 }
@@ -145,7 +143,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -249,7 +247,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -280,7 +278,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -638,7 +636,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -996,7 +994,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1354,7 +1352,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -1712,7 +1710,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2070,7 +2068,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2428,7 +2426,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -2786,7 +2784,7 @@
                                         "appversion": {
                                             "major": 9,
                                             "minor": 1,
-                                            "revision": 0,
+                                            "revision": 2,
                                             "architecture": "x64",
                                             "modernui": 1
                                         },
@@ -3675,7 +3673,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -4078,7 +4076,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -4438,7 +4436,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -4834,7 +4832,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-13", 1 ],
-                    "midpoints": [ 1475.5, 699.0, 1475.5, 699.0 ],
+                    "midpoints": [ 1475.5, 702.0, 1475.5, 702.0 ],
                     "source": [ "obj-12", 0 ]
                 }
             },
@@ -4848,7 +4846,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-13", 0 ],
-                    "midpoints": [ 1280.5, 570.0, 1280.5, 570.0 ],
+                    "midpoints": [ 1280.5, 573.0, 1280.5, 573.0 ],
                     "source": [ "obj-14", 0 ]
                 }
             },
@@ -4974,14 +4972,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-28", 0 ],
-                    "midpoints": [ 911.5, 570.0, 911.5, 570.0 ],
+                    "midpoints": [ 911.5, 573.0, 911.5, 573.0 ],
                     "source": [ "obj-26", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-28", 1 ],
-                    "midpoints": [ 1106.5, 699.0, 1106.5, 699.0 ],
+                    "midpoints": [ 1106.5, 702.0, 1106.5, 702.0 ],
                     "source": [ "obj-27", 0 ]
                 }
             },
@@ -5058,7 +5056,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-27", 0 ],
-                    "midpoints": [ 1106.5, 570.0, 1106.5, 570.0 ],
+                    "midpoints": [ 1106.5, 573.0, 1106.5, 573.0 ],
                     "source": [ "obj-30", 0 ]
                 }
             },
@@ -5093,14 +5091,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-35", 0 ],
-                    "midpoints": [ 1189.5, 570.0, 1189.5, 570.0 ],
+                    "midpoints": [ 1189.5, 573.0, 1189.5, 573.0 ],
                     "source": [ "obj-36", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-41", 1 ],
-                    "midpoints": [ 815.5, 699.0, 815.5, 699.0 ],
+                    "midpoints": [ 815.5, 702.0, 815.5, 702.0 ],
                     "source": [ "obj-37", 0 ]
                 }
             },
@@ -5121,7 +5119,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-113", 0 ],
-                    "midpoints": [ 389.5, 879.0, 389.5, 879.0 ],
+                    "midpoints": [ 389.5, 882.0, 389.5, 882.0 ],
                     "source": [ "obj-39", 0 ]
                 }
             },
@@ -5142,14 +5140,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-37", 0 ],
-                    "midpoints": [ 815.5, 639.0, 815.5, 639.0 ],
+                    "midpoints": [ 815.5, 654.0, 815.5, 654.0 ],
                     "source": [ "obj-40", 1 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-41", 0 ],
-                    "midpoints": [ 620.5, 639.0, 620.5, 639.0 ],
+                    "midpoints": [ 620.5, 654.0, 620.5, 654.0 ],
                     "source": [ "obj-40", 0 ]
                 }
             },
@@ -5198,14 +5196,14 @@
             {
                 "patchline": {
                     "destination": [ "obj-19", 0 ],
-                    "midpoints": [ 39.5, 90.0, 39.5, 90.0 ],
+                    "midpoints": [ 39.5, 93.0, 39.5, 93.0 ],
                     "source": [ "obj-48", 0 ]
                 }
             },
             {
                 "patchline": {
                     "destination": [ "obj-8", 0 ],
-                    "midpoints": [ 1558.5, 570.0, 1558.5, 570.0 ],
+                    "midpoints": [ 1558.5, 573.0, 1558.5, 573.0 ],
                     "source": [ "obj-5", 0 ]
                 }
             },
@@ -5270,7 +5268,7 @@
             {
                 "patchline": {
                     "destination": [ "obj-12", 0 ],
-                    "midpoints": [ 1475.5, 570.0, 1475.5, 570.0 ],
+                    "midpoints": [ 1475.5, 573.0, 1475.5, 573.0 ],
                     "source": [ "obj-9", 0 ]
                 }
             }

@@ -4,12 +4,12 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 0,
+            "revision": 2,
             "architecture": "x64",
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 34.0, 93.0, 1852.0, 953.0 ],
+        "rect": [ 34.0, 91.0, 1372.0, 807.0 ],
         "openrect": [ 0.0, 0.0, 214.0, 62.0 ],
         "openrectmode": 0,
         "openinpresentation": 1,
@@ -32,7 +32,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -483,7 +483,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -652,7 +652,6 @@
             {
                 "box": {
                     "activebgcolor": [ 0.298037976026535, 0.298046916723251, 0.298041820526123, 0.0 ],
-                    "appearance": 1,
                     "bordercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "focusbordercolor": [ 0.313725, 0.313725, 0.313725, 0.0 ],
                     "id": "obj-11",
@@ -676,7 +675,7 @@
                         },
                         "valueof": {
                             "parameter_longname": "live.numbox[92]",
-                            "parameter_mmax": 2.0,
+                            "parameter_mmax": 4.0,
                             "parameter_mmin": 1.0,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.numbox",
@@ -700,7 +699,7 @@
                     "numoutlets": 2,
                     "outlettype": [ "", "" ],
                     "parameter_enable": 1,
-                    "patching_rect": [ 659.0, 456.0, 65.0, 15.0 ],
+                    "patching_rect": [ 212.0, 31.0, 65.0, 15.0 ],
                     "pictures": [ "unlock.svg", "lock.svg" ],
                     "presentation": 1,
                     "presentation_rect": [ 4.0, 4.0, 66.0, 15.0 ],
@@ -778,8 +777,8 @@
                     "numinlets": 2,
                     "numoutlets": 1,
                     "outlettype": [ "" ],
-                    "patching_rect": [ 580.0, 534.0, 85.0, 23.0 ],
-                    "text": "target 0, bang"
+                    "patching_rect": [ 580.0, 534.0, 105.0, 23.0 ],
+                    "text": "target 0, calibrate"
                 }
             },
             {
@@ -939,7 +938,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1167,7 +1166,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1495,7 +1494,6 @@
                 "box": {
                     "activebgcolor": [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 0.0 ],
                     "activebgoncolor": [ 0.594473705410263, 0.720560630419913, 0.928309050695498, 1.0 ],
-                    "appearance": 1,
                     "bordercolor": [ 0.0, 0.0, 0.0, 1.0 ],
                     "focusbordercolor": [ 0.313725, 0.313725, 0.313725, 0.0 ],
                     "id": "obj-13",
@@ -1506,6 +1504,8 @@
                     "outlettype": [ "", "" ],
                     "parameter_enable": 1,
                     "patching_rect": [ 580.0, 456.0, 59.0, 15.0 ],
+                    "presentation": 1,
+                    "presentation_rect": [ 92.80000138282776, 4.400000065565109, 87.09285777807236, 15.20000022649765 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -1544,7 +1544,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 10.0,
                     "id": "obj-24",
-                    "items": [ "all", ",", 1, ",", 2 ],
+                    "items": [ "all", ",", 1, ",", 2, ",", 3, ",", 4 ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -1621,7 +1621,7 @@
                     "patching_rect": [ 152.0, 304.0, 45.0, 213.0 ],
                     "rounded": 0.0,
                     "spacing_y": 0.0,
-                    "tabs": [ "1", "2" ]
+                    "tabs": [ "1", "2", "3", "4" ]
                 }
             },
             {
@@ -1636,7 +1636,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -2011,7 +2011,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 0,
+                            "revision": 2,
                             "architecture": "x64",
                             "modernui": 1
                         },
