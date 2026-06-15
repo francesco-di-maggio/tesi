@@ -5,9 +5,14 @@
 </p>
 
 ## About
-TESI (Tangible Embodied Sound Interaction) is an open-source prototype designed as a sound-centered Tangible User Interface (TUI) for networked, interactive music systems. It enables real-time sensor-based interaction for embodied sound exploration.
+TESI (Tangible Embodied Sound Interaction) is a modular toolkit designed to support tangible and embodied sound interaction as a distributed system. It enables interaction designers to manipulate sound directly in their design context, linking gestures, materials, and spatial relationships to auditory outcomes.
 
-TESI is a modular, wireless, and networked interface, leveraging machine learning, decentralized communication, and digital musical instrument (DMI) design. 
+TESI consists of three main components: 
+* (1) a **hardware** device integrating multiple sensors, 
+* (2) **middleware** for network communication, and 
+* (3) **software** for real-time sensor-to-sound mapping.
+
+TESI aims to create a flexible and adaptable system for embodied sound exploration, supporting a variety of sensor-based interactions and real-time data processing.
 
 ### Features
 * Wireless and networked using [Adafruit ESP32 Feather V2 - 8MB Flash + 2 MB PSRAM - STEMMA QT](https://www.adafruit.com/product/5400) and [OOCSI](https://oocsi.id.tue.nl/).
@@ -56,14 +61,6 @@ TESI operates as part of a system of interconnected objects, using OOCSI for wir
 * Collaborative sound generation
 * Adaptive, sensor-driven soundscapes
 
-### Research & Development
-TESI is part of my ongoing PhD research at TU Eindhoven, focusing on:
-
-* Tangible and Embodied Interaction
-* Modular and Decentralized Ecologies of Smart Objects
-* Sound Interaction in TEI and IoT
-* Sustainable Interaction Design
-
 ## Publications
 * Francesco Di Maggio, Bart Hengeveld, and Mathias Funk. 2025. [Making Sense of Decentralized TUIs: A Modular Sound-Centric Approach](https://dl.acm.org/doi/10.1145/3689050.3708332). Proceedings of the Nineteenth International Conference on Tangible, Embedded, and Embodied Interaction. Association for Computing Machinery, New York, NY, USA, Article 136, 1–3. https://doi.org/10.1145/3689050.3708332
 
@@ -86,4 +83,4 @@ Designed and assembled at TU/e in the [d.search lab](https://research.tue.nl/en/
 Designed at TU/e with [Mathias Funk](https://mathias-funk.com/).
 
 ## License
-TESI is released under the MIT License, making it free to use, modify, and share.
+See [LICENSE](LICENSE) for details. TESI is licensed under the MIT License, allowing for free use, modification, and distribution with proper attribution.

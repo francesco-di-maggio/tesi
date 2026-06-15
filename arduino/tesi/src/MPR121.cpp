@@ -10,6 +10,7 @@ void initMPR121() {
         Serial.println(F("MPR121 FAILED - Check wiring!"));
         return;
     }
+    CAP_SENSOR.setAutoconfig(true);
     Serial.println(F("   MPR121  > OK"));
 }
 

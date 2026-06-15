@@ -4,7 +4,7 @@
         "appversion": {
             "major": 9,
             "minor": 1,
-            "revision": 2,
+            "revision": 4,
             "architecture": "x64",
             "modernui": 1
         },
@@ -20,17 +20,6 @@
         "subpatcher_template": " ",
         "helpsidebarclosed": 1,
         "boxes": [
-            {
-                "box": {
-                    "id": "obj-25",
-                    "maxclass": "message",
-                    "numinlets": 2,
-                    "numoutlets": 1,
-                    "outlettype": [ "" ],
-                    "patching_rect": [ 720.0, 559.0, 29.5, 23.0 ],
-                    "text": "tesi"
-                }
-            },
             {
                 "box": {
                     "id": "obj-18",
@@ -83,14 +72,13 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 650.0, 455.75, 95.5, 15.5 ],
                     "presentation": 1,
-                    "presentation_rect": [ 50.0, 5.0, 130.89285916090012, 13.0 ],
+                    "presentation_rect": [ 123.0, 5.0, 64.0, 13.0 ],
                     "rounded": 0.0,
                     "saved_attribute_attributes": {
                         "textcolor": {
                             "expression": "themecolor.live_control_text_selection"
                         }
                     },
-                    "text": "TEI26",
                     "textcolor": [ 0.85, 0.85, 0.85, 1.0 ],
                     "textjustification": 1,
                     "varname": "name-"
@@ -109,7 +97,7 @@
                     "numoutlets": 0,
                     "patching_rect": [ 650.0, 455.75, 95.5, 15.5 ],
                     "presentation": 1,
-                    "presentation_rect": [ 50.0, 5.0, 129.89285916090012, 13.0 ],
+                    "presentation_rect": [ 123.0, 5.0, 63.0, 13.0 ],
                     "proportion": 0.5,
                     "rounded": 0
                 }
@@ -176,7 +164,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -304,7 +292,7 @@
                     "parameter_enable": 1,
                     "patching_rect": [ 283.0, 456.0, 59.0, 15.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 137.89285916090012, 42.0, 42.0, 15.0 ],
+                    "presentation_rect": [ 168.0, 42.0, 42.0, 15.0 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -369,7 +357,7 @@
                         },
                         "valueof": {
                             "parameter_longname": "live.numbox[537]",
-                            "parameter_mmax": 4.0,
+                            "parameter_mmax": 1.0,
                             "parameter_mmin": 1.0,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.numbox",
@@ -632,7 +620,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -821,7 +809,7 @@
                     "parameter_enable": 1,
                     "patching_rect": [ 254.0, 408.0, 59.0, 15.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 92.75, 42.0, 42.0, 15.0 ],
+                    "presentation_rect": [ 123.0, 42.0, 42.0, 15.0 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -860,7 +848,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1236,7 +1224,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 10.0,
                     "id": "obj-24",
-                    "items": [ "all", ",", 1, ",", 2, ",", 3, ",", 4 ],
+                    "items": [ "all", ",", 1 ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -1313,7 +1301,7 @@
                     "patching_rect": [ 152.0, 304.0, 45.0, 213.0 ],
                     "rounded": 0.0,
                     "spacing_y": 0.0,
-                    "tabs": [ "1", "2", "3", "4" ]
+                    "tabs": "1"
                 }
             },
             {
@@ -1328,7 +1316,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1703,7 +1691,7 @@
                         "appversion": {
                             "major": 9,
                             "minor": 1,
-                            "revision": 2,
+                            "revision": 4,
                             "architecture": "x64",
                             "modernui": 1
                         },
@@ -1975,13 +1963,6 @@
             },
             {
                 "patchline": {
-                    "destination": [ "obj-25", 0 ],
-                    "midpoints": [ 729.5, 555.0, 729.5, 555.0 ],
-                    "source": [ "obj-18", 0 ]
-                }
-            },
-            {
-                "patchline": {
                     "destination": [ "obj-11", 0 ],
                     "midpoints": [ 297.5, 390.0, 449.5, 390.0 ],
                     "source": [ "obj-20", 0 ]
@@ -1999,13 +1980,6 @@
                     "destination": [ "obj-14", 0 ],
                     "midpoints": [ 470.5, 291.0, 470.5, 291.0 ],
                     "source": [ "obj-24", 0 ]
-                }
-            },
-            {
-                "patchline": {
-                    "destination": [ "obj-15", 0 ],
-                    "midpoints": [ 729.5, 585.0, 729.5, 585.0 ],
-                    "source": [ "obj-25", 0 ]
                 }
             },
             {

@@ -3,22 +3,22 @@
 // -------------------------------------------------------------------------
 // Device Identity
 // -------------------------------------------------------------------------
-const int DEVICE_INDEX = 1;             // Set board index (change as needed)
+const int DEVICE_INDEX = 4;             // Set board index (change as needed)
 const char* BASE_ADDRESS = "/tesi";     // Base address for OSC and OOCSI messages
 
 // -------------------------------------------------------------------------
 // Sensor Configuration
-// Use 1 for enabled/true, 0 for disabled/false = ON/OFF, OSC, Serial, OOCSI
+// ON/OFF, OSC, Serial, OOCSI, Sampling Rate (ms)
 // -------------------------------------------------------------------------
-SensorConfig BATTERY  = {{1, 1, 0, 0}, 8000, 0};
-SensorConfig LDR      = {{1, 1, 0, 0},   20, 0};
-SensorConfig MIC      = {{1, 1, 0, 0},   20, 0};
-SensorConfig POT      = {{1, 1, 0, 0},   10, 0};
-SensorConfig DISTANCE = {{1, 1, 0, 0},   20, 0};
-SensorConfig QUAT     = {{1, 1, 0, 0},   40, 0};
-SensorConfig PUSH     = {{1, 1, 0, 0},    5, 0};
-SensorConfig CAP      = {{1, 1, 0, 0},    5, 0};
-SensorConfig PING     = {{1, 1, 0, 0}, 1000, 0};
+SensorConfig BATTERY  = {{1, 1, 0, 0}, 10000, 0};
+SensorConfig LDR      = {{1, 1, 0, 0},    20, 0};
+SensorConfig MIC      = {{1, 1, 0, 0},    20, 0};
+SensorConfig POT      = {{1, 1, 0, 1},    10, 0};
+SensorConfig DISTANCE = {{1, 1, 0, 0},    20, 0};
+SensorConfig QUAT     = {{1, 1, 0, 0},    40, 0};
+SensorConfig PUSH     = {{1, 1, 0, 1},     5, 0};
+SensorConfig CAP      = {{1, 1, 0, 1},     5, 0};
+SensorConfig PING     = {{1, 1, 0, 0},  1000, 0};
 
 // -------------------------------------------------------------------------
 // WiFi & OSC/OOCSI Configuration

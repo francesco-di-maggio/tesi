@@ -9,8 +9,8 @@
             "modernui": 1
         },
         "classnamespace": "box",
-        "rect": [ 34.0, 91.0, 1372.0, 807.0 ],
-        "openrect": [ 0.0, 0.0, 214.0, 62.0 ],
+        "rect": [ 697.0, 91.0, 709.0, 807.0 ],
+        "openrect": [ 0.0, 0.0, 214.0, 45.0 ],
         "openrectmode": 0,
         "openinpresentation": 1,
         "default_fontname": "Ableton Sans Medium",
@@ -20,6 +20,17 @@
         "subpatcher_template": " ",
         "helpsidebarclosed": 1,
         "boxes": [
+            {
+                "box": {
+                    "comment": "",
+                    "id": "obj-2",
+                    "index": 1,
+                    "maxclass": "outlet",
+                    "numinlets": 1,
+                    "numoutlets": 0,
+                    "patching_rect": [ 30.0, 700.0, 30.0, 30.0 ]
+                }
+            },
             {
                 "box": {
                     "id": "obj-15",
@@ -611,7 +622,7 @@
                     "parameter_enable": 1,
                     "patching_rect": [ 283.0, 456.0, 59.0, 15.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 137.89285916090012, 42.0, 42.0, 15.0 ],
+                    "presentation_rect": [ 167.95581722259521, 26.519339561462402, 42.0, 15.0 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -662,7 +673,7 @@
                     "parameter_enable": 1,
                     "patching_rect": [ 440.0, 456.0, 50.0, 15.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 50.0, 42.0, 40.75, 15.0 ],
+                    "presentation_rect": [ 50.276247918605804, 26.519339561462402, 40.75, 15.0 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -675,7 +686,7 @@
                         },
                         "valueof": {
                             "parameter_longname": "live.numbox[92]",
-                            "parameter_mmax": 4.0,
+                            "parameter_mmax": 1.0,
                             "parameter_mmin": 1.0,
                             "parameter_modmode": 0,
                             "parameter_shortname": "live.numbox",
@@ -1127,7 +1138,7 @@
                     "parameter_enable": 1,
                     "patching_rect": [ 254.0, 408.0, 59.0, 15.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 92.75, 42.0, 42.0, 15.0 ],
+                    "presentation_rect": [ 123.20443171262741, 26.519339561462402, 42.0, 15.0 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -1474,8 +1485,6 @@
                     "numinlets": 1,
                     "numoutlets": 0,
                     "patching_rect": [ 499.0, 454.0, 36.0, 18.0 ],
-                    "presentation": 1,
-                    "presentation_rect": [ 7.5, 24.0, 36.0, 18.0 ],
                     "text": "target"
                 }
             },
@@ -1505,7 +1514,7 @@
                     "parameter_enable": 1,
                     "patching_rect": [ 580.0, 456.0, 59.0, 15.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 92.80000138282776, 4.400000065565109, 87.09285777807236, 15.20000022649765 ],
+                    "presentation_rect": [ 123.0, 4.0, 64.0, 15.0 ],
                     "saved_attribute_attributes": {
                         "activebgcolor": {
                             "expression": ""
@@ -1544,7 +1553,7 @@
                     "bgfillcolor_type": "color",
                     "fontsize": 10.0,
                     "id": "obj-24",
-                    "items": [ "all", ",", 1, ",", 2, ",", 3, ",", 4 ],
+                    "items": [ "all", ",", 1 ],
                     "maxclass": "umenu",
                     "numinlets": 1,
                     "numoutlets": 3,
@@ -1552,7 +1561,7 @@
                     "parameter_enable": 0,
                     "patching_rect": [ 461.0, 269.0, 57.0, 20.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 6.051873117685318, 40.057636350393295, 41.0, 20.0 ],
+                    "presentation_rect": [ 6.0773486495018005, 24.309394598007202, 41.0, 20.0 ],
                     "saved_attribute_attributes": {
                         "textcolor": {
                             "expression": "themecolor.live_control_fg_on"
@@ -1621,7 +1630,7 @@
                     "patching_rect": [ 152.0, 304.0, 45.0, 213.0 ],
                     "rounded": 0.0,
                     "spacing_y": 0.0,
-                    "tabs": [ "1", "2", "3", "4" ]
+                    "tabs": "1"
                 }
             },
             {
@@ -2181,7 +2190,8 @@
                     "id": "obj-6",
                     "maxclass": "newobj",
                     "numinlets": 1,
-                    "numoutlets": 0,
+                    "numoutlets": 2,
+                    "outlettype": [ "", "" ],
                     "patching_rect": [ 30.0, 596.0, 108.0, 23.0 ],
                     "text": "poly~ tesi.visualize",
                     "varname": "poly~"
@@ -2200,7 +2210,7 @@
                     "numoutlets": 0,
                     "patching_rect": [ 461.0, 269.0, 57.0, 20.0 ],
                     "presentation": 1,
-                    "presentation_rect": [ 4.899135380983353, 43.2276651263237, 41.0, 13.0 ],
+                    "presentation_rect": [ 4.9723761677742, 27.624312043190002, 41.0, 13.0 ],
                     "proportion": 0.5,
                     "rounded": 0,
                     "saved_attribute_attributes": {
@@ -2429,6 +2439,12 @@
                     "midpoints": [ 39.5, 66.0, 221.5, 66.0 ],
                     "order": 0,
                     "source": [ "obj-56", 0 ]
+                }
+            },
+            {
+                "patchline": {
+                    "destination": [ "obj-2", 0 ],
+                    "source": [ "obj-6", 0 ]
                 }
             },
             {
