@@ -1,0 +1,42 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../url";
+---
+<Base title="Mapping" description="From sensor data to sound: Max on a computer, Pure Data on the node.">
+  <h1>Mapping</h1>
+  <p class="lead">From sensor data to sound: Max on a computer, Pure Data on the node.</p>
+
+  <h2 class="label">Max, on a computer</h2>
+  <div class="prose">
+    <p>V1 and V2 send sensor data to Max. Patches scale, smooth and map it to sound, or send it as MIDI to a DAW such as Ableton Live. Mappings can also be trained from examples with machine learning (FluCoMa).</p>
+  </div>
+  <div class="panel lists">
+    <ul class="list">
+      <li><a href="https://github.com/francesco-di-maggio/modulo">
+        <span class="text"><b>modulo</b><span class="sub">Modules for input, transform, routing and sound, one cable each.</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>
+      <li><a href="https://github.com/francesco-di-maggio/modulo-plus">
+        <span class="text"><b>modulo+</b><span class="sub">Machine learning, mapping modules, instruments.</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>
+      <li><a href="https://github.com/francesco-di-maggio/tesi/tree/main/max">
+        <span class="text"><b>TESI patches</b><span class="sub">Receive, map and play. Also need the Sadam Library, FluCoMa and odot.</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <h2 class="label">Pure Data, on the node</h2>
+  <div class="prose">
+    <p>V3 runs the patch on the ESP32: sensing, mapping and synthesis in one patch. Patches are written in Pure Data on a computer and copied to the board.</p>
+  </div>
+  <div class="panel lists">
+    <ul class="list">
+      <li><a href={url("versions/v3/")}>
+        <span class="text"><b>V3: ESP32-S3 AudioBoard</b><span class="sub">espd and ESPdLib compared.</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>
+    </ul>
+  </div>
+</Base>

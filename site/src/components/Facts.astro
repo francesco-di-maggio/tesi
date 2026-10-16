@@ -1,0 +1,10 @@
+---
+interface Props { rows: [string, string, string?][] }
+
+const { rows } = Astro.props;
+---
+<dl class="panel meta">
+  {rows.map(([key, value, href]) => (
+    <Fragment><dt class="label">{key}</dt><dd>{href ? <a href={href}>{value}</a> : value}</dd></Fragment>
+  ))}
+</dl>

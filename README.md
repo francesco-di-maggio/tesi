@@ -1,78 +1,49 @@
-# TESI — TANGIBLE EMBODIED SOUND INTERACTION
+# TESI — TANGIBLE AND EMBODIED SOUND INTERACTION
 
 <p align="left">
   <img alt="TESI" src="images/tesi.jpg" width="765">
 </p>
 
 ## About
-TESI (Tangible Embodied Sound Interaction) is a modular toolkit designed to support tangible and embodied sound interaction as a distributed system. It enables interaction designers to manipulate sound directly in their design context, linking gestures, materials, and spatial relationships to auditory outcomes.
+TESI (Tangible and Embodied Sound Interaction) is a modular toolkit for sound in distributed systems of tangible interfaces. It links gestures, materials and spatial relationships to sound.
 
-TESI consists of three main components: 
-* (1) a **hardware** device integrating multiple sensors, 
-* (2) **middleware** for network communication, and 
-* (3) **software** for real-time sensor-to-sound mapping.
+TESI has three layers:
+* **Node**: hardware that senses and, from V3, makes sound.
+* **Network**: how nodes and computers communicate (OSC, OOCSI, ESP-NOW).
+* **Mapping**: from sensor data to sound, in Max on a computer or Pure Data on the node.
 
-TESI aims to create a flexible and adaptable system for embodied sound exploration, supporting a variety of sensor-based interactions and real-time data processing.
+Documentation: **[francescodimaggio.nl/tesi](https://francescodimaggio.nl/tesi/)**
 
-### Features
-* Wireless and networked using [Adafruit ESP32 Feather V2 - 8MB Flash + 2 MB PSRAM - STEMMA QT](https://www.adafruit.com/product/5400) and [OOCSI](https://oocsi.id.tue.nl/).
-* Multi-sensor data collection:
-  * Motion (IMU) – BNO055
-  * Light – Light-Dependent Resistor (LDR)
-  * Distance – Time-of-flight (ToF)
-  * Capacitive Touch – MPR121
-  * Audio – MAX4466
-  * Potentiometer
-* Integration with [Max](https://cycling74.com/products/max) via TCP [(Sadam Library)](https://cycling74.com/packages/sadam-library) to process and map data to [Ableton Live](https://www.ableton.com/en/live/).
-* Machine learning-based mapping using:
-  * FluCoMa
-* Custom PCB design (open-source schematics included).
+## Versions
+| Version | Board | Sound | Files |
+|---|---|---|---|
+| V3 | Waveshare ESP32-S3-AUDIO-Board | On the node (Pure Data) | In progress, see the site |
+| V2 | Custom PCB, Adafruit ESP32 Feather V2 | On a computer (Max) | `arduino/`, `kicad/`, `max/`, `oocsi/`, `ableton/` |
+| V1 | Breadboard, Adafruit ESP32 Feather | On a computer (Max) | — |
 
-### Repository Contents
-* ableton/ – Example Ableton Live set for sound interaction.
-* arduino/ – ESP32 firmware for sensor data collection and communication.
-* kicad/ – Open-source KiCad schematics and PCB layouts.
-* max/ – Max/MSP patches for data processing, mapping, and control.
-* oocsi/ - OOCSI local server.
+## Repository Contents
+* `arduino/` – V2 firmware for sensor data collection and communication.
+* `kicad/` – V2 schematics and PCB layout.
+* `max/` – Max patches for data processing, mapping and control.
+* `oocsi/` – OOCSI local server.
+* `ableton/` – Example Ableton Live set.
+* `events/` – Material from workshops and conferences.
+* `site/` – Source of the documentation site (Astro).
 
-## Setup & Installation
-1. Flash the ESP32 with Arduino
-  * Install Arduino IDE and ESP32 board support.
-  * Upload the firmware in /arduino to ESP32 Feather V2.
-2. Set up OOCSI Communication
-  * Ensure an OOCSI Server is running.
-  * Configure the ESP32 and Max/MSP to connect.
-3. Run Max/MSP and Ableton Live
-  * Open the Max patches (/max) for data reception and processing.
-  * Load the Ableton Live set to explore interactive sound control.
-
-### Dependencies
-To work in Max, TESI requires external libraries including:
-* (modulo)[https://cycling74.com/packages/modulo]
-* (oocsi-max)[https://github.com/francesco-di-maggio/oocsi-max]
-* (odot)[https://cycling74.com/packages/odot]
-* (Sadam Library)[https://cycling74.com/packages/sadam-library]
-* (FluCoMa)[https://www.flucoma.org/]
-
-### Networked Interaction & Distributed Control
-TESI operates as part of a system of interconnected objects, using OOCSI for wireless communication between multiple devices. This enables:
-
-* Real-time multi-agent interaction
-* Collaborative sound generation
-* Adaptive, sensor-driven soundscapes
+## Get Started
+Setup for V2 (firmware, libraries, OOCSI, Max) is on the [V2 page](https://francescodimaggio.nl/tesi/versions/v2/). Firmware details are in [`arduino/README.md`](arduino/README.md).
 
 ## Publications
-* Francesco Di Maggio, Bart Hengeveld, and Mathias Funk. 2025. [Making Sense of Decentralized TUIs: A Modular Sound-Centric Approach](https://dl.acm.org/doi/10.1145/3689050.3708332). Proceedings of the Nineteenth International Conference on Tangible, Embedded, and Embodied Interaction. Association for Computing Machinery, New York, NY, USA, Article 136, 1–3. https://doi.org/10.1145/3689050.3708332
+* Francesco Di Maggio, Bart Hengeveld, Mathias Funk, and Rebecca Fiebrink. 2026. TESI: A Toolkit for Tangible and Embodied Sound Interaction. In *TEI '26*. ACM. https://doi.org/10.1145/3731459.3779334
+* Francesco Di Maggio, Bart Hengeveld, and Mathias Funk. 2025. [Making Sense of Decentralized TUIs: A Modular Sound-Centric Approach](https://dl.acm.org/doi/10.1145/3689050.3708332). In *TEI '25*. ACM. https://doi.org/10.1145/3689050.3708332
 
-### Next Presentation
-TESI's first prototype will be presented at (TEI'25)[https://tei.acm.org/2025/] (Tangible, Embedded, and Embodied Interaction) in Bordeaux, France, during a Studio session exploring sustainable, modular, and embodied interaction in sound design., ["Making Sense of Decentralized TUIs: A Modular Sound-Centric Approach"](https://sites.google.com/view/decentralized-sound-tuis/home).
-
-### Contribute & Collaborate
-TESI is open-source, and contributions are welcome. You can contribute by:
+## Contribute & Collaborate
+TESI is open-source, and contributions are welcome:
 
 * Expanding hardware (sensor integration, PCB improvements)
 * Enhancing software (Max patches, mappings, sound engines)
 * Exploring new applications (live performance, installations, research)
+
 Fork this repository, submit pull requests, or start a discussion in the issues section.
 
 ## Credits
@@ -83,4 +54,4 @@ Designed and assembled at TU/e in the [d.search lab](https://research.tue.nl/en/
 Designed at TU/e with [Mathias Funk](https://mathias-funk.com/).
 
 ## License
-See [LICENSE](LICENSE) for details. TESI is licensed under the MIT License, allowing for free use, modification, and distribution with proper attribution.
+MIT. See [LICENSE](LICENSE) for details. 

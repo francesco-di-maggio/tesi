@@ -1,0 +1,39 @@
+---
+import Base from "../layouts/Base.astro";
+---
+<Base title="Network" description="How TESI nodes and computers talk: OSC, OOCSI, ESP-NOW, MQTT.">
+  <h1>Network</h1>
+  <p class="lead">How nodes reach each other and the computers that map them.</p>
+
+  <h2 class="label">Protocols</h2>
+  <div class="panel">
+    <table class="protocols">
+      <thead><tr><th>Protocol</th><th>V2</th><th>V3</th></tr></thead>
+      <tbody>
+        <tr><td><b>OSC</b><span class="sub">Messages over UDP, the common language of music software</span></td><td>Yes</td><td>From a patch</td></tr>
+        <tr><td><b>OOCSI</b><span class="sub">Messaging through a server, with presence. From TU/e Industrial Design</span></td><td>Yes</td><td>–</td></tr>
+        <tr><td><b>ESP-NOW</b><span class="sub">Direct radio between ESP32 boards. No router, no handshake</span></td><td>–</td><td>Yes</td></tr>
+        <tr><td><b>Serial</b><span class="sub">USB cable</span></td><td>Debugging</td><td>Patch upload</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="label">On the computer</h2>
+  <div class="panel lists">
+    <ul class="list">
+      <li><a href="https://github.com/francesco-di-maggio/oocsi-max">
+        <span class="text"><b>oocsi-max</b><span class="sub">OOCSI for Max: messages and presence.</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>
+      <li><a href="https://github.com/francesco-di-maggio/oocsi-pi">
+        <span class="text"><b>oocsi-pi</b><span class="sub">A Raspberry Pi as an OOCSI hub and Wi-Fi network for a set of nodes.</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>
+      <li><a href="https://francescodimaggio.nl/mqtt-max/">
+        <span class="text"><b>mqtt-max</b><span class="sub">MQTT for Max, with Homie discovery. Phones and browsers join as devices.</span></span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a></li>
+    </ul>
+  </div>
+  <p class="hint">Which protocol suits which use is to be measured: a comparison of latency, jitter and range is planned.</p>
+</Base>

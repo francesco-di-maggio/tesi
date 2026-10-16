@@ -1,0 +1,25 @@
+---
+import Base from "../layouts/Base.astro";
+import Versions from "../components/Versions.astro";
+---
+<Base title="Node" description="TESI node hardware across versions: sensors, sound output, power.">
+  <h1>Node</h1>
+  <p class="lead">The hardware of each version.</p>
+
+  <h2 class="label">Compared</h2>
+  <div class="panel matrix">
+    <table>
+      <thead><tr><th></th><th>V1</th><th>V2</th><th>V3</th></tr></thead>
+      <tbody>
+        <tr><th>Board</th><td>ESP32 Feather</td><td>ESP32 Feather V2</td><td>Waveshare ESP32-S3-AUDIO</td></tr>
+        <tr><th>Build</th><td>Breadboard</td><td>Custom PCB</td><td>Ready-made board</td></tr>
+        <tr><th>Sensors</th><td>IMU, distance, touch, microphone, light, button</td><td>IMU, distance, touch (8 pads), microphone, light, potentiometer, buttons</td><td>Microphones, buttons. External sensors over I2C</td></tr>
+        <tr><th>Sound</th><td>Computer</td><td>Computer</td><td>Node: speaker and Pure Data</td></tr>
+        <tr><th>Power</th><td>USB</td><td>LiPo battery</td><td>USB or battery</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="label">Versions</h2>
+  <Versions />
+</Base>

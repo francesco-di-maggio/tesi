@@ -1,0 +1,16 @@
+---
+import { url } from "../url";
+import { versions, years } from "../versions";
+
+const list = await versions();
+---
+<div class="panel lists">
+  <ul class="list">
+    {list.map((v) => (
+      <li><a class:list={{ on: v.data.status === "current" }} href={url(`versions/${v.id}/`)}>
+        <span class="text"><b>{v.data.title}</b><span class="sub">{v.data.summary}</span></span>
+        <span class="label">{years(v)}</span>
+      </a></li>
+    ))}
+  </ul>
+</div>

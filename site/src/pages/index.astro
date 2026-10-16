@@ -1,0 +1,54 @@
+---
+import Base from "../layouts/Base.astro";
+import Facts from "../components/Facts.astro";
+import Versions from "../components/Versions.astro";
+import { url } from "../url";
+
+const layers = [
+  { path: "node/", title: "Node", sub: "The hardware: sensors, sound output, power." },
+  { path: "network/", title: "Network", sub: "How nodes and computers talk: OSC, OOCSI, ESP-NOW." },
+  { path: "mapping/", title: "Mapping", sub: "From sensor data to sound: Max on a computer, Pure Data on the node." },
+];
+---
+<Base>
+  <h1>TESI</h1>
+  <p class="lead">Tangible and Embodied Sound Interaction. A modular toolkit for sound in distributed systems of tangible interfaces.</p>
+
+  <figure class="photo">
+    <img src={url("images/teaser.jpg").replace(/\/$/, "")} alt="TESI V2 nodes: sensors on a custom PCB" width="1600" height="1114">
+  </figure>
+
+  <h2 class="label">Aims</h2>
+  <div class="prose">
+    <ul>
+      <li>Lower the entry barrier for working with distributed sound in tangible and embodied interaction.</li>
+      <li>Support distributed systems where several smart objects interact.</li>
+      <li>Enable embodied interaction through tangible, wearable or mobile sensors.</li>
+      <li>Allow expressive sound mappings, as in digital musical instrument design.</li>
+    </ul>
+  </div>
+
+  <h2 class="label">Layers</h2>
+  <div class="panel lists">
+    <ul class="list">
+      {layers.map((l) => (
+        <li><a href={url(l.path)}>
+          <span class="text"><b>{l.title}</b><span class="sub">{l.sub}</span></span>
+          <span class="arrow" aria-hidden="true">→</span>
+        </a></li>
+      ))}
+    </ul>
+  </div>
+
+  <h2 class="label">Versions</h2>
+  <Versions />
+
+  <h2 class="label">Source</h2>
+  <Facts rows={[
+    ["Repository", "github.com/francesco-di-maggio/tesi", "https://github.com/francesco-di-maggio/tesi"],
+    ["Licence", "MIT"],
+    ["Paper", "TEI '26, Chicago", "https://doi.org/10.1145/3731459.3779334"],
+    ["Studio", "TEI '25, Bordeaux", "https://doi.org/10.1145/3689050.3708332"],
+    ["Research", "TSOST", "https://francescodimaggio.nl/tsost/"],
+  ]} />
+</Base>

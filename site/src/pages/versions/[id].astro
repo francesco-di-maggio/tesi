@@ -1,0 +1,44 @@
+---
+import { render } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import Facts from "../../components/Facts.astro";
+import { url } from "../../url";
+import { versions, period, type Version } from "../../versions";
+
+export async function getStaticPaths() {
+  return (await versions()).map((v) => ({ params: { id: v.id }, props: { v } }));
+}
+
+const { v } = Astro.props as { v: Version };
+const { Content } = await render(v);
+const d = v.data;
+const status = d.status === "current" ? "Current" : "Earlier";
+---
+<Base title={d.title} description={d.summary}>
+  <span class="label"><a class="crumb" href={url("versions/")}>Versions</a> · {d.status}</span>
+  <h1>{d.title}</h1>
+  <p class="lead">{d.summary}</p>
+  {d.image && (
+    <figure class="photo">
+      <img src={url(d.image).replace(/\/$/, "")} alt={d.caption ?? d.title} loading="lazy">
+      {d.caption && <figcaption>{d.caption}</figcaption>}
+    </figure>
+  )}
+  <Facts rows={[["Status", status], ["Period", period(v)], ...d.specs]} />
+  {v.body?.trim() && <div class="prose body"><Content /></div>}
+  {d.files.length > 0 && (
+    <Fragment>
+      <h2 class="label">Files</h2>
+      <div class="panel lists">
+        <ul class="list">
+          {d.files.map(([label, href]) => (
+            <li><a href={href}>
+              <span class="text"><b>{label}</b><span class="sub">{href.replace(/^https:\/\/(github\.com\/)?/, "")}</span></span>
+              <span class="arrow" aria-hidden="true">→</span>
+            </a></li>
+          ))}
+        </ul>
+      </div>
+    </Fragment>
+  )}
+</Base>
