@@ -19,7 +19,7 @@ a:hover { text-decoration-color: var(--ink); }
 .panel { padding: 14px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
 
 header { display: flex; align-items: center; justify-content: space-between; gap: 12px; height: 28px; }
-.mark { display: flex; align-items: center; gap: 8px; font: 600 13px var(--mono); letter-spacing: 0.04em; text-decoration: none; }
+.mark { display: flex; align-items: center; gap: 8px; font: 600 13px var(--mono); letter-spacing: 0.04em; text-decoration: none; text-transform: uppercase; white-space: nowrap; }
 /* The mark: four modules; the orange one sounds and breathes. */
 .mark svg { width: 18px; height: 18px; overflow: visible; }
 .mark svg rect { fill: none; stroke: var(--ink); stroke-width: 1.5; }
