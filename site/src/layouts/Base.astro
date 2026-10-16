@@ -10,7 +10,8 @@ interface Props {
 }
 
 const { title, description = "Tangible and Embodied Sound Interaction. A modular toolkit for exploring sound in distributed systems of tangible interfaces." } = Astro.props;
-const pageTitle = title ? `${title} · TESI` : "TESI · Tangible and Embodied Sound Interaction";
+// Tabs: the page first, then the site; the home is just its name.
+const pageTitle = title ? `${title} · TESI` : "TESI";
 const path = Astro.url.pathname;
 const nav = [
   { path: "versions/", title: "Versions" },
