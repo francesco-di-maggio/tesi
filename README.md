@@ -1,8 +1,6 @@
 # TESI — TANGIBLE AND EMBODIED SOUND INTERACTION
 
-<p align="left">
-  <img alt="TESI" src="images/tesi.jpg" width="765">
-</p>
+![TESI](images/tesi.jpg)
 
 ## About
 TESI (Tangible and Embodied Sound Interaction) is a modular toolkit for exploring sound in distributed systems of tangible interfaces. It links gestures, materials and spatial relationships to sound.
