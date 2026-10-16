@@ -5,7 +5,7 @@
 </p>
 
 ## About
-TESI (Tangible and Embodied Sound Interaction) is a modular toolkit for sound in distributed systems of tangible interfaces. It links gestures, materials and spatial relationships to sound.
+TESI (Tangible and Embodied Sound Interaction) is a modular toolkit for exploring sound in distributed systems of tangible interfaces. It links gestures, materials and spatial relationships to sound.
 
 TESI has three layers:
 * **Node**: hardware that senses and, from V3, makes sound.
